@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content='2020-09-22'>
+    <title>http - post</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="content">
+      <p>Date: September 22, 2020</p>
+      <h2 id="headers.-content-type">Headers. Content-Type</h2>
+      <h3
+      id="applicationx-www-urlencoded">application/x-www-urlencoded</h3>
+      <ul>
+      <li><strong>Form Data Submission</strong>: This is typically used
+      when submitting form data from a web page. Each key-value pair is
+      URL-encoded and concatenated with <strong>&amp;</strong>.</li>
+      <li><strong>Simple Data</strong>: suitable fo rsimple, flat data
+      structures</li>
+      </ul>
+      <p>Example:</p>
+      <blockquote>
+      <p>name=John&amp;age=30&amp;city=New+York</p>
+      </blockquote>
+      <p>Usage in C# code:</p>
+      <pre><code>var formData = new FormUrlEncodedContent(new[]{
+    new KeyValuePair&lt;string, string&gt;(&quot;name&quot;, &quot;John&quot;),
+    new KeyValuePair&lt;string, string&gt;(&quot;age&quot;, &quot;30&quot;),
+    new KeyValuePair&lt;string, string&gt;(&quot;city&quot;, &quot;New York&quot;)
+});
+
+var httpRequest = new HttpRequestMessage(HttpMethod.Post, &quot;https://example.com/api&quot;)
+{
+    Content = formData
+};</code></pre>
+      <h3 id="applicationjson">application/json</h3>
+      <ul>
+      <li><strong>Complex Data Structures</strong>: Ideal for sending
+      complex, nested data structures.</li>
+      <li><strong>API Communication</strong>: Commonly used in RESTful
+      APIs for both requests and responses.</li>
+      <li><strong>Readability</strong>: JSON is more human-readable and
+      easier to debug.</li>
+      </ul>
+      <p>Usage in C# code:</p>
+      <pre><code>var jsonData = JsonConvert.SerializeObject(new
+{
+    name = &quot;John&quot;,
+    age = 30,
+    city = &quot;New York&quot;
+});
+
+var httpRequest = new HttpRequestMessage(HttpMethod.Post, &quot;https://example.com/api&quot;)
+{
+    Content = new StringContent(jsonData, Encoding.UTF8, &quot;application/json&quot;)
+}</code></pre>
+      <h2 id="headers.-authorization">Headers. Authorization</h2>
+    </div>
+  </body>
+</html>
