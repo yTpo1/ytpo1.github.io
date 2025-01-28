@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content='2020-09-22'>
+    <title>bash scripting</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="content">
+      <p>Date: September 22, 2020</p>
+      <h2 id="parameter-expansion">Parameter expansion</h2>
+      <p>It allows you to manipulate the value of variables in various
+      ways, for example: extracting substrings, setting default values,
+      removing parts of strings based on patterns, etc. &gt; ${var}</p>
+      <p>Usefull when working file names, for example, getting the
+      extenshion of file, file name without the extension, etc.</p>
+      <p>Remove the shortest match of a pattern from the beginning: &gt;
+      ${filename##*.} # example: file.gz.md -&gt; gz.md</p>
+      <p>Remove the longest match of a pattern from the beginning: &gt;
+      ${filename##*.} # example: file.tar.gz -&gt; gz</p>
+      <p>Remove the shortest match of a pattern from the end: &gt;
+      ${file%.*} # example: file.md -&gt; file</p>
+      <p>Remove the longest match of a pattern from the end: &gt;
+      ${file%%.*} # example: file.md -&gt; file</p>
+      <p>Additional info: * ## removes the longest matching pattern from
+      the beginning of the variable’s value * *. matches everything up
+      to and including the last dot (.) in the filename</p>
+      <h2 id="for-loops">For loops</h2>
+      <p>for each file in current directory with the extension of
+      *.md</p>
+      <pre><code>for file in *.md; do 
+    if [ -f &quot;$file&quot; ]; then 
+        echo &quot;$file&quot;
+    fi 
+done</code></pre>
+    </div>
+  </body>
+</html>

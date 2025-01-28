@@ -7,7 +7,11 @@ date: September 22, 2020
 tech notes
 
 ## Command line tools
-* [git](./Command_line_tools/git.html)
+* [git](./git.html)
+* [termux](./termux.html)
 
 ## Security. Encryption. Decryption
 to do...
+
+## Programming
+* [bash scripting](./bash_scripting.html)
