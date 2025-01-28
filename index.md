@@ -4,4 +4,10 @@ date: September 22, 2020
 ---
 
 ## Index page
-try this [Doc](./doc.md)
+tech notes
+
+## Command line tools
+* [git](./Command_line_tools/git.html)
+
+## Security. Encryption. Decryption
+to do...
