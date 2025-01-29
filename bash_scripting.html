@@ -8,43 +8,60 @@
   </head>
   <body>
     <div class="content">
-      <p>Date: September 22, 2020</p>
-      <h2 id="parameter-expansion">Parameter expansion</h2>
-      <p>It allows you to manipulate the value of variables in various
-      ways, for example: extracting substrings, setting default values,
-      removing parts of strings based on patterns, etc.</p>
-      <blockquote>
-      <p>${var}</p>
-      </blockquote>
-      <p>Usefull when working file names, for example, getting the
-      extenshion of file, file name without the extension, etc.</p>
-      <p>Remove the shortest match of a pattern from the beginning:</p>
-      <blockquote>
-      <p>${filename##*.} # example: file.gz.md -&gt; gz.md</p>
-      </blockquote>
-      <p>Remove the longest match of a pattern from the beginning:</p>
-      <blockquote>
-      <p>${filename##*.} # example: file.tar.gz -&gt; gz</p>
-      </blockquote>
-      <p>Remove the shortest match of a pattern from the end:</p>
-      <blockquote>
-      <p>${file%.*} # example: file.md -&gt; file</p>
-      </blockquote>
-      <p>Remove the longest match of a pattern from the end:</p>
-      <blockquote>
-      <p>${file%%.*} # example: file.md -&gt; file</p>
-      </blockquote>
-      <p>Additional info: * ## removes the longest matching pattern from
-      the beginning of the variable’s value * *. matches everything up
-      to and including the last dot (.) in the filename</p>
-      <h2 id="for-loops">For loops</h2>
-      <p>for each file in current directory with the extension of
-      *.md</p>
-      <pre><code>for file in *.md; do 
+      <div class="container-lg">
+        <p>Date: September 22, 2020</p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h2 id="section">&amp;&amp;</h2>
+            <p>&amp;&amp; means “and if successful”</p>
+            <h2 id="a-unix-pipe">A Unix pipe |</h2>
+            <h2 id="section-1">||</h2>
+            <h2 id="section-2">&gt;</h2>
+            <h2 id="section-3">;</h2>
+            <h2 id="then">then</h2>
+            <h2 id="if">if</h2>
+            <p>if [[ ]]</p>
+            <h2 id="parameter-expansion">Parameter expansion</h2>
+            <p>It allows you to manipulate the value of variables in
+            various ways, for example: extracting substrings, setting
+            default values, removing parts of strings based on patterns,
+            etc.</p>
+            <pre><code>${var}</code></pre>
+            <p>Usefull when working file names, for example, getting the
+            extenshion of file, file name without the extension,
+            etc.</p>
+            <p>Remove the shortest match of a pattern from the
+            beginning:</p>
+            <pre><code># example: file.gz.md -&gt; gz.md
+${filename##*.} </code></pre>
+            <p>Remove the longest match of a pattern from the
+            beginning:</p>
+            <pre><code># example: file.tar.gz -&gt; gz
+${filename##*.}</code></pre>
+            <p>Remove the shortest match of a pattern from the end:</p>
+            <pre><code># example: file.md -&gt; file
+${file%.*}</code></pre>
+            <p>Remove the longest match of a pattern from the end:</p>
+            <pre><code># example: file.md -&gt; file
+${file%%.*}</code></pre>
+            <p>Additional info:</p>
+            <ul>
+            <li><code>##</code> removes the longest matching pattern
+            from the beginning of the variable’s value</li>
+            <li><code>*.</code> matches everything up to and including
+            the last dot <code>.</code> in the filename</li>
+            </ul>
+            <h2 id="for-loops">For loops</h2>
+            <p>for each file in current directory with the extension of
+            *.md</p>
+            <pre><code>for file in *.md; do 
     if [ -f &quot;$file&quot; ]; then 
         echo &quot;$file&quot;
     fi 
 done</code></pre>
+          </div>
+        </article>
+      </div>
     </div>
   </body>
 </html>

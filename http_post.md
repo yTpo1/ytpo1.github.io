@@ -6,7 +6,7 @@ date: September 22, 2020
 ## Headers. Content-Type
 
 ### application/x-www-urlencoded
-* **Form Data Submission**: This is typically used when submitting form data from a web page. Each key-value pair is URL-encoded and concatenated with **&**.
+* **Form Data Submission**: This is typically used when submitting form data from a web page. Each key-value pair is URL-encoded and concatenated with `&`.
 * **Simple Data**: suitable fo rsimple, flat data structures
 
 Example:

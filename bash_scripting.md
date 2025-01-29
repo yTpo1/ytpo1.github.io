@@ -3,32 +3,63 @@ title: bash scripting
 date: September 22, 2020
 ---
 
+## &&
+&& means "and if successful"
+
+## A Unix pipe |
+
+## ||
+
+## >
+
+## ; 
+
+## then
+
+## if
+
+if [[ ]]
+
 ## Parameter expansion
 It allows you to manipulate the value of variables in various ways, for example: extracting substrings, setting default values, removing parts of strings based on patterns, etc.
 
-> ${var}
+```
+${var}
+```
 
 Usefull when working file names, for example, getting the extenshion of file, file name without the extension, etc.
 
 Remove the shortest match of a pattern from the beginning:
 
-> ${filename##*.} # example: file.gz.md -> gz.md
+```
+# example: file.gz.md -> gz.md
+${filename##*.} 
+```
 
 Remove the longest match of a pattern from the beginning:
 
-> ${filename##*.} # example: file.tar.gz -> gz
+```
+# example: file.tar.gz -> gz
+${filename##*.}
+```
 
 Remove the shortest match of a pattern from the end:
 
-> ${file%.*}  # example: file.md -> file
+```
+# example: file.md -> file
+${file%.*}
+```
 
 Remove the longest match of a pattern from the end:
-
-> ${file%%.*}  # example: file.md -> file
+```
+# example: file.md -> file
+${file%%.*}
+```
 
 Additional info:
-* \## removes the longest matching pattern from the beginning of the variable's value
-* *. matches everything up to and including the last dot (.) in the filename
+
+* `##` removes the longest matching pattern from the beginning of the variable's value
+* `*.` matches everything up to and including the last dot `.` in the filename
 
 ## For loops
 

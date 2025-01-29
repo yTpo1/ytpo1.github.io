@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="css">CSS</h1>
+            <h2 id="using-css-custom-properties-variables">Using CSS
+            custom properties (variables)</h2>
+            <p>https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties</p>
+            <p>the :root pseudo-class, can be referenced globally:</p>
+            <pre><code>:root {
+  --main-bg-color: brown;
+}</code></pre>
+            <p>Referencing custom properties with var()</p>
+            <pre><code>details {
+  background-color: var(--main-bg-color);
+}</code></pre>
+            <h2 id="apply-rule-only-when-inside-an-element">apply rule
+            only when inside an element</h2>
+            <p>CSS descendant selector (a space) between the parent
+            element and the descendant element</p>
+            <pre><code>article p {
+    /* CSS rules */
+}</code></pre>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

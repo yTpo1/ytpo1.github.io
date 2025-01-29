@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="apache-http-server">Apache HTTP Server</h1>
+            <p>To start the server, view the status, etc, use <a
+            href="./linux_systemd.html">systemctl</a>:</p>
+            <pre><code>sudo systemctl start httpd.service
+sudo systemctl status httpd.service</code></pre>
+            <p>By default, it will serve the directory
+            <code>/srv/http</code> to anyone who visits your
+            website.</p>
+            <p>If everything is working correctly, visiting
+            http://localhost/ should display a simple index page.</p>
+            <p><a
+            href="https://wiki.archlinux.org/title/Apache_HTTP_Server">arch
+            wiki</a></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
