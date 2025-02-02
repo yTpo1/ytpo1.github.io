@@ -5,18 +5,18 @@ title: bash scripting
 # BASH scripting
 
 ## first line
-```
+```bash
 #!/bin/bash
 ```
 
 ## Variables
 Defining a variable:
-```
+```bash
 my_name=Jon
 ```
 
 Referencing (using) a variable:
-```
+```bash
 $my_name
 ```
 
@@ -52,7 +52,7 @@ fi
 ## Parameter expansion
 It allows you to manipulate the value of variables in various ways, for example: extracting substrings, setting default values, removing parts of strings based on patterns, etc.
 
-```
+```bash
 ${var}
 ```
 
@@ -60,27 +60,27 @@ Usefull when working file names, for example, getting the extenshion of file, fi
 
 Remove the shortest match of a pattern from the beginning:
 
-```
+```bash
 # example: file.gz.md -> gz.md
 ${filename##*.} 
 ```
 
 Remove the longest match of a pattern from the beginning:
 
-```
+```bash
 # example: file.tar.gz -> gz
 ${filename##*.}
 ```
 
 Remove the shortest match of a pattern from the end:
 
-```
+```bash
 # example: file.md -> file
 ${file%.*}
 ```
 
 Remove the longest match of a pattern from the end:
-```
+```bash
 # example: file.md -> file
 ${file%%.*}
 ```

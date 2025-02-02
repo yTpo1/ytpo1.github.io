@@ -15,3 +15,10 @@ Copy a directory from one location to another:
 ```
 cp -r source destination
 ```
+
+## Command Substitution
+
+This is command substitution. It runs the command inside the parentheses and substitutes the output in its place.
+```bash
+$(...)
+```
