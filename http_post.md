@@ -1,6 +1,5 @@
 ---
 title: http - post
-date: September 22, 2020
 ---
 
 ## Headers. Content-Type

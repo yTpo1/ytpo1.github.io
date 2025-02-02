@@ -3,17 +3,51 @@
   <head>
     <meta charset="utf-8">
     <meta name="date" content=''>
-    <title></title>
-    <link rel="stylesheet" href="style.css">
+    <title>systemd</title>
+    <link rel="stylesheet" href="0_style.css">
   </head>
   <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
     <div class="content">
       <div class="container-lg">
         <p>Date: </p>
         <article class="article markdown-body">
           <div class="article-inner">
             <h1 id="systemd">systemd</h1>
-            <p>https://wiki.archlinux.org/title/Systemd</p>
+            <p>systemd is a system and service manager for Linux
+            operating systems. It is designed to provide a more
+            efficient and unified way to manage system processes and
+            services. Here are some key features and benefits of
+            systemd:</p>
+            <ul>
+            <li><strong>Service Management</strong>: Systemd manages
+            system services and daemons, allowing you to start, stop,
+            enable, disable, and monitor services.</li>
+            <li><strong>Unit Files</strong>: Systemd uses unit files to
+            define services, sockets, devices, mounts, and other system
+            resources. THese files provide a standardized way to
+            configure and manage system resources.</li>
+            <li><strong>Logging</strong>: System includes a built-in
+            logging system called <code>journald</code>, which collects
+            and manages log data from various sources.</li>
+            <li><strong>Timers</strong>: System can replace traditional
+            cron jobs with timer units, providing more flexibility and
+            integration with the rest of the system.</li>
+            </ul>
+            <p>The main command used to control systemd is
+            <code>systemctl</code>.</p>
+            <h2 id="service-management">Service Management</h2>
+            <p>??Units??</p>
+            <p>To enable/disable a service to start at boot:</p>
+            <pre><code>sudo systemctl enable unit-name
+sudo systemctl disable unit-name</code></pre>
+            <h4 id="docs">Docs</h4>
+            <ul>
+            <li><a
+            href="https://wiki.archlinux.org/title/Systemd">https://wiki.archlinux.org/title/Systemd</a></li>
+            </ul>
           </div>
         </article>
       </div>

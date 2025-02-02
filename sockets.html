@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="sockets">Sockets</h1>
+            <p>In the context of computer networking, a socket is an
+            endpoint for communication between two machines. It is a
+            combination of an IP address and a port number, which
+            together uniquely identify a network connection. Sockets are
+            used to establish and manage connections for data exchange
+            over a network.</p>
+            <p>Some Key points about sockets:</p>
+            <ol type="1">
+            <li>Types of Sockets:
+            <ul>
+            <li><strong>Stream Sockets (TCP)</strong>: These provide a
+            reliable, connection-oriented communication <a
+            href="">channel</a>. Data is transmitted in a continuous <a
+            href="./stream.html">stream</a>, and the connection is
+            maintained until explicitly terminated. TCP (Transmission
+            Control Protocol) is commonly used for stream sockets.</li>
+            <li><strong>Datagram Sockets (UDP)</strong>: These provide a
+            connectionless communication channel. Data is transmitted in
+            discrete packets called datagrams, and there is no guarantee
+            of delivery, order, or integrity. UDP (User Datagram
+            Protocol) is commonly used for datagram sockets.</li>
+            </ul></li>
+            <li><strong>Socket Programming</strong>: Sockets are used in
+            network programming to create client-server applications. A
+            server socket listens for incoming connections, while a
+            client socket initiates a connection to the server.</li>
+            <li><strong>Socket API</strong>: Most programming languages
+            provide a socket API to create and manage sockets. For
+            example, in C#, you can use the System.Net.Sockets namespace
+            to work with sockets.</li>
+            </ol>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="dns-domain-name-system">DNS (Domain Name
+            System)</h1>
+            <p>DNS (Domain Name System) is a hierarchical and
+            decentralized naming system used to translate human-readable
+            domain names (like <a
+            href="http://www.example.com">www.example.com</a>) into IP
+            addresses (like 192.0.2.1) that computers use to identify
+            each other on the network. DNS is essential for the
+            functioning of the internet, as it allows users to access
+            websites and other resources using easy-to-=remember domain
+            names instead of numerical IP addresses.</p>
+            <p>Key Components of DNS:</p>
+            <ol type="1">
+            <li><strong>Domain Names</strong>: Human-readable addresses
+            (e.g., <a href="http://www.example.com">www.example.com</a>)
+            that are easier to remember than IP addresses</li>
+            <li><strong>IP Addresses</strong>: Numerical addresses
+            (e.g., 192.0.2.1) used by computers to identify and
+            communicate with each other on the network</li>
+            <li><strong>DNS Servers</strong>: Specialized servers that
+            store DNS records and respond to DNS queries. There are
+            several types of DNS servers:
+            <ul>
+            <li><strong>Root Name Servers</strong>: The top-level DNS
+            servers that direct queries to the appropriate top-level
+            domain (TLD) servers</li>
+            <li><strong>TLD Name Servers</strong>: Servers responsible
+            for top-level domains (e.g., .com, .org) that direct queries
+            to the appropriate authoritative name servers</li>
+            <li><strong>Authoritative Name Servers</strong>: Servers
+            that contain the actual DNS records for specific
+            domains</li>
+            <li><strong>Recursive Resolvers</strong>: Servers that
+            handle DNS queries from clients, recursively querying other
+            DNS servers to resolve the domain name</li>
+            </ul></li>
+            <li><strong>DNS Records</strong>: Entries in the DNS
+            database that provide information about domain names and
+            their corresponding IP Addresses.
+            <ul>
+            <li><strong>A Record</strong>: Maps a domain name to an IPv4
+            address</li>
+            <li><strong>AAAA Record</strong>: Maps a domain name to an
+            IPv6 address</li>
+            <li><strong>CNAME Record</strong>: Maps a domain name to
+            another domain name (alias)</li>
+            <li><strong>MX Record</strong>: Specifies the mail servers
+            for a domain</li>
+            <li><strong>TXT Record</strong>: Stores arbitrary text data,
+            often used for verification and security purposes</li>
+            </ul></li>
+            </ol>
+            <h3 id="how-dns-works">How DNS Works</h3>
+            <ol type="1">
+            <li><strong>DNS Query</strong>: When a user enters a domain
+            name in their web browser, a DNS query is initiated to
+            resolve the domain name to an IP address</li>
+            <li><strong>Recursive Resolution</strong>: The query is sent
+            to a recursive resolver, which checks its cache for the
+            requested domain name. If the records is not cached, the
+            resolver queries the root name servers</li>
+            <li><strong>Root and TLD Servers</strong>: The root name
+            servers direct the query to the appropriate TLD name
+            servers, which in turn direct the query to the authoritative
+            name servers for the domain</li>
+            <li><strong>Authoritative Response</strong>: The
+            authoritative name servers provide the IP address for the
+            requested domain name</li>
+            <li><strong>Caching</strong>: The recursive resolver caches
+            the DNS record to speed up the future queries for the same
+            domain.</li>
+            <li><strong>Response to Client</strong>: The IP address is
+            returned to the user's device, allowing the web browser to
+            establish a connection to the web server and load the
+            website</li>
+            </ol>
+            <p><a
+            href="https://en.wikipedia.org/wiki/Domain_Name_System">https://en.wikipedia.org/wiki/Domain_Name_System</a></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

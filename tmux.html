@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title>tmux</title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="tmux">tmux</h1>
+            <p>tmux (Terminal Multiplexer). It allows users to manage
+            multiple terminal sessions from a single window.</p>
+            <p>Configuration: <code>~/.tmux.conf</code></p>
+            <h2 id="hotkeys">Hotkeys</h2>
+            <ul>
+            <li><code>ctrl+b c</code> Create a new window</li>
+            <li><code>ctrl+b n</code> &amp; <code>ctrl+b p</code> Go to
+            next window, Go to previous window</li>
+            <li><code>ctrl+[</code> Enter copy mode (allows scrolling)
+            <ul>
+            <li>scroll using <code>ctrl+u</code> &amp;
+            <code>ctrl+d</code></li>
+            <li><code>/</code> search</li>
+            <li><code>q</code> to exit copy mode</li>
+            </ul></li>
+            <li><code>ctrl+b d</code> Detatch from current session in
+            current terminal</li>
+            </ul>
+            <p>Split panes</p>
+            <ul>
+            <li><code>ctrl+"</code> Create new window in horizontal
+            split screen</li>
+            <li><code>ctrl+UP</code> <code>ctrl+Down</code> Change size
+            of the current split pane</li>
+            <li><code>ctrl+!</code> Move split pane into its own
+            window</li>
+            <li><code>ctrl+j</code> &amp; <code>ctrl+k</code> Focus on
+            top/bottom pane</li>
+            </ul>
+            <h2 id="docs">Docs</h2>
+            <ul>
+            <li><a
+            href="https://tmuxcheatsheet.com/">https://tmuxcheatsheet.com/</a></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

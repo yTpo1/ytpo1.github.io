@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title>git - next steps</title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="git---continued">git - continued</h1>
+            <h2 id="cherry-pick">cherry-pick</h2>
+            <p>Will apply selected commit to current branch</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick commit-hash</span></code></pre></div>
+            <p>Multiple commits:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick commit-hash1 commit-hash2 commit-hash3</span></code></pre></div>
+            <p>Using the --no-commit option with git cherry-pick allows
+            you to apply changes from a specific commit to your working
+            directory and staging area without creating a new commit.
+            This gives you the flexibility ot review and modify the
+            changes before committing them.</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick <span class="at">--no-commit</span> commit-hash</span></code></pre></div>
+            <h2 id="reset">reset</h2>
+            <p>Will remove the lastest commit. The changes are kept in
+            the working directory and staging area, so that they are
+            ready to be committed again if needed.</p>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--soft</span> HEAD~1</span></code></pre></div>
+            <p>Will remove both the lastest commit and the changes in
+            it.</p>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> HEAD~1</span></code></pre></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

@@ -2,31 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="date" content='2020-09-22'>
+    <meta name="date" content=''>
     <title>Tech notes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="0_style.css">
   </head>
   <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
     <div class="content">
       <div class="container-lg">
-        <p>Date: September 22, 2020</p>
+        <p>Date: </p>
         <article class="article markdown-body">
           <div class="article-inner">
             <h2 id="command-line-tools">Command line tools</h2>
             <ul>
+            <li><a href="shell_commands.html">Basic shell
+            commands</a></li>
             <li>git
             <ul>
             <li>basics</li>
-            <li><a href="./git_next_level.html">a bit more
-            advanced</a></li>
+            <li><a href="./git_next.html">next steps</a></li>
             </ul></li>
-            <li><a href="./termux.html">termux</a></li>
+            <li><a href="./tmux.html">tmux</a></li>
+            <li><a href="./sed.html">sed</a></li>
+            <li>awk</li>
+            <li>grep</li>
+            <li>chmod 744</li>
             <li><a href="./pandoc.html">pandoc</a></li>
-            </ul>
-            <h2 id="security.-encryption.-decryption">Security.
-            Encryption. Decryption</h2>
-            <ul>
-            <li><a href="./ssh.html">SSH Protocol</a></li>
+            <li>pass</li>
+            <li>rsync</li>
             </ul>
             <h2 id="programming">Programming</h2>
             <ul>
@@ -36,20 +41,76 @@
             </ul>
             <h3 id="clean-code">Clean Code</h3>
             <ul>
-            <li><a href="./coding_principles.html">Coding
-            principles</a></li>
+            <li><a href="./coding_principles.html">Coding principles</a>
+            <ul>
+            <li><a
+            href="http://wiki.c2.com/?DontRepeatYourself">DRY</a></li>
+            <li>KISS</li>
+            <li><a href="./single_responsibility_principle.html">Single
+            Responsibility Principle (SRP)</a></li>
+            <li>Open Closed Principle (OCP)</li>
+            </ul></li>
+            </ul>
+            <p>Code:</p>
+            <ul>
+            <li><a href="./cc_classes.html">Classes</a></li>
+            </ul>
+            <h3 id="c">C#</h3>
+            <ul>
+            <li>Working with JSON (files)</li>
+            </ul>
+            <p>WebApps:</p>
+            <ul>
+            <li><a href="cs_web_configuration.html">Configuration</a></li>
             </ul>
             <h2 id="ides-code-editors-etc">IDEs, code editors, etc</h2>
             <ul>
             <li><a href="./ide_vscode.html">VS Code</a></li>
+            <li><a href="./ide_vim.html">vim</a></li>
             </ul>
-            <h2 id="networking">Networking</h2>
+            <h2 id="computer-networking">Computer Networking</h2>
+            <p>Application Layer Protocols:</p>
             <ul>
-            <li>HTTP protocol
+            <li><a href="./http.html">HTTP protocol</a>
+            <ul>
+            <li>Methods
             <ul>
             <li><a href="./http_post.html">http post</a></li>
             </ul></li>
+            <li>Headers</li>
+            <li>Status Codes</li>
+            <li>HTTPS</li>
+            </ul></li>
             <li>SSH Protocol</li>
+            <li><a href="./dns.html">DNS</a></li>
+            <li>FTP</li>
+            <li>SMTP, IMAP, POP</li>
+            <li>BitTorrent</li>
+            <li>IRC</li>
+            </ul>
+            <p>Transport Layer Protocols:</p>
+            <ul>
+            <li>TCP</li>
+            <li>UDP</li>
+            </ul>
+            <p>Internet layer:</p>
+            <ul>
+            <li>IP (v4, v6)</li>
+            </ul>
+            <p>Other:</p>
+            <ul>
+            <li><a href="./stream.html">Stream</a></li>
+            <li><a href="./sockets.html">Sockets</a>
+            <ul>
+            <li><a href="./socket_exhaustion.html">Socket
+            Exhaustion</a></li>
+            </ul></li>
+            <li>Ports</li>
+            <li>Firewall</li>
+            <li>Client - Server (architecture?)</li>
+            <li>Certificates, hosting</li>
+            <li><a href="./hosts_file.html">'hosts' file</a></li>
+            <li>proxy</li>
             </ul>
             <h4 id="web-servers">Web servers</h4>
             <p>A web server serves HTML web pages and other files via
@@ -60,14 +121,35 @@
             <ul>
             <li>nginx</li>
             <li><a href="./web_server_apache.html">apache</a></li>
+            <li>IIS. Powershell scripts to create a IIS websites,
+            services, binding, shut them down</li>
+            </ul>
+            <p>Other:</p>
+            <ul>
+            <li>Reverse proxy</li>
+            <li>Load Balancing</li>
             </ul>
             <h2 id="linux-system">Linux System</h2>
             <ul>
-            <li><a href="./linux_systemd.html">systemd</a></li>
+            <li><a href="./i3.html">Tiling window manager. "i3"</a></li>
+            <li><a href="./rofi.html">Program launchers. "rofi",
+            "morc_menu"</a></li>
+            <li><a href="./linux_systemd.html">systemd systemctl</a></li>
             </ul>
             <h2 id="windows-system">Windows System</h2>
             <ul>
-            <li>to do…</li>
+            <li>Event Viewer</li>
+            <li>Remote Desktop Connection</li>
+            <li><a href="./windows_certmgr.html">Manage certificates.
+            certmgr</a></li>
+            <li>MS SQL Server</li>
+            <li>IIS</li>
+            <li>to do...</li>
+            </ul>
+            <h2 id="security-encryption-decryption">Security.
+            Encryption. Decryption</h2>
+            <ul>
+            <li><a href="./ssh.html">SSH Protocol</a></li>
             </ul>
           </div>
         </article>

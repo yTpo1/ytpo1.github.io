@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title>sed</title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="sed">sed</h1>
+            <p><code>sed</code> is a stream editor command using for
+            parsing and transforming text. <code>-i</code> This option
+            tells sed to edit files in place. It means the</p>
+            <p>Format:</p>
+            <pre><code>s/pattern/replacement/flags</code></pre>
+            <ul>
+            <li><code>s</code>: Stands for substitution</li>
+            <li><code>/</code>: Delimiters that separate the pattern and
+            the replacement.</li>
+            </ul>
+            <p>Example:</p>
+            <pre><code>&#39;s/\.md&quot;/\.html&quot;/g&#39;</code></pre>
+            <ul>
+            <li><code>\.html"</code>: The pattern to search for. Here:
+            <ul>
+            <li><code>\.</code>: matches a literal dot
+            <code>.</code></li>
+            <li><code>md"</code>: matches the string</li>
+            </ul></li>
+            <li><code>\.html"</code>: The replacement string</li>
+            <li><code>g</code>: The global flag. It tells sed to replace
+            all occurrences of the pattern in each line, not just for
+            the first one.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

@@ -2,25 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="date" content='2020-09-22'>
+    <meta name="date" content=''>
     <title>bash scripting</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="0_style.css">
   </head>
   <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
     <div class="content">
       <div class="container-lg">
-        <p>Date: September 22, 2020</p>
+        <p>Date: </p>
         <article class="article markdown-body">
           <div class="article-inner">
-            <h2 id="section">&amp;&amp;</h2>
-            <p>&amp;&amp; means “and if successful”</p>
-            <h2 id="a-unix-pipe">A Unix pipe |</h2>
-            <h2 id="section-1">||</h2>
-            <h2 id="section-2">&gt;</h2>
-            <h2 id="section-3">;</h2>
+            <h1 id="bash-scripting">BASH scripting</h1>
+            <h2 id="first-line">first line</h2>
+            <pre><code>#!/bin/bash</code></pre>
+            <h2 id="variables">Variables</h2>
+            <p>Defining a variable:</p>
+            <pre><code>my_name=Jon</code></pre>
+            <p>Referencing (using) a variable:</p>
+            <pre><code>$my_name</code></pre>
+            <h2>&amp;&amp;</h2>
+            <p>&amp;&amp; means "and if successful"</p>
+            <h2 id="a-unix-pipe-">A Unix pipe |</h2>
+            <h2 id="-1">||</h2>
+            <h2 id="-2">&gt;</h2>
+            <h2 id="-3">;</h2>
             <h2 id="then">then</h2>
-            <h2 id="if">if</h2>
-            <p>if [[ ]]</p>
+            <h2 id="if-statement">if statement</h2>
+            <p>Single <code>[ ... ]</code> vs double
+            <code>[[ ... ]]</code> brackets Using double brackets
+            <code>[[ ... ]]</code> in bash scripting provides several
+            advantages over single brackets <code>[ ... ]</code>:</p>
+            <ol type="1">
+            <li><strong>Enhanced Syntax</strong>: Double brackets
+            support more complex conditional expressions, such as
+            pattern matching <code>=~</code>, logical operators
+            <code>&amp;&amp;, ||</code>, and arithmetic comparisons
+            without needing to escape special characters.</li>
+            <li><strong>Safer Variable Handling</strong>: Double
+            brackets handle variables with spaces or special characters
+            more safely, reducing the risk of syntax errors.</li>
+            <li><strong>No Word Splitting or Filename
+            Expansion</strong>: Inside double brackets, word splitting
+            and filename expansion are not performed, which can prevent
+            unexpected behaviour. The result is a more robust and less
+            prone to errors script.</li>
+            </ol>
+            <pre><code>if [[ -f &quot;$file&quot; ]]; then
+    echo &quot;$file&quot;
+fi</code></pre>
             <h2 id="parameter-expansion">Parameter expansion</h2>
             <p>It allows you to manipulate the value of variables in
             various ways, for example: extracting substrings, setting
@@ -47,18 +79,21 @@ ${file%%.*}</code></pre>
             <p>Additional info:</p>
             <ul>
             <li><code>##</code> removes the longest matching pattern
-            from the beginning of the variable’s value</li>
+            from the beginning of the variable's value</li>
             <li><code>*.</code> matches everything up to and including
             the last dot <code>.</code> in the filename</li>
             </ul>
             <h2 id="for-loops">For loops</h2>
-            <p>for each file in current directory with the extension of
+            <p>For each file in current directory with the extension of
             *.md</p>
-            <pre><code>for file in *.md; do 
-    if [ -f &quot;$file&quot; ]; then 
-        echo &quot;$file&quot;
-    fi 
-done</code></pre>
+            <div class="sourceCode" id="cb10"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>.md<span class="kw">;</span> <span class="cf">do</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Using double quotes around $file is a good practice in bash scripting.</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Using double quotes ensures that the script handles filenames with spaces or special characters correctly</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-f</span> <span class="st">&quot;</span><span class="va">$file</span><span class="st">&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$file</span><span class="st">&quot;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span> </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre></div>
           </div>
         </article>
       </div>

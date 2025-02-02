@@ -1,3 +1,5 @@
+---
+title: Programming principles. Coding principles.
+---
 
-## Coding principles
-* [DRY](http://wiki.c2.com/?DontRepeatYourself)
+# Programming principles. Coding principles.

@@ -1,3 +1,7 @@
+---
+title: pandoc
+---
+
 # pandoc
 
 https://www.arthurkoziel.com/convert-md-to-html-pandoc/
