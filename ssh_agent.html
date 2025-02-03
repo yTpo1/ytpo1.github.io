@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="ssh-agent">SSH agent</h1>
+            <p>An SSH agent runs in the background and manages your SSH
+            keys. <code>ssh-agent</code> is the default agent included
+            with <code>OpenSSH</code>.</p>
+            <p>Configuration file: <code>~/.ssh/config</code></p>
+            <p>Tip: To make all ssh clients, including git store keys in
+            the agent on first use, add the configuration setting
+            AddKeysToAgent yes to ~/.ssh/config. Other possible values
+            are confirm, ask and no (default).</p>
+            <p>In order to start the agent automatically and make sure
+            that only one <code>ssh-agent</code> process runs at a time,
+            add the following to your <code>~/.bashrc</code>:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="ot">! </span><span class="ex">pgrep</span> <span class="at">-u</span> <span class="st">&quot;</span><span class="va">$USER</span><span class="st">&quot;</span> ssh-agent <span class="op">&gt;</span> /dev/null<span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ssh-agent</span> <span class="at">-t</span> 1h <span class="op">&gt;</span> <span class="st">&quot;</span><span class="va">$XDG_RUNTIME_DIR</span><span class="st">/ssh-agent.env&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">&quot;</span><span class="va">$SSH_AUTH_SOCK</span><span class="st">&quot;</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">source</span> <span class="st">&quot;</span><span class="va">$XDG_RUNTIME_DIR</span><span class="st">/ssh-agent.env&quot;</span> <span class="op">&gt;</span>/dev/null</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code></pre></div>
+            <p>This will run a ssh-agent process if there is not one
+            already, and save the output thereof. If there is one
+            running already, we retrieve the cached ssh-agent output and
+            evaluate it which will set the necessary environment
+            variables. The lifetime of the unlocked keys is set to 1
+            hour.</p>
+            <p><a
+            href="https://wiki.archlinux.org/title/SSH_keys#SSH_agents">https://wiki.archlinux.org/title/SSH_keys#SSH_agents</a></p>
+            <h2 id="manually-loading-keys-into-the-ssh-agent">Manually
+            loading keys into the ssh-agent</h2>
+            <p>Start the ssh-agent in the background. And set up the
+            necessary environment variables for it.</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="va">$(</span><span class="fu">ssh-agent</span> <span class="at">-s</span><span class="va">)</span></span></code></pre></div>
+            <ol type="1">
+            <li><code>ssh-agent -s</code>: This command starts the
+            ssh-agent in the background and outputs the necessary
+            environment variables to configure the shell to use the
+            agent. The <code>-s</code> option specifies that the output
+            should be in a format suitable for the sh-style shells</li>
+            <li><code>$(...)</code>: <a
+            href="./shell_commands.html">Command Substitution</a></li>
+            <li><code>eval</code>: This command takes the output from
+            the command substitution and evaluates it as a command in
+            the current shell. This sets the environment variables for
+            the ssh-agent.</li>
+            </ol>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check what keys are loaded</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-add</span> <span class="at">-l</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your private key to the agent</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-add</span> ~/.ssh/private_key</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your connection to git</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code></pre></div>
+            <ul>
+            <li><a
+            href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</a></li>
+            <li><a
+            href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server">https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server</a></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

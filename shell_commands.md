@@ -4,15 +4,17 @@ title: Basic Shell Commands (Terminal Commands)
 
 # Basic Shell Commands (Terminal Commands)
 
-cd ls mkdir touch echo cp rm rmdir
+`cat`, `cd`, `cp`, `echo`, `ls`, `mkdir`, `rm`, `rmdir`, `touch`  
 
-Copy a file from one location to another:
-```
+Less commonly used:
+`htop`, `man`, `uname`,
+
+`cp`:
+```bash
+# Copy a file
 cp source.txt destination.txt
-```
 
-Copy a directory from one location to another:
-```
+# Copy a directory
 cp -r source destination
 ```
 

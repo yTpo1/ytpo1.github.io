@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="archlinux-installation">Archlinux Installation</h1>
+            <ol type="1">
+            <li>Install the package</li>
+            </ol>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pacman <span class="at">-S</span> mariadb</span></code></pre></div>
+            <ol start="2" type="1">
+            <li>Run the following command <strong>before
+            starting</strong> the mariadb.service This command sets up
+            the initial MariaDB database environment, ensuring that the
+            necessary system tables are created and that the MariaDB
+            server runs with the appropriate user permissions.</li>
+            </ol>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mariadb-install-db <span class="at">--user</span><span class="op">=</span>mysql <span class="at">--basedir</span><span class="op">=</span>/usr <span class="at">--datadir</span><span class="op">=</span>/var/lib/mysql</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql # old</span></span></code></pre></div>
+            <p>Breakdown:</p>
+            <ul>
+            <li><code>mariadb-install-db</code>: This is the command to
+            initialize the MariaDB data directory. It sets up the
+            initial database structure and system tables required by
+            MariaDB.</li>
+            <li><code>--user=mysql</code>: This option specifies that
+            the MariaDB server should run as the <code>mysql</code>
+            user. THis is important for security and permissions
+            management.</li>
+            <li><code>--basedir=/usr</code>: This option specifies the
+            base directory of the MariaDB installation. It tells the
+            script where to find the MariaDB binaries and support
+            files.</li>
+            <li><code>--datadir=/var/lib/mysql</code>: This option
+            specifies the directory where the MariaDB data files will be
+            stored. This is where the actual database files will
+            reside.</li>
+            </ul>
+            <ol start="3" type="1">
+            <li>Start and enable the Mariadb service</li>
+            </ol>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl start mariadb</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl enable mariadb</span></code></pre></div>
+            <ol start="4" type="1">
+            <li>Test installation by logging in</li>
+            </ol>
+            <pre><code>sudo mysql -u root -p
+MariaDB [(none)]&gt; show databases;</code></pre>
+            <p>Optional/outdated? (securing post installation?)
+            [root@archlinux ~]# /usr/bin/mysql_secure_installation</p>
+            <p>Sources: <a
+            href="https://wiki.archlinux.org/index.php/MariaDB">https://wiki.archlinux.org/index.php/MariaDB</a>
+            <a
+            href="http://www.geekpills.com/operating-system/linux/install-configure-mariadb-mysql-archlinux">http://www.geekpills.com/operating-system/linux/install-configure-mariadb-mysql-archlinux</a></p>
+            <h1
+            id="ubuntu-installation-very-old-notes-dont-care-about-sorting-this-out">Ubuntu
+            Installation (very old notes, dont care about sorting this
+            out)</h1>
+            <h2 id="creating-another-super-user">creating another super
+            user</h2>
+            <p>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO
+            'user'@'localhost';</p>
+            <h3 id="saving-your-changes">Saving Your Changes</h3>
+            <p>mysql&gt; FLUSH PRIVILEGES;</p>
+            <h2 id="securing-mariadb">Securing MariaDB</h2>
+            <p>Run the mysql_secure_installation command to improve the
+            security of the MariaDB installation:</p>
+            <blockquote>
+            <p>sudo mysql_secure_installation</p>
+            </blockquote>
+            <p>The script will prompt you to set up the root user
+            password, remove the anonymous user, restrict root user
+            access to the local machine and remove the test database. At
+            the end the script will reload the privilege tables ensuring
+            that all changes take effect immediately.</p>
+            <p>All steps are explained in detail and it is recommended
+            to answer “Y” (yes) to all questions.</p>
+            <ul>
+            <li><a
+            href="https://linuxize.com/post/how-to-install-mariadb-on-ubuntu-18-04/#securing-mariadb">https://linuxize.com/post/how-to-install-mariadb-on-ubuntu-18-04/#securing-mariadb</a></li>
+            </ul>
+            <h2 id="errors-and-broken-code">Errors and broken code</h2>
+            <ul>
+            <li><a
+            href="https://stackoverflow.com/questions/51587227/phpmyadmin-error-in-processing-request-error-code-500-error-text-internal-serv">https://stackoverflow.com/questions/51587227/phpmyadmin-error-in-processing-request-error-code-500-error-text-internal-serv</a></li>
+            </ul>
+            <h3 id="access-denied-for-user-rootlocalhost">Access denied
+            for user 'root'@'localhost'</h3>
+            <blockquote>
+            <p>sudo mysql -u</p>
+            </blockquote>
+            <ul>
+            <li><a
+            href="https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-user-rootlocalhost">https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-user-rootlocalhost</a></li>
+            </ul>
+            <h2 id="setting-up-phpmyadmin">Setting up phpmyadmin</h2>
+            <ol type="1">
+            <li>Make sure apache2 is installed</li>
+            <li>Install and configure phpmyadmin</li>
+            </ol>
+            <blockquote>
+            <p>echo sudo apt install phpmyadmin vim
+            /etc/apache2/apache2.conf Add the following to the bottom of
+            the file:</p>
+            </blockquote>
+            <pre><code># phpMyAdmin Configuration
+Include /etc/phpmyadmin/apache.conf</code></pre>
+            <blockquote>
+            <p>service apache2 restart</p>
+            </blockquote>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

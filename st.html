@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="st-suckless-terminal">ST "Suckless Terminal"</h1>
+            <p><a
+            href="https://st.suckless.org/">https://st.suckless.org/</a>
+            The following is how I set up on my machine</p>
+            <h2 id="step-1-download-and-installation">Step 1. Download
+            and Installation</h2>
+            <p>Get the source code.</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /usr/local/src/</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> git clone https://git.suckless.org/st  </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> st</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> git checkout 0.8.4  </span></code></pre></div>
+            <h2 id="step-2-patching">Step 2. Patching</h2>
+            <ol type="1">
+            <li>Put the .diff file in the git repo.<br />
+            I use the gruvbox theme. While still in the st
+            directory.</li>
+            </ol>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://st.suckless.org/patches/gruvbox/st-gruvbox-dark-0.8.2.diff</span></code></pre></div>
+            <ol start="2" type="1">
+            <li>Use <code>patch</code> command<br />
+            -u (unified) option lets patch know that the patch file
+            contains unified context lines.<br />
+            -r (recursive) option to make diff look into any
+            sub-directories<br />
+            -N (new file)<br />
+            -d (directory) option tell patch which directory to work
+            on.</li>
+            </ol>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">patch</span> <span class="at">-ruN</span> <span class="at">-d</span> . <span class="op">&lt;</span> st-gruvbox-dark-0.8.2.diff  </span></code></pre></div>
+            <h2 id="step-3-edit-the-config-file-my-tweaks">Step 3. Edit
+            the config file. (My Tweaks)</h2>
+            <p>Increase the font size to 24.</p>
+            <blockquote>
+            <p>static char *font = "Liberation
+            Mono:pixelsize=24:antialias=true:autohint=true";</p>
+            </blockquote>
+            <h2 id="step-4-installation">Step 4. Installation</h2>
+            <p>To see available options:</p>
+            <blockquote>
+            <p>make</p>
+            </blockquote>
+            <p>Then to install:</p>
+            <blockquote>
+            <p>sudo make clean install</p>
+            </blockquote>
+            <p>Uninstalation:</p>
+            <blockquote>
+            <p>sudo make clean uninstall</p>
+            </blockquote>
+            <h2 id="hotkeys">Hotkeys</h2>
+            <ul>
+            <li>Ctrl-Shift-y : Paste from primary selection (middle
+            mouse button).</li>
+            <li>Ctrl-Shift-v : Paste from the clipboard selection.</li>
+            <li>Ctrl-Shift-c : Copy the selected text to the clipboard
+            selection.</li>
+            </ul>
+            <p>Sources:<br />
+            <a
+            href="https://www.howtogeek.com/415442/how-to-apply-a-patch-to-a-file-and-create-patches-in-linux/">https://www.howtogeek.com/415442/how-to-apply-a-patch-to-a-file-and-create-patches-in-linux/</a><br />
+            Luke Smith <a
+            href="https://www.youtube.com/watch?v=FJmm7wl4JUI">https://www.youtube.com/watch?v=FJmm7wl4JUI</a></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

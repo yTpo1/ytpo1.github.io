@@ -17,12 +17,15 @@
           <div class="article-inner">
             <h1 id="bash-scripting">BASH scripting</h1>
             <h2 id="first-line">first line</h2>
-            <pre><code>#!/bin/bash</code></pre>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span></code></pre></div>
             <h2 id="variables">Variables</h2>
             <p>Defining a variable:</p>
-            <pre><code>my_name=Jon</code></pre>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">my_name</span><span class="op">=</span>Jon</span></code></pre></div>
             <p>Referencing (using) a variable:</p>
-            <pre><code>$my_name</code></pre>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">$my_name</span></span></code></pre></div>
             <h2>&amp;&amp;</h2>
             <p>&amp;&amp; means "and if successful"</p>
             <h2 id="a-unix-pipe-">A Unix pipe |</h2>
@@ -58,24 +61,29 @@ fi</code></pre>
             various ways, for example: extracting substrings, setting
             default values, removing parts of strings based on patterns,
             etc.</p>
-            <pre><code>${var}</code></pre>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">${var}</span></span></code></pre></div>
             <p>Usefull when working file names, for example, getting the
             extenshion of file, file name without the extension,
             etc.</p>
             <p>Remove the shortest match of a pattern from the
             beginning:</p>
-            <pre><code># example: file.gz.md -&gt; gz.md
-${filename##*.} </code></pre>
+            <div class="sourceCode" id="cb6"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example: file.gz.md -&gt; gz.md</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="va">${filename</span><span class="op">##</span><span class="pp">*</span>.<span class="va">}</span> </span></code></pre></div>
             <p>Remove the longest match of a pattern from the
             beginning:</p>
-            <pre><code># example: file.tar.gz -&gt; gz
-${filename##*.}</code></pre>
+            <div class="sourceCode" id="cb7"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example: file.tar.gz -&gt; gz</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">${filename</span><span class="op">##</span><span class="pp">*</span>.<span class="va">}</span></span></code></pre></div>
             <p>Remove the shortest match of a pattern from the end:</p>
-            <pre><code># example: file.md -&gt; file
-${file%.*}</code></pre>
+            <div class="sourceCode" id="cb8"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example: file.md -&gt; file</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">${file</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span></span></code></pre></div>
             <p>Remove the longest match of a pattern from the end:</p>
-            <pre><code># example: file.md -&gt; file
-${file%%.*}</code></pre>
+            <div class="sourceCode" id="cb9"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example: file.md -&gt; file</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="va">${file</span><span class="op">%%</span>.<span class="pp">*</span><span class="va">}</span></span></code></pre></div>
             <p>Additional info:</p>
             <ul>
             <li><code>##</code> removes the longest matching pattern

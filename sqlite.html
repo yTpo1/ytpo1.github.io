@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="sqlite">Sqlite</h1>
+            <h2
+            id="convert-mysql-dump-to-sqlite3-compatible-dump">Convert
+            mysql dump to Sqlite3 compatible dump</h2>
+            <ul>
+            <li><a
+            href="https://github.com/dumblob/mysql2sqlite">https://github.com/dumblob/mysql2sqlite</a></li>
+            </ul>
+            <h2 id="import-into-sqlite3">Import into Sqlite3</h2>
+            <ul>
+            <li><a
+            href="https://stackoverflow.com/questions/2049109/how-do-i-import-sql-files-into-sqlite-3">https://stackoverflow.com/questions/2049109/how-do-i-import-sql-files-into-sqlite-3</a></li>
+            </ul>
+            <p>From a Sqlite prompt:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlite</span><span class="op">&gt;</span> .read db.sql</span></code></pre></div>
+            <p>From shell:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> db.sql <span class="kw">|</span> <span class="ex">sqlite3</span> database.db</span></code></pre></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

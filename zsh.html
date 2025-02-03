@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="zsh-shell">ZSH shell</h1>
+            <p>Hotkeys:</p>
+            <ul>
+            <li><code>ctrl + r</code>: open history with current
+            text</li>
+            <li><code>ctrl + e</code>: open current text in vim</li>
+            <li><code>ctrl + space</code>: accept auto-suggestions</li>
+            </ul>
+            <p>Plugin installation: To do...</p>
+            <p>zsh functions: To do...</p>
+            <h4 id="print-out-the-code-behind-a-zsh-function">Print out
+            the code behind a zsh function</h4>
+            <p>(to remind myself of what the function does).
+            Unfortunately comments are not visible.</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">whence</span> <span class="at">-f</span> foo</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span> <span class="at">-f</span> foo</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> foo</span></code></pre></div>
+            <p>Which will print out:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">foo ()</span> <span class="kw">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> hello</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code></pre></div>
+            <p>Source: <a
+            href="https://stackoverflow.com/questions/11478673/how-to-show-zsh-function-definition-like-bash-type-myfunc">https://stackoverflow.com/questions/11478673/how-to-show-zsh-function-definition-like-bash-type-myfunc</a></p>
+            <p>Docs:</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> zshbuiltins</span></code></pre></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

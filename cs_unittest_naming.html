@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="unit-test-naming-conventions">Unit Test Naming
+            Conventions</h1>
+            <h3 id="descriptive-names-style">Descriptive Names
+            Style</h3>
+            <p>Use descriptive names that clearly state what the test is
+            verifying. Format:
+            MethodName_StateUnderTest_ExpectedBehavior</p>
+            <p>Example:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>TestMethod<span class="op">]</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">Add_TwoPositiveNumbers_ReturnsPositiveSum</span><span class="op">()</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Arrange ...</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Act</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> result <span class="op">=</span> calc<span class="op">.</span><span class="fu">Add</span><span class="op">(</span>a<span class="op">,</span> b<span class="op">);</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Assert</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+            <h3 id="arrange-act-assert-pattern">Arrange-Act-Assert
+            Pattern</h3>
+            <p>Reflect the three phases of a unit test: Arrange, Act and
+            Assert Example:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>TestMethod<span class="op">]</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">CalculateTotalPrice_WithValidItems_ReturnsCorrectTotal</span><span class="op">()</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Arrange</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> cart <span class="op">=</span> <span class="kw">new</span> <span class="fu">ShoppingCart</span><span class="op">();</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    cart<span class="op">.</span><span class="fu">AddItem</span><span class="op">(</span><span class="kw">new</span> Item <span class="op">{</span> Price <span class="op">=</span> <span class="dv">10</span> <span class="op">});</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    cart<span class="op">.</span><span class="fu">AddItem</span><span class="op">(</span><span class="kw">new</span> Item <span class="op">{</span> Price <span class="op">=</span> <span class="dv">20</span> <span class="op">});</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Act</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> total <span class="op">=</span> cart<span class="op">.</span><span class="fu">CalculateTotalPrice</span><span class="op">();</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Assert</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    Assert<span class="op">.</span><span class="fu">AreEqual</span><span class="op">(</span><span class="dv">30</span><span class="op">,</span> total<span class="op">);</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+            <h3
+            id="behavior-driven-development-bdd-style">Behavior-Driven
+            Development (BDD) style</h3>
+            <p>Format: GivenState_WhenAction_ThenExpectedResult
+            Example:</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>TestMethod<span class="op">]</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">GivenValidItems_WhenCalculateTotalPrice_ThenReturnsCorrectTotal</span><span class="op">()</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Arrange</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> cart <span class="op">=</span> <span class="kw">new</span> <span class="fu">ShoppingCart</span><span class="op">();</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    cart<span class="op">.</span><span class="fu">AddItem</span><span class="op">(</span><span class="kw">new</span> Item <span class="op">{</span> Price <span class="op">=</span> <span class="dv">10</span> <span class="op">});</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    cart<span class="op">.</span><span class="fu">AddItem</span><span class="op">(</span><span class="kw">new</span> Item <span class="op">{</span> Price <span class="op">=</span> <span class="dv">20</span> <span class="op">});</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Act</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> total <span class="op">=</span> cart<span class="op">.</span><span class="fu">CalculateTotalPrice</span><span class="op">();</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Assert</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    Assert<span class="op">.</span><span class="fu">AreEqual</span><span class="op">(</span><span class="dv">30</span><span class="op">,</span> total<span class="op">);</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+            <h3></h3>
+            <p>Alternatives:</p>
+            <ul>
+            <li>MethodName_WhenX_ReturnsY</li>
+            <li>MethodName_X_ShouldY</li>
+            <li>MethodName_X_ShouldBeY</li>
+            <li>MethodName_X_ThenY</li>
+            </ul>
+            <p>Format when testing exceptions:</p>
+            <ul>
+            <li>MethodName_OnException_ThrowsParticularException</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

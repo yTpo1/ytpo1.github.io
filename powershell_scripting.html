@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="powershell-scripting">Powershell scripting</h1>
+            <p>Useful tools:</p>
+            <ul>
+            <li>Windows Powershell ISE
+            <ul>
+            <li>The Intellisense in the editor and the command windows
+            gives you live property values on the commands an even live
+            objects</li>
+            </ul></li>
+            </ul>
+            <h2 id="loading-assemblies">Loading Assemblies</h2>
+            <p>To import the <code>Microsoft.Web.Administration</code>
+            assembly directly in your PowerShell script, you can use the
+            <code>[System.Reflection.Assembly]::LoadFrom</code> method.
+            This method loads the specified assembly from a file path.
+            The <code>Microsoft.Web.Administration</code> assembly is
+            typicall located in the C:\Windows\System32\inetsrv
+            directory.</p>
+            <p>The <code>Add-PSSnapin</code> cmdlet is used to add
+            snap-ins to the current PowerSHell session. However, in
+            newer versions of PowerSHell (starting with PowerShell 3.0),
+            the use of snap-ins has been largely replaced by modules.
+            The WebAdministration module should be imported using
+            <code>Import-Module</code> instead of
+            <code>Add-PSSnapin</code>.</p>
+            <h2 id="misc">misc</h2>
+            <p><code>$PSVersionTable</code>: powershell version</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

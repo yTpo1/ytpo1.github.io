@@ -17,11 +17,23 @@
           <div class="article-inner">
             <h1 id="basic-shell-commands-terminal-commands">Basic Shell
             Commands (Terminal Commands)</h1>
-            <p>cd ls mkdir touch echo cp rm rmdir</p>
-            <p>Copy a file from one location to another:</p>
-            <pre><code>cp source.txt destination.txt</code></pre>
-            <p>Copy a directory from one location to another:</p>
-            <pre><code>cp -r source destination</code></pre>
+            <p><code>cat</code>, <code>cd</code>, <code>cp</code>,
+            <code>echo</code>, <code>ls</code>, <code>mkdir</code>,
+            <code>rm</code>, <code>rmdir</code>, <code>touch</code></p>
+            <p>Less commonly used: <code>htop</code>, <code>man</code>,
+            <code>uname</code>,</p>
+            <p><code>cp</code>:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy a file</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> source.txt destination.txt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy a directory</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-r</span> source destination</span></code></pre></div>
+            <h2 id="command-substitution">Command Substitution</h2>
+            <p>This is command substitution. It runs the command inside
+            the parentheses and substitutes the output in its place.</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">$(</span><span class="ex">...</span><span class="va">)</span></span></code></pre></div>
           </div>
         </article>
       </div>
