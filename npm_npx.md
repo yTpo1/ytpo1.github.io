@@ -20,3 +20,13 @@ npm init
 
 npx is a command-line tool that comes with npm. It allows you to execute binaries from npm packages without globally installing them. This is particularly useful for running one-off commands or scripts from npm packages.
 
+## Configuration file
+Location (both windows and linux): `~/.npmrc`
+
+Proxy settings:
+```
+proxy=http://yourproxy.net:80
+https-proxy=http://yourproxy.net:80
+```
+
+
