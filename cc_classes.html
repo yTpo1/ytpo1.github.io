@@ -16,15 +16,60 @@
         <article class="article markdown-body">
           <div class="article-inner">
             <h1 id="classes">Classes</h1>
-            <p>Classes should be small.</p>
             <ul>
-            <li>Count responsibilities.</li>
-            <li>The name of a class should describe what
-            responsibilities it fulfills. If we cannot derive a concise
-            name for a class, then it’s likely too large.</li>
+            <li><p><a href="./cc_class_organisation_csharp.html">Class
+            organization in C#</a></p></li>
+            <li><p>Encapsulation</p>
+            <ul>
+            <li>Keep variables and utility functions private. Use
+            protected sometimes, for example to be able to unit-test
+            it.</li>
+            </ul></li>
+            <li><p>Classes should be small.</p>
+            <ul>
+            <li>We measure classes by counting responsibilities</li>
+            <li>Naming is probably the first way of helping determine
+            class size. If we cannot derive a concise name for a class,
+            then it’s likely too large. The more ambiguous the class
+            name, the more likely it has too many responsibilities. For
+            example, class names including weasel words like Processor
+            or Manager or Super often hint at unfortunate aggregation of
+            responsibilities.</li>
             <li>We should also be able to write a brief description of
             the class in about 25 words, without using the words “if,”
             “and,” “or,” or “but.”</li>
+            <li>The Single Responsibility Principle (SRP) states that a
+            class or module should have one, and only one, reason to
+            change. This principle gives us both a definition of
+            responsibility, and a guidelines for class size. Classes
+            should have one responsibility—one reason to change.</li>
+            <li>Trying to identify responsibilities (reasons to change)
+            often helps us recognize and create better abstractions in
+            our code</li>
+            </ul></li>
+            <li><p>Cohesion</p>
+            <ul>
+            <li>Strive to write classes with few instance variables and
+            watch out for variables that are used by few methods.</li>
+            <li>When classes lose cohesion, split them!</li>
+            </ul></li>
+            <li><p>Organizing for change</p>
+            <ul>
+            <li>In a clean system we organize our classes so as to
+            reduce the risk of change.</li>
+            <li>Open-Closed Principle (OCP): Classes should be open for
+            extension but closed for modification.</li>
+            <li>Dependency Inversion Principle (DIP): our classes should
+            depend upon abstractions, not on concrete details.
+            <ul>
+            <li>Use <code>Dependency Injection</code>, depend on
+            Interfaces and Abstractions rather than concrete
+            implementations.</li>
+            <li>Decoupling.</li>
+            <li>Dependencies upon concrete details create challenges for
+            testing our system.</li>
+            </ul></li>
+            </ul></li>
             </ul>
           </div>
         </article>

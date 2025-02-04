@@ -43,7 +43,7 @@ Using double brackets `[[ ... ]]` in bash scripting provides several advantages 
 2. **Safer Variable Handling**: Double brackets handle variables with spaces or special characters more safely, reducing the risk of syntax errors.
 3. **No Word Splitting or Filename Expansion**: Inside double brackets, word splitting and filename expansion are not performed, which can prevent unexpected behaviour.
 The result is a more robust and less prone to errors script.
-```
+```bash
 if [[ -f "$file" ]]; then
     echo "$file"
 fi

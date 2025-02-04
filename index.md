@@ -13,6 +13,8 @@ Web:
 * [CSS](./css.md)
 * [JavaScript](./javascript.md)
 
+(Concepts?)
+
 Data:
 * [Serialization and Deserialization](./serialization_deserialization.md)
 
@@ -23,8 +25,22 @@ Data:
     * [Single Responsibility Principle (SRP)](./single_responsibility_principle.md)
     * Open Closed Principle (OCP)
 
+
+Best practices:
+* Third party APIs.
+wrapping third-party APIs is a best practice. When you wrap a third-party API, you minimize your dependencies upon it: You can choose to move to a different library in the future without much penalty. Wrapping also makes it easier to mock out third-party calls when you are testing your own code.
+
+One final advantage of wrapping is that you aren’t tied to a particular vendor’s API design choices. You can define an API that you feel comfortable with. In the preceding example, we defined a single exception type for port device failure and found that we could write much cleaner code.
+
 Code:
-* [Classes](./cc_classes.md)
+* ch 3. Functions
+* ch 6. Objects and Data structures
+* [ch 7. Exceptions](./cc_exceptions.md)
+* ch 9. Unit tests
+* [ch 10. Classes](./cc_classes.md)
+
+* https://gist.github.com/cedrickchee/55ecfbaac643bf0c24da6874bf4feb08
+* https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29
 
 ### Design patterns
 Creational:
@@ -40,7 +56,17 @@ Behavioral:
 * Strategy
 
 ### C#
+Prerequisites:
+* [.NET SDK](./dotnet_sdk.md)
+* [.NET Runtime](./dotnet_runtime.md)
+
+Language features:
+* [Automatically implemented properties](./cs_auto_implemented_properties.md)
+
+Misc:
 * Working with JSON (files) 
+* Clean code: [Class organization in C#](./cc_class_organisation_csharp.md)
+    * https://www.webdevtutor.net/blog/c-sharp-class-structure-best-practices
 
 WebApps:
 * Dependency Injection
@@ -110,8 +136,9 @@ A web server serves HTML web pages and other files via HTTP to clients like web 
 * nginx
 * [apache](./web_server_apache.md)
 * [IIS](./iis.md)
-    * .net 8 deployment example
-    * Programmability. Scripting. Powershell scripts to create a IIS websites, services, binding, shut them down
+    * [Manual Management (using GUI)](./iis_manual_management.md)
+    * [Programmatically managing IIS](./iis_scripting.md)
+    * urlrewrite
 
 Other:
 * Reverse proxy
@@ -141,19 +168,25 @@ Other:
 * [Tiling window manager. "i3"](./i3.md)
 * [Program launchers. "rofi", "morc_menu"](./rofi.md)
 * [systemd systemctl](./linux_systemd.md)
+* package manager
+    * pacman
 
 Terminal, shell:
 * [ST terminal](./st.md)
 * [zsh shell](./zsh.md)
 
 ## Windows System
-
 * Event Viewer
 * Remote Desktop Connection
 * [Manage certificates. certmgr](./windows_certmgr.md)
 * [MS SQL Server](./ms_sql_server.md)
-* IIS
+    * installation
+* [IIS](./iis.md)
+    * installation
 * Windows Powershell ISE
+* choklotey
+* linux subsystem installation
+* docker installation
 * to do...
 
 ## Security. Encryption. Decryption
@@ -161,3 +194,10 @@ Terminal, shell:
 * SSH Keys
     * [SSH agent](./ssh_agent.md)
 * OpenSSH
+
+## Other
+* [markdown](./markdown.md)
+* [Software developers library](./library.md)
+
+## Glossary
+* [stub](./stub.md)

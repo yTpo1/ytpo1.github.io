@@ -16,6 +16,110 @@
         <article class="article markdown-body">
           <div class="article-inner">
             <h1 id="css">CSS</h1>
+            <h2 id="properties">Properties</h2>
+            <h3 id="box-sizing"><code>box-sizing</code></h3>
+            <p><code>box-sizing</code> defines hwo the width and height
+            of an element are calculated</p>
+            <p>There are two main values for <code>box-sizing</code>:
+            <code>border-box</code> and <code>content-box</code>.</p>
+            <ol type="1">
+            <li><code>box-sizing: content-box;</code> (default):
+            <ul>
+            <li>The width and height properties include only the
+            content. Padding, border and margin are not included in the
+            width and height.</li>
+            </ul></li>
+            </ol>
+            <p>Example:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode css"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.content-box</span> {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span>: <span class="dv">10</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">box-sizing</span>: <span class="dv">content-box</span><span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+            <p>In this example, the total width of the element will be
+            200px (content) + 40px (padding) + 20px (border) =
+            260px.</p>
+            <ol start="2" type="1">
+            <li><code>box-sizing: border-box;</code>
+            <ul>
+            <li>The width snf height properties include the content,
+            padding and border, but not the margin.</li>
+            <li>This makes it easier to manage the size of elements, as
+            the total width and height are consistent.</li>
+            </ul></li>
+            </ol>
+            <p>With the above CSS example, the total width of the
+            element will be exactly 200px, as the padding and border are
+            included within the specified width;</p>
+            <p>Example:</p>
+            <div>
+                <div class="css-lesson_content-box">Content box</div>
+                <div class="css-lesson_border-box">Border box</div>
+            </div>
+
+            <p>In this example, the <code>.content-box</code> element
+            will have a total width grater than 200px due to the padding
+            and border, while the <code>.border-box</code> element will
+            have a total width of exactly 200px, including the padding
+            and border.</p>
+            <p>What are some common use cases for using
+            <code>box-sizing: border-box;</code> in web design?</p>
+            <p>Using <code>box-sizing: border-box;</code> in web design
+            us quite common due to its practical benefits in managing
+            element dimensions. Here are some common use cases:</p>
+            <ol type="1">
+            <li><strong>Consistent Layouts</strong>:
+            <ul>
+            <li>When you set <code>box-sizing: border-box;</code>, the
+            padding and border are included in the element's total width
+            and height. THis makes it easier to create consistent
+            layouts, as the total size of elements remains
+            predictable.</li>
+            </ul></li>
+            <li><strong>Responsive Design</strong>:
+            <ul>
+            <li>In responsive design, managing the dimensions of
+            elements across different screen sizes is crucial.
+            <code>border-box</code> helps ensure that the elements
+            resize as expected without unexpected overflow or layout
+            shifts dues to padding and borders.</li>
+            </ul></li>
+            <li><strong>Grid Systems</strong>:
+            <ul>
+            <li>When building grid systems, using
+            <code>border-box</code> ensures that columns and rows align
+            correctly without needing to account for padding and borders
+            separately. This simplifies the math involved in creating
+            fluid grids.</li>
+            </ul></li>
+            <li><strong>Form Elements</strong>:
+            <ul>
+            <li>Form elements like input fields, buttons, and text areas
+            often need precise sizing to fit within their containers.
+            Using <code>border-box</code> ensures that these elements
+            maintain their intended size, regardless of padding and
+            border.</li>
+            </ul></li>
+            <li><strong>Global Reset</strong>:
+            <ul>
+            <li>Many developers use a global CSS reset or normalize
+            stylesheet to set <code>box-sizing: border-box;</code> for
+            all elements. This creates a consistent box model across the
+            entire application, reducing the likelihood of layout
+            issues.</li>
+            </ul></li>
+            </ol>
+            <p>Example of a global reset using
+            <code>box-sizing: border-box;</code>:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode css"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Apply border-box to all elements */</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">*,</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">*</span><span class="in">::before</span><span class="op">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">*</span><span class="in">::after</span> {</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">box-sizing</span>: <span class="dv">border-box</span><span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
             <h2 id="using-css-custom-properties-variables">Using CSS
             custom properties (variables)</h2>
             <p><a

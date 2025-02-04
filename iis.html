@@ -15,28 +15,105 @@
         <p>Date: </p>
         <article class="article markdown-body">
           <div class="article-inner">
-            <h1 id="iis">IIS</h1>
+            <h1 id="iis-internet-information-services">IIS (Internet
+            Information Services)</h1>
             <h2 id="sites">Sites</h2>
-            <p>To do...</p>
+            <p><strong>Scope</strong>: Sites define the entry points and
+            structure of web applications.</p>
+            <p>Each site is identified by a unique combination of a
+            binding (IP address, port and optionally a host header).</p>
+            <p><strong>Configuration</strong>: Configured with settings
+            related to how the site is accessed and served.</p>
             <h2 id="application-pools">Application Pools</h2>
+            <p><strong>Scope</strong>: Provide isolated execution
+            environments for web applications.</p>
+            <p><strong>Configuration</strong>: Configured with settings
+            related to the execution environment and resource
+            management.</p>
             <p>Application pools in Internet Information Services (IIS)
             are a fundamental feature that provide a way to isolate web
             applications for better security, reliability, and
             availability. Each application pool runs its own set of
             worker processes (w3wp.exe), which means that applications
             in different pools do not affect each other.</p>
-            <h3 id="no-managed-code-setting">No Managed Code
-            setting</h3>
-            <p>The "No Managed Code" setting in IIS refers to an
-            application pool configuration where the application pool
+            <p><strong>A worker process</strong>: in the context of IIS
+            is an instance of w3wp.exe executable that handles web
+            requests for a specific application pool. Worker processes
+            are responsible for processing incoming HTTP requests,
+            executing web applications, and returning responses to
+            clients. Each application pool in IIS run its own set of
+            worker processes, proving isolation and improving the
+            reliability and security of web applications</p>
+            <p><strong>w3wp.exe</strong>: stands for "World WIde Web
+            Worker Process" and is the executable file for the worker
+            process in IIS. It is responsible for handling web requests
+            and executing web application hosted on IIS.</p>
+            <h3 id="configuration-parameters">Configuration
+            parameters</h3>
+            <ul>
+            <li><strong>Identity</strong>: (Access to files and
+            folders)</li>
+            </ul>
+            <p>By default, IIS runs under the application pool identity
+            called <code>ApplicationPoolIdentity</code>. This is a
+            built-in, least-privileged account that is unique to each
+            application pool. It provides a more secure and isolated
+            environment for web applications.</p>
+            <p>When an application pool is created, it is assigned the
+            <code>ApplicationPoolIdentity</code> by default. This
+            identity has limited permissions, which helps to minimize
+            the potential impact of security vulnerabilities.</p>
+            <p><strong>Ensuring access to folders</strong> To Ensure
+            that IIS has access to a folder, you should grant
+            permissions to the <code>IIS_IUSRS</code> group. This group
+            includes the application pool identities that IIS uses to
+            run web applications. By granting the necessary permission
+            to this group, you ensure that IIS can read from and write
+            to the folder as needed.</p>
+            <p>Programmatically change group permissions on a folder,
+            using powershell:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define variables</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">$folderPath</span> <span class="op">=</span> <span class="st">&quot;C:\folder1\folder2&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">$group</span> <span class="op">=</span> <span class="st">&quot;IIS_IUSRS&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the folder&#39;s ACL (Access Control List)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="va">$acl</span> <span class="op">=</span> <span class="op">=</span> <span class="fu">Get-Acl</span> <span class="va">$folderPath</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the permission rule</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="va">$permissions</span> <span class="op">=</span> <span class="op">[</span>System<span class="op">.</span><span class="fu">Security</span><span class="op">.</span><span class="fu">AccessControl</span><span class="op">.</span><span class="fu">FileSystemRIghts</span><span class="op">]::</span>Read<span class="op">,</span> `</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                <span class="op">[</span>System<span class="op">.</span><span class="fu">Security</span><span class="op">.</span><span class="fu">AccessControl</span><span class="op">.</span><span class="fu">FileSystemRIghts</span><span class="op">]::</span>ReadAndExecute `</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                <span class="op">[</span>System<span class="op">.</span><span class="fu">Security</span><span class="op">.</span><span class="fu">AccessControl</span><span class="op">.</span><span class="fu">FileSystemRIghts</span><span class="op">]::</span>ListDirectory</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Sets the inheritance and propagation flags to ensure the permissions apply to the folder and its contents</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="va">$inheritanceFlags</span> <span class="op">=</span> <span class="op">[</span>System<span class="op">.</span><span class="fu">Security</span><span class="op">.</span><span class="fu">AccessControl</span><span class="op">.</span><span class="fu">InheritanceFlags</span><span class="op">]::</span>ContainerInherit<span class="op">,</span> `</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                    <span class="op">[</span>System<span class="op">.</span><span class="fu">Security</span><span class="op">.</span><span class="fu">AccessControl</span><span class="op">.</span><span class="fu">InheritanceFlags</span><span class="op">]::</span>ObjectInherit</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="va">$propagationFlags</span> <span class="op">=</span> <span class="op">[</span>System<span class="op">.</span><span class="fu">Security</span><span class="op">.</span><span class="fu">AccessControl</span><span class="op">.</span><span class="fu">PropagationFlags</span><span class="op">]::</span>None</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="va">$accessRule</span> <span class="op">=</span> <span class="fu">New-Object</span> System<span class="op">.</span><span class="fu">Security</span><span class="op">.</span><span class="fu">AccessControl</span><span class="op">.</span><span class="fu">FileSystemAccessRule</span><span class="op">(</span><span class="va">$group</span><span class="op">,</span> <span class="va">$permissions</span><span class="op">,</span> <span class="va">$inheritanceFlags</span><span class="op">,</span> <span class="va">$propagationFlags</span><span class="op">,</span> <span class="st">&quot;Allow&quot;</span><span class="op">)</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the permission rule to the ACL</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="va">$acl</span><span class="op">.</span><span class="fu">SetAccessRule</span><span class="op">(</span><span class="va">$accessRule</span><span class="op">)</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the updated ACL to the folder</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Acl</span> <span class="va">$folderPath</span> <span class="va">$acl</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">Write-Output</span> <span class="st">&quot;Permissions for the group &#39;$group&#39; have been set on the folder &#39;$folderPath&#39;.&quot;</span></span></code></pre></div>
+            <ul>
+            <li><strong>.NET CRL Version</strong>: No Managed Code
+            setting</li>
+            </ul>
+            <p>The <code>No Managed Code</code> setting in IIS refers to
+            an application pool configuration where the application pool
             does not load the .NET runtime. This setting is used for
             applications that do not require the .NET runtime, such as
             static websites or application written in other programming
             languages like PHP or classic ASP or .NET core.</p>
-            <p>When you set the application pool to "No Managed Code"
-            IIS will not attempt to load the .NET runtime, which can
-            improve performance and reduce resource usage for the
-            non-.NET applications.</p>
+            <p>When you set the application pool to
+            <code>No Managed Code</code> IIS will not attempt to load
+            the .NET runtime, which can improve performance and reduce
+            resource usage for the non-.NET applications.</p>
             <p>ASP.NET Core runs in a separate process and manages the
             runtime. ASP.NET Core doesn't rely on loading the desktop
             CLR (.NET CLR). The Core Common Language Runtime (CoreCLR)
@@ -46,6 +123,27 @@
             href="https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?view=aspnetcore-3.1">src</a></p>
             <p><a
             href="https://stackoverflow.com/questions/40862032/iis-application-pools-clr-v4-0-vs-no-managed-code">https://stackoverflow.com/questions/40862032/iis-application-pools-clr-v4-0-vs-no-managed-code</a></p>
+            <h2
+            id="execution-environment-for-net-applications">Execution
+            environment for .NET applications</h2>
+            <p>When hosting a .NET 8 application in IIS, you need to
+            install the .NET 8 Hosting Bundle to ensure that your IIS
+            server can properly run and manage .NET applications. The
+            .NET Hosting Bundle includes several important
+            components:</p>
+            <ul>
+            <li><a href="./dotnet_runtime.html">.NET Runtime</a>: THe
+            runtime is necessary to execute the .NET applications. It
+            includes the .NET libraries and the Common Language Runtime
+            (CLR) that your application depends on. hosting bundle .net
+            core 8</li>
+            <li><strong>ASP.NET Core Module (ANCM)</strong>: This module
+            allows IIS to work as a reverse proxy server, forwarding
+            requests to your .NET application running in the Kestrel web
+            server. It ensures that IIS can manage the application
+            lifecycle, including starting and stopping the
+            application.</li>
+            </ul>
           </div>
         </article>
       </div>

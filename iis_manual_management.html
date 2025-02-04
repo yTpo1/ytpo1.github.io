@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="manual-management-using-gui">Manual Management
+            (using GUI)</h1>
+            <p>.net 8 app deployment example:</p>
+            <ol type="1">
+            <li>Publish the Application:
+            <ul>
+            <li>In Visual Studio right-click on the project in Solution
+            Explorer and select <code>Publish</code>.</li>
+            <li>Choose a publish target. For IIS, select Folder and
+            specify a path where the published files will be
+            stored.</li>
+            <li>Click <code>Publish</code> to generate the publish
+            files.</li>
+            </ul></li>
+            <li>Configure IIS:
+            <ul>
+            <li>Open the IIS Manager (inetmgr).</li>
+            <li>Right-click on <code>Sites</code> and select
+            <code>Add Website</code>.</li>
+            <li>Configure the site:
+            <ul>
+            <li><strong>Site Name</strong></li>
+            <li><strong>Physical Path</strong></li>
+            <li><strong>Binding</strong></li>
+            </ul></li>
+            </ul></li>
+            <li>Set Application Pool:
+            <ul>
+            <li>Select the newly created time</li>
+            <li>Click on <code>Basic Settings</code> and ensure the
+            Application Pool is set to use <code>No Managed Code</code>
+            or the appropriate .NET CLR version.</li>
+            </ul></li>
+            <li>Configure Folder Permissions:
+            <ul>
+            <li>Ensure the IIS user (e.g., IIS_IUSRS) has read and
+            execute permissions on the published folder.</li>
+            </ul></li>
+            </ol>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

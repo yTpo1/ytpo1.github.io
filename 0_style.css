@@ -22,12 +22,18 @@
 
   --bgColor-muted: #302f2f;
   /* --bgColor-muted: #151b23; */
+
+
+  /* Syntax highlighting */
+  --color-syntax-comment: #9198a1;
+  --color-syntax-keyword: #ff7b72;
 }
 
 
 body {
     /* background-color: #202124; */
-    background-color: var(--bgColor-default, var(--color-canvas-default));
+    /* background-color: var(--bgColor-default, var(--color-canvas-default)); */
+    background-color: #1e1e1e;;
     color: var(--fgColor-default, var(--color-fg-default));
     font-size: 1.1875rem;
     line-height: 1.31;
@@ -85,6 +91,8 @@ pre {
   color: var(--fgColor-default, var(--color-fg-default));
   /* background-color: var(--bgColor-muted, var(--color-canvas-subtle)); */
   background-color: #0f2331;
+  /* background-color: #1e1d1d; */
+  /* background-color: #242323; */
 
   border-color: #2a2a2a;
   border-style: solid;
@@ -109,6 +117,10 @@ p code, li code {
   /* margin */
   margin-top: var(--base-size-8, 8px);
   margin-bottom: var(--base-size-8, 8px);
+
+  /* background-color: #353535; */
+  /* background-color: #313131; */
+  background-color: #282828;
 }
 
 .markdown-body {
@@ -152,4 +164,86 @@ img {
   height: 100%; 
   object-fit: contain;
   */
+}
+
+table tr {
+  background-color: var(--bgColor-default, var(--color-canvas-default));
+  border-top: 1px solid var(--borderColor-muted, var(--color-border-muted));
+}
+
+table th {
+  padding: 6px 13px;
+  border: 1px solid var(--borderColor-default, var(--color-border-default));
+  font-weight: var(--base-text-weight-semibold, 600);
+}
+
+table td {
+  padding: 6px 13px;
+  border: 1px solid var(--borderColor-default, var(--color-border-default));
+}
+
+
+.css-lesson_content-box {
+  /* common rules */
+  width: 200px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 10px solid black;
+  color: black;
+
+  /* purpose of the example */
+  box-sizing: content-box;
+
+  /* rule to separate the two examples from each other */
+  margin-bottom: 20px;
+  background-color: lightblue;
+}
+
+.css-lesson_border-box {
+  /* common rules */
+  width: 200px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 10px solid black;
+  color: black;
+
+  /* purpose of the example */
+  box-sizing: border-box;
+
+  background-color: lightgreen;
+}
+
+/* Code Syntax Highting */
+
+/* comment */
+.co {
+  color: var(--color-syntax-comment);
+}
+
+/* variable */
+.va {
+color: lightgreen;
+}
+
+/* keyword */
+.kw {
+  color: var(--color-syntax-keyword);
+}
+
+.cf {
+  color: var(--color-syntax-keyword);
+}
+
+/* function */
+.fu {
+  color: #ffffca;
+}
+
+/* string */
+.st {
+  color: orange;
 }

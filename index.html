@@ -29,6 +29,7 @@
             <li><a href="./css.html">CSS</a></li>
             <li><a href="./javascript.html">JavaScript</a></li>
             </ul>
+            <p>(Concepts?)</p>
             <p>Data:</p>
             <ul>
             <li><a
@@ -47,9 +48,32 @@
             <li>Open Closed Principle (OCP)</li>
             </ul></li>
             </ul>
+            <p>Best practices:</p>
+            <ul>
+            <li>Third party APIs. wrapping third-party APIs is a best
+            practice. When you wrap a third-party API, you minimize your
+            dependencies upon it: You can choose to move to a different
+            library in the future without much penalty. Wrapping also
+            makes it easier to mock out third-party calls when you are
+            testing your own code.</li>
+            </ul>
+            <p>One final advantage of wrapping is that you aren’t tied
+            to a particular vendor’s API design choices. You can define
+            an API that you feel comfortable with. In the preceding
+            example, we defined a single exception type for port device
+            failure and found that we could write much cleaner code.</p>
             <p>Code:</p>
             <ul>
-            <li><a href="./cc_classes.html">Classes</a></li>
+            <li><p>ch 3. Functions</p></li>
+            <li><p>ch 6. Objects and Data structures</p></li>
+            <li><p><a href="./cc_exceptions.html">ch 7.
+            Exceptions</a></p></li>
+            <li><p>ch 9. Unit tests</p></li>
+            <li><p><a href="./cc_classes.html">ch 10. Classes</a></p></li>
+            <li><p><a
+            href="https://gist.github.com/cedrickchee/55ecfbaac643bf0c24da6874bf4feb08">https://gist.github.com/cedrickchee/55ecfbaac643bf0c24da6874bf4feb08</a></p></li>
+            <li><p><a
+            href="https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29">https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29</a></p></li>
             </ul>
             <h3 id="design-patterns">Design patterns</h3>
             <p>Creational:</p>
@@ -68,8 +92,27 @@
             <li>Strategy</li>
             </ul>
             <h3 id="c">C#</h3>
+            <p>Prerequisites:</p>
+            <ul>
+            <li><a href="./dotnet_sdk.html">.NET SDK</a></li>
+            <li><a href="./dotnet_runtime.html">.NET Runtime</a></li>
+            </ul>
+            <p>Language features:</p>
+            <ul>
+            <li><a
+            href="./cs_auto_implemented_properties.html">Automatically
+            implemented properties</a></li>
+            </ul>
+            <p>Misc:</p>
             <ul>
             <li>Working with JSON (files)</li>
+            <li>Clean code: <a
+            href="./cc_class_organisation_csharp.html">Class organization
+            in C#</a>
+            <ul>
+            <li><a
+            href="https://www.webdevtutor.net/blog/c-sharp-class-structure-best-practices">https://www.webdevtutor.net/blog/c-sharp-class-structure-best-practices</a></li>
+            </ul></li>
             </ul>
             <p>WebApps:</p>
             <ul>
@@ -165,9 +208,11 @@
             <li><a href="./web_server_apache.html">apache</a></li>
             <li><a href="./iis.html">IIS</a>
             <ul>
-            <li>.net 8 deployment example</li>
-            <li>Programmability. Scripting. Powershell scripts to create
-            a IIS websites, services, binding, shut them down</li>
+            <li><a href="./iis_manual_management.html">Manual Management
+            (using GUI)</a></li>
+            <li><a href="./iis_scripting.html">Programmatically managing
+            IIS</a></li>
+            <li>urlrewrite</li>
             </ul></li>
             </ul>
             <p>Other:</p>
@@ -208,6 +253,10 @@
             <li><a href="./rofi.html">Program launchers. "rofi",
             "morc_menu"</a></li>
             <li><a href="./linux_systemd.html">systemd systemctl</a></li>
+            <li>package manager
+            <ul>
+            <li>pacman</li>
+            </ul></li>
             </ul>
             <p>Terminal, shell:</p>
             <ul>
@@ -220,9 +269,18 @@
             <li>Remote Desktop Connection</li>
             <li><a href="./windows_certmgr.html">Manage certificates.
             certmgr</a></li>
-            <li><a href="./ms_sql_server.html">MS SQL Server</a></li>
-            <li>IIS</li>
+            <li><a href="./ms_sql_server.html">MS SQL Server</a>
+            <ul>
+            <li>installation</li>
+            </ul></li>
+            <li><a href="./iis.html">IIS</a>
+            <ul>
+            <li>installation</li>
+            </ul></li>
             <li>Windows Powershell ISE</li>
+            <li>choklotey</li>
+            <li>linux subsystem installation</li>
+            <li>docker installation</li>
             <li>to do...</li>
             </ul>
             <h2 id="security-encryption-decryption">Security.
@@ -234,6 +292,16 @@
             <li><a href="./ssh_agent.html">SSH agent</a></li>
             </ul></li>
             <li>OpenSSH</li>
+            </ul>
+            <h2 id="other">Other</h2>
+            <ul>
+            <li><a href="./markdown.html">markdown</a></li>
+            <li><a href="./library.html">Software developers
+            library</a></li>
+            </ul>
+            <h2 id="glossary">Glossary</h2>
+            <ul>
+            <li><a href="./stub.html">stub</a></li>
             </ul>
           </div>
         </article>

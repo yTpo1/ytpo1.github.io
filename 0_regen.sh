@@ -17,6 +17,8 @@ for file in *.md; do
     fi 
 done
 
+# To Do: loop to check if .html file has a corresponding .md file
+
 # Publish
 echo "Copying to $server_dir. "
 sudo cp -r ../$notes_dir $server_dir
