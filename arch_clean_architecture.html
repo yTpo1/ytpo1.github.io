@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="clean-architecture">Clean Architecture</h1>
+            <p>Clean Architecture, introduced by Robert C. Martin (Uncle
+            Bob), is a software design philosophy that emphasizes the
+            <code>separation of concerns</code> and the
+            <code>independence of the business logic from external systems</code>.
+            The goal is to create a system that is easy to maintain,
+            test and extend over time.</p>
+            <p><img
+            src="https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg"
+            title="Clean Architecture" alt="Clean Architecture" /></p>
+            <p><strong>Key Concepts</strong></p>
+            <ol type="1">
+            <li><strong>Separation of Concerns</strong>: Clean
+            Architecture divides the system into layers, each with a
+            specific responsibility. This separation helps to manage
+            complexity and makes the system easier to understand and
+            maintain.</li>
+            <li><strong>Dependency Rule</strong>: The core principle of
+            Clean Architecture is that
+            <code>dependencies should point inward</code>. Inner layers
+            should not depend on outer layers. This ensures that
+            <code>the core business logic is independent of external concerns</code>
+            like databases, user interfaces, and frameworks.</li>
+            <li><strong>Layers</strong>: Clean Architecture typically
+            consists of the following layers:
+            <ul>
+            <li><strong>Entities</strong>: Represent the core business
+            objects and encapsulate business rules.</li>
+            <li><strong>Use Cases (or Interactors)</strong>: Contain
+            application-specific besiness rules and orchestrate the flow
+            of data to and from the entities.</li>
+            <li><strong>Interface Adapters</strong> Convert data from
+            the format most convenient for the use cases and entities to
+            the format most convenient for external systems (e.g.,
+            controllers, presenters, gateways).</li>
+            <li><strong>Frameworks and Drivers</strong>: Contain the
+            details of external systems such as databases, web
+            frameworks, and user interfaces.</li>
+            </ul></li>
+            <li><strong>Independence</strong>: The architecture ensures
+            that the core business logic is independent of:
+            <ul>
+            <li><strong>Frameworks</strong>: The business logic does not
+            depend on any specific framework, making it easier to switch
+            frameworks if needed.</li>
+            <li><strong>UI</strong>: The user interface can be changed
+            without affecting the business logic.</li>
+            <li><strong>Database</strong>: The database can be swapped
+            out without affecting the business logic.</li>
+            <li><strong>External Agencies</strong>: External systems and
+            services can be replaced without affecting the business
+            logic.</li>
+            </ul></li>
+            </ol>
+            <p>Practical example:</p>
+            <ul>
+            <li><a href="./cs_clean_architecture.html">C#</a></li>
+            </ul>
+            <p>Clean Architecture helps create a maintainable, testable,
+            and scalable system by organizing code into well-defined
+            layers and ensuring that the core business logic remains
+            independent of external concerns. This approach promotes a
+            clear separation of concerns and makes it easier to adapt to
+            changing requirements and technologies.</p>
+            <p><strong>Extracts for the Uncle Bob article</strong> <a
+            href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">src</a></p>
+            <p>Objective: separation of concerns</p>
+            <p>Separation of concerns is achieved by: dividing the
+            software into layers. At least one layer for business rules,
+            and another for interfaces.</p>
+            <p>Result is a system that is:</p>
+            <ol type="1">
+            <li><strong>Independent of Frameworks</strong>. The
+            architecture does not depend on the existence of some
+            library of feature laden software. This allows you to use
+            such frameworks as tools, rather than having to cram your
+            system into their limited constraints.</li>
+            <li><strong>Testable</strong>. The business rules can be
+            tested without the UI, Database, Web Server, or any other
+            external element.</li>
+            <li><strong>Independent of UI</strong>. The UI can change
+            easily, without changing the rest of the system. A Web UI
+            could be replaced with a console UI, for example, without
+            changing the business rules.</li>
+            <li><strong>Independent of Database</strong>. You can swap
+            out Oracle or SQL Server, for Mongo, BigTable, CouchDB, or
+            something else. Your business rules are not bound to the
+            database.</li>
+            <li><strong>Independent of any external agency</strong>. In
+            fact your business rules simply don’t know anything at all
+            about the outside world.</li>
+            </ol>
+            <p>The Dependency Rule: Source code dependencies can only
+            point inwards. Nothing in an inner circle can know anything
+            at all about something in an outer circle. In particular,
+            the name of something declared in an outer circle must not
+            be mentioned by the code in the an inner circle. That
+            includes, functions, classes. variables, or any other named
+            software entity.</p>
+            <p>As you move inwards the level of abstraction increases.
+            The outermost circle is low level concrete detail. As you
+            move inwards the software grows more abstract, and
+            encapsulates higher level policies. The inner most circle is
+            the most general.</p>
+            <p>For example, many database frameworks return a convenient
+            data format in response to a query. We might call this a
+            RowStructure. We don’t want to pass that row structure
+            inwards across a boundary. That would violate The Dependency
+            Rule because it would force an inner circle to know
+            something about an outer circle.</p>
+            <p>More concrete (detailed) versions of Clean
+            Architecture:</p>
+            <ul>
+            <li>Hexagonal Architecture (a.k.a. Ports and Adapters)</li>
+            <li><a href="./arch_onion_architecture.html">Onion
+            Architecture</a></li>
+            <li>Screaming Architecture</li>
+            <li>DCI</li>
+            <li>BCE</li>
+            </ul>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+  </body>
+</html>

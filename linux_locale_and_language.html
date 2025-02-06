@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1
+            id="linux-the-current-locale-and-language-settings">Linux.
+            The current locale and language settings</h1>
+            <p>Set hotkey to change keyboard language.
+            ~/.config/i3/config</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># toggle between english and russian languages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">exec</span> <span class="at">--no-startup-id</span> /usr/bin/setxkbmap <span class="at">-option</span> grp:ctrl_alt_toggle us,ru</span></code></pre></div>
+            <p>Display current language in the status bar.
+            ~/.config/i3blocks/keyboard_layout.sh</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">VAR</span><span class="op">=</span><span class="va">$(</span><span class="fu">xset</span> <span class="at">-q</span><span class="kw">|</span><span class="fu">grep</span> LED<span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ print $10 }&#39;</span><span class="va">)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">case</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">xset</span> <span class="at">-q</span><span class="kw">|</span><span class="fu">grep</span> LED<span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ print $10 }&#39;</span><span class="va">)</span><span class="st">&quot;</span> <span class="kw">in</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;00000000&quot;</span><span class="kw">)</span> <span class="va">KBD</span><span class="op">=</span><span class="st">&quot;eng&quot;</span> <span class="cf">;;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;00000001&quot;</span><span class="kw">)</span> <span class="va">KBD</span><span class="op">=</span><span class="st">&quot;ENG&quot;</span> <span class="cf">;;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;00001000&quot;</span><span class="kw">)</span> <span class="va">KBD</span><span class="op">=</span><span class="st">&quot;rus&quot;</span> <span class="cf">;;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;00001001&quot;</span><span class="kw">)</span> <span class="va">KBD</span><span class="op">=</span><span class="st">&quot;RUS&quot;</span> <span class="cf">;;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="pp">*</span><span class="kw">)</span> <span class="va">KBD</span><span class="op">=</span><span class="st">&quot;unknown&quot;</span> <span class="cf">;;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="cf">esac</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">get_layouts()</span> <span class="kw">{</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$(</span><span class="ex">setxkbmap</span> <span class="at">-query</span> <span class="kw">|</span> <span class="fu">grep</span> layout <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $2}&#39;</span><span class="va">)</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="va">$(</span><span class="ex">get_layouts</span><span class="va">)</span> <span class="ot">!=</span> <span class="st">&quot;us,ru&quot;</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">setxkbmap</span> <span class="at">-option</span> grp:ctrl_alt_toggle us,ru<span class="kw">;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">notify-send</span> <span class="st">&quot;Switched to us,ru&quot;</span><span class="kw">;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$KBD</span></span></code></pre></div>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -12,23 +12,9 @@
     </div>
     <div class="content">
       <div class="container-lg">
-        <p>Date: </p>
         <article class="article markdown-body">
           <div class="article-inner">
             <h2 id="programming">Programming</h2>
-            <p>Scripting:</p>
-            <ul>
-            <li><a href="./bash_scripting.html">bash scripting</a></li>
-            <li><a href="./powershell_scripting.html">Powershell
-            scripting</a></li>
-            <li><a href="./zsh_scripting.html">zsh scripting</a></li>
-            </ul>
-            <p>Web:</p>
-            <ul>
-            <li><a href="./html.html">HTML</a></li>
-            <li><a href="./css.html">CSS</a></li>
-            <li><a href="./javascript.html">JavaScript</a></li>
-            </ul>
             <p>(Concepts?)</p>
             <p>Data:</p>
             <ul>
@@ -37,32 +23,6 @@
             Deserialization</a></li>
             </ul>
             <h3 id="clean-code">Clean Code</h3>
-            <ul>
-            <li><a href="./coding_principles.html">Coding principles</a>
-            <ul>
-            <li><a
-            href="http://wiki.c2.com/?DontRepeatYourself">DRY</a></li>
-            <li>KISS</li>
-            <li><a href="./single_responsibility_principle.html">Single
-            Responsibility Principle (SRP)</a></li>
-            <li>Open Closed Principle (OCP)</li>
-            </ul></li>
-            </ul>
-            <p>Best practices:</p>
-            <ul>
-            <li>Third party APIs. wrapping third-party APIs is a best
-            practice. When you wrap a third-party API, you minimize your
-            dependencies upon it: You can choose to move to a different
-            library in the future without much penalty. Wrapping also
-            makes it easier to mock out third-party calls when you are
-            testing your own code.</li>
-            </ul>
-            <p>One final advantage of wrapping is that you aren’t tied
-            to a particular vendor’s API design choices. You can define
-            an API that you feel comfortable with. In the preceding
-            example, we defined a single exception type for port device
-            failure and found that we could write much cleaner code.</p>
-            <p>Code:</p>
             <ul>
             <li><p>ch 3. Functions</p></li>
             <li><p>ch 6. Objects and Data structures</p></li>
@@ -74,6 +34,30 @@
             href="https://gist.github.com/cedrickchee/55ecfbaac643bf0c24da6874bf4feb08">https://gist.github.com/cedrickchee/55ecfbaac643bf0c24da6874bf4feb08</a></p></li>
             <li><p><a
             href="https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29">https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29</a></p></li>
+            <li><p><a href="./coding_principles.html">Coding
+            principles</a></p>
+            <ul>
+            <li><a
+            href="http://wiki.c2.com/?DontRepeatYourself">DRY</a></li>
+            <li>KISS</li>
+            <li><a href="./single_responsibility_principle.html">Single
+            Responsibility Principle (SRP)</a></li>
+            <li>Open Closed Principle (OCP)</li>
+            </ul></li>
+            </ul>
+            <h3 id="architecture">Architecture</h3>
+            <ul>
+            <li><a href="./arch_clean_architecture.html">Clean
+            Architecture</a>
+            <ul>
+            <li><a href="./arch_onion_architecture.html">Onion
+            Architecture</a></li>
+            </ul></li>
+            </ul>
+            <p>Web:</p>
+            <ul>
+            <li>REST</li>
+            <li>Microservices</li>
             </ul>
             <h3 id="design-patterns">Design patterns</h3>
             <p>Creational:</p>
@@ -106,9 +90,8 @@
             <p>Misc:</p>
             <ul>
             <li><a href="./cs_json.html">Working with JSON</a></li>
-            <li><a
-            href="./cs_serialization_deserialization.html">Serialization
-            and Deserialization</a></li>
+            <li><a href="./cs_json.html">Serialization and
+            Deserialization</a></li>
             <li>Clean code: <a
             href="./cc_class_organisation_csharp.html">Class organization
             in C#</a>
@@ -141,7 +124,7 @@
             <h3 id="javascript">JavaScript</h3>
             <ul>
             <li><a href="./javascript.html">Javascript</a></li>
-            <li><a href="">TypeScript</a></li>
+            <li>TypeScript</li>
             <li><a href="./nodejs.html">Node.js</a>
             <ul>
             <li><a href="./npm_npx.html">npm, npx</a></li>
@@ -151,6 +134,18 @@
             <li>Next.js</li>
             </ul></li>
             <li>ESLint</li>
+            </ul>
+            <h3 id="scripting">Scripting</h3>
+            <ul>
+            <li><a href="./bash_scripting.html">bash scripting</a></li>
+            <li><a href="./powershell_scripting.html">Powershell
+            scripting</a></li>
+            <li><a href="./zsh_scripting.html">zsh scripting</a></li>
+            </ul>
+            <h3 id="web">Web</h3>
+            <ul>
+            <li><a href="./html.html">HTML</a></li>
+            <li><a href="./css.html">CSS</a></li>
             </ul>
             <h2 id="ides-code-editors-etc">IDEs, code editors, etc</h2>
             <ul>
@@ -271,6 +266,7 @@
             <h2 id="linux-system">Linux System</h2>
             <ul>
             <li><a href="./i3.html">Tiling window manager. "i3"</a></li>
+            <li>Status bar "i3blocks"</li>
             <li><a href="./rofi.html">Program launchers. "rofi",
             "morc_menu"</a></li>
             <li><a href="./linux_systemd.html">systemd systemctl</a></li>
@@ -279,6 +275,8 @@
             <ul>
             <li>pacman</li>
             </ul></li>
+            <li><a href="./linux_locale_and_language.html">Current locale
+            and language settings</a></li>
             </ul>
             <p>Terminal, shell:</p>
             <ul>
@@ -300,7 +298,10 @@
             <li>installation</li>
             </ul></li>
             <li>Windows Powershell ISE</li>
-            <li>Chocolatey (package manager for Windows)</li>
+            <li>Chocolatey (package manager for Windows)
+            <ul>
+            <li>Initial system install script</li>
+            </ul></li>
             <li>linux subsystem installation</li>
             <li>docker installation</li>
             <li>to do...</li>
@@ -317,6 +318,8 @@
             </ul>
             <h2 id="other">Other</h2>
             <ul>
+            <li><a href="./environment_variables.html">Environment
+            Variables</a></li>
             <li><a href="./markdown.html">markdown</a></li>
             <li><a href="./library.html">Software developers
             library</a></li>
@@ -327,6 +330,7 @@
             </ul>
           </div>
         </article>
+        <p>Date: </p>
       </div>
     </div>
   </body>

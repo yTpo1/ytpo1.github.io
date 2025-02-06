@@ -3,36 +3,12 @@ title: Tech notes
 ---
 
 ## Programming
-Scripting:
-* [bash scripting](./bash_scripting.md)
-* [Powershell scripting](./powershell_scripting.md)
-* [zsh scripting](./zsh_scripting.md)
-
-Web:
-* [HTML](./html.md)
-* [CSS](./css.md)
-* [JavaScript](./javascript.md)
-
 (Concepts?)
 
 Data:
 * [Serialization and Deserialization](./serialization_deserialization.md)
 
 ### Clean Code
-* [Coding principles](./coding_principles.md)
-    * [DRY](http://wiki.c2.com/?DontRepeatYourself)
-    * KISS
-    * [Single Responsibility Principle (SRP)](./single_responsibility_principle.md)
-    * Open Closed Principle (OCP)
-
-
-Best practices:
-* Third party APIs.
-wrapping third-party APIs is a best practice. When you wrap a third-party API, you minimize your dependencies upon it: You can choose to move to a different library in the future without much penalty. Wrapping also makes it easier to mock out third-party calls when you are testing your own code.
-
-One final advantage of wrapping is that you aren’t tied to a particular vendor’s API design choices. You can define an API that you feel comfortable with. In the preceding example, we defined a single exception type for port device failure and found that we could write much cleaner code.
-
-Code:
 * ch 3. Functions
 * ch 6. Objects and Data structures
 * [ch 7. Exceptions](./cc_exceptions.md)
@@ -41,6 +17,19 @@ Code:
 
 * https://gist.github.com/cedrickchee/55ecfbaac643bf0c24da6874bf4feb08
 * https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29
+* [Coding principles](./coding_principles.md)
+    * [DRY](http://wiki.c2.com/?DontRepeatYourself)
+    * KISS
+    * [Single Responsibility Principle (SRP)](./single_responsibility_principle.md)
+    * Open Closed Principle (OCP)
+
+### Architecture
+* [Clean Architecture](./arch_clean_architecture.md)
+    * [Onion Architecture](./arch_onion_architecture.md)
+
+Web:
+* REST
+* Microservices
 
 ### Design patterns
 Creational:
@@ -65,7 +54,7 @@ Language features:
 
 Misc:
 * [Working with JSON](./cs_json.md)
-* [Serialization and Deserialization](./cs_serialization_deserialization.md)
+* [Serialization and Deserialization](./cs_json.md)
 * Clean code: [Class organization in C#](./cc_class_organisation_csharp.md)
     * https://www.webdevtutor.net/blog/c-sharp-class-structure-best-practices
 
@@ -85,12 +74,21 @@ Unit testing:
 
 ### JavaScript
 * [Javascript](./javascript.md)
-* [TypeScript]()
+* TypeScript
 * [Node.js](./nodejs.md)
     * [npm, npx](./npm_npx.md)
 * React
     * Next.js
 * ESLint
+
+### Scripting
+* [bash scripting](./bash_scripting.md)
+* [Powershell scripting](./powershell_scripting.md)
+* [zsh scripting](./zsh_scripting.md)
+
+### Web
+* [HTML](./html.md)
+* [CSS](./css.md)
 
 ## IDEs, code editors, etc
 * Visual Studio
@@ -175,11 +173,13 @@ Other:
 
 ## Linux System
 * [Tiling window manager. "i3"](./i3.md)
+* Status bar "i3blocks"
 * [Program launchers. "rofi", "morc_menu"](./rofi.md)
 * [systemd systemctl](./linux_systemd.md)
 * [Firewall](./linux_firewall.md)
 * package manager
     * pacman
+* [Current locale and language settings](./linux_locale_and_language.md)
 
 Terminal, shell:
 * [ST terminal](./st.md)
@@ -195,6 +195,7 @@ Terminal, shell:
     * installation
 * Windows Powershell ISE
 * Chocolatey (package manager for Windows)
+    * Initial system install script
 * linux subsystem installation
 * docker installation
 * to do...
@@ -206,6 +207,7 @@ Terminal, shell:
 * OpenSSH
 
 ## Other
+* [Environment Variables](./environment_variables.md)
 * [markdown](./markdown.md)
 * [Software developers library](./library.md)
 

@@ -24,5 +24,11 @@
         * Decoupling.
         * Dependencies upon concrete details create challenges for testing our system.
 
+Best practices:
+* Third party APIs.
+wrapping third-party APIs is a best practice. When you wrap a third-party API, you minimize your dependencies upon it: You can choose to move to a different library in the future without much penalty. Wrapping also makes it easier to mock out third-party calls when you are testing your own code.
+
+One final advantage of wrapping is that you aren’t tied to a particular vendor’s API design choices. You can define an API that you feel comfortable with. In the preceding example, we defined a single exception type for port device failure and found that we could write much cleaner code.
+
 Bibliography:
 * Robert Martin - Clean Code - A Handbook of Agile Software Craftsmanship - 2008.

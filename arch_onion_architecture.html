@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="onion-architecture">Onion Architecture</h1>
+            <p>Onion Architecture is a software architectural patterns
+            that emphasizes the <strong>separation of concerns</strong>
+            and <strong>dependency inversion</strong>.</p>
+            <p><strong>Layers of Onion Architecture</strong></p>
+            <ol type="1">
+            <li><strong>Core (Domain) Layer</strong>: Contains the
+            business logic and domain entities. This layer is
+            independent of any other layers and does not depend on
+            external libraries or frameworks.</li>
+            <li><strong>Application Layer</strong>: Contains
+            application-specific logic, such as use cases and services.
+            This layer coordinates the flow of data between the domain
+            and outer layers.</li>
+            <li><strong>Infrastructure Layer</strong>: Contains
+            implementations for external concerns, such as data access,
+            messaging, and other services. This layer depends on the
+            application and domain layers.</li>
+            <li><strong>Presentation Layer</strong>: Contains the user
+            interface and API controllers. This layer depends on teh
+            application layer and interacts with the user or external
+            systems.</li>
+            </ol>
+            <p><strong>Concepts related to each Layer</strong></p>
+            <ol type="1">
+            <li>Core (Domain) Layer
+            <ul>
+            <li><a href="./arch_ddd.html">Domain-Driven Design
+            (DDD)</a></li>
+            <li><a href="./arch_ddd_vs_onion.html">What is the
+            relationship between DDD and "Onion Architecture"?</a></li>
+            <li><hr /></li>
+            <li>Interfaces</li>
+            <li><a href="./arch_entities.html">Entities</a>: Objects with
+            a unique identity, state and behavior</li>
+            <li>Value Objects</li>
+            <li>Aggregates</li>
+            </ul></li>
+            <li>Application Layer
+            <ul>
+            <li>Services</li>
+            </ul></li>
+            <li>Infrastructure Layer
+            <ul>
+            <li>Repositories</li>
+            <li>Data Source</li>
+            </ul></li>
+            <li>Presentation Layer
+            <ul>
+            <li>Controller</li>
+            </ul></li>
+            </ol>
+            <ul>
+            <li><a
+            href="https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/">https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/</a></li>
+            </ul>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+  </body>
+</html>

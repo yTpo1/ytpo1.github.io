@@ -12,7 +12,6 @@
     </div>
     <div class="content">
       <div class="container-lg">
-        <p>Date: </p>
         <article class="article markdown-body">
           <div class="article-inner">
             <h1 id="classes">Classes</h1>
@@ -71,6 +70,20 @@
             </ul></li>
             </ul></li>
             </ul>
+            <p>Best practices:</p>
+            <ul>
+            <li>Third party APIs. wrapping third-party APIs is a best
+            practice. When you wrap a third-party API, you minimize your
+            dependencies upon it: You can choose to move to a different
+            library in the future without much penalty. Wrapping also
+            makes it easier to mock out third-party calls when you are
+            testing your own code.</li>
+            </ul>
+            <p>One final advantage of wrapping is that you aren’t tied
+            to a particular vendor’s API design choices. You can define
+            an API that you feel comfortable with. In the preceding
+            example, we defined a single exception type for port device
+            failure and found that we could write much cleaner code.</p>
             <p>Bibliography:</p>
             <ul>
             <li>Robert Martin - Clean Code - A Handbook of Agile
@@ -78,6 +91,7 @@
             </ul>
           </div>
         </article>
+        <p>Date: </p>
       </div>
     </div>
   </body>
