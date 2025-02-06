@@ -64,7 +64,8 @@ Language features:
 * [Automatically implemented properties](./cs_auto_implemented_properties.md)
 
 Misc:
-* Working with JSON (files) 
+* [Working with JSON](./cs_json.md)
+* [Serialization and Deserialization](./cs_serialization_deserialization.md)
 * Clean code: [Class organization in C#](./cc_class_organisation_csharp.md)
     * https://www.webdevtutor.net/blog/c-sharp-class-structure-best-practices
 
@@ -74,6 +75,8 @@ WebApps:
 * (Security) Authentication, authorization, claims
 * [Configuration](./cs_web_configuration.md)
 * routing
+* HttpClient
+    * [HTTP request message](./cs_httpclient_http_message.md)
 
 Unit testing:
 * [Naming conventions](./cs_unittest_naming.md)
@@ -91,7 +94,10 @@ Unit testing:
 
 ## IDEs, code editors, etc
 * Visual Studio
+    * Hotkeys
+    * [Snippets](./ide_vs_snippets.md)
 * [VS Code](./ide_vscode.md)
+    * [Hotkeys](./ide_vscode.md##hotkeys)
 * [vim](./ide_vim.md)
 
 ## Computer Networking
@@ -104,6 +110,7 @@ Application Layer Protocols:
         * Bearer
     * Status Codes
     * HTTPS
+    * [Authentication / Authorization - JWT Token](./http_auth_jwt.md)
 * [SSH Protocol](./ssh_protocol.md)
 * [DNS](./dns.md)
 * FTP
@@ -124,10 +131,12 @@ Other:
     * [Socket Exhaustion](./socket_exhaustion.md)
 * Ports
 * Firewall
+    * [Firewall in Linux](./linux_firewall.md)
 * Client - Server (architecture?)
 * Certificates, hosting
 * ['hosts' file](./hosts_file.md)
 * proxy
+* [JWT (JSON Web Token)](./jwt.md)
 
 #### Web servers
 
@@ -158,7 +167,7 @@ Other:
 * [tmux](./tmux.md)
 * [sed](./sed.md)
 * awk
-* grep
+* [grep](./grep.md)
 * chmod 744
 * [pandoc](./pandoc.md)
 * pass
@@ -168,6 +177,7 @@ Other:
 * [Tiling window manager. "i3"](./i3.md)
 * [Program launchers. "rofi", "morc_menu"](./rofi.md)
 * [systemd systemctl](./linux_systemd.md)
+* [Firewall](./linux_firewall.md)
 * package manager
     * pacman
 
@@ -184,7 +194,7 @@ Terminal, shell:
 * [IIS](./iis.md)
     * installation
 * Windows Powershell ISE
-* choklotey
+* Chocolatey (package manager for Windows)
 * linux subsystem installation
 * docker installation
 * to do...

@@ -70,7 +70,7 @@
             <p>Remove the shortest match of a pattern from the
             beginning:</p>
             <div class="sourceCode" id="cb6"><pre
-            class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example: file.gz.md -&gt; gz.md</span></span>
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example: file.gz.html -&gt; gz.html</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="va">${filename</span><span class="op">##</span><span class="pp">*</span>.<span class="va">}</span> </span></code></pre></div>
             <p>Remove the longest match of a pattern from the
             beginning:</p>
@@ -79,11 +79,11 @@
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">${filename</span><span class="op">##</span><span class="pp">*</span>.<span class="va">}</span></span></code></pre></div>
             <p>Remove the shortest match of a pattern from the end:</p>
             <div class="sourceCode" id="cb8"><pre
-            class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example: file.md -&gt; file</span></span>
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example: file.html -&gt; file</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">${file</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span></span></code></pre></div>
             <p>Remove the longest match of a pattern from the end:</p>
             <div class="sourceCode" id="cb9"><pre
-            class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example: file.md -&gt; file</span></span>
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example: file.html -&gt; file</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="va">${file</span><span class="op">%%</span>.<span class="pp">*</span><span class="va">}</span></span></code></pre></div>
             <p>Additional info:</p>
             <ul>
@@ -94,9 +94,9 @@
             </ul>
             <h2 id="for-loops">For loops</h2>
             <p>For each file in current directory with the extension of
-            *.md</p>
+            *.html</p>
             <div class="sourceCode" id="cb10"><pre
-            class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>.md<span class="kw">;</span> <span class="cf">do</span> </span>
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>.html<span class="kw">;</span> <span class="cf">do</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Using double quotes around $file is a good practice in bash scripting.</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Using double quotes ensures that the script handles filenames with spaces or special characters correctly</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-f</span> <span class="st">&quot;</span><span class="va">$file</span><span class="st">&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> </span>

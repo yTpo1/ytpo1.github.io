@@ -15,7 +15,7 @@
         <p>Date: </p>
         <article class="article markdown-body">
           <div class="article-inner">
-            <h1 id="systemd">systemd</h1>
+            <h1 id="systemd-systemctl">systemd, systemctl</h1>
             <p>systemd is a system and service manager for Linux
             operating systems. It is designed to provide a more
             efficient and unified way to manage system processes and
@@ -43,7 +43,53 @@
             <p>To enable/disable a service to start at boot:</p>
             <pre><code>sudo systemctl enable unit-name
 sudo systemctl disable unit-name</code></pre>
-            <h4 id="docs">Docs</h4>
+            <h2 id="journal-and-logging">Journal and Logging</h2>
+            <blockquote>
+            <p>journalctl</p>
+            </blockquote>
+            <p><strong>-r</strong> to see latest logs</p>
+            <h2 id="times">Times</h2>
+            <p><a
+            href="https://coreos.com/os/docs/latest/scheduling-tasks-with-systemd-timers.html">https://coreos.com/os/docs/latest/scheduling-tasks-with-systemd-timers.html</a></p>
+            <h4 id="listing-timers">Listing timers</h4>
+            <p>You can also list all timers enabled in your system
+            using</p>
+            <blockquote>
+            <p>$ systemctl list-timers<br />
+            <strong>--all</strong> to list all timers.</p>
+            </blockquote>
+            <h4 id="enablingstopping-timers">Enabling/Stopping
+            timers</h4>
+            <blockquote>
+            <p>$ systemctl start *.timer<br />
+            $ systemctl stop *.timer</p>
+            </blockquote>
+            <h4 id="creating-timers">Creating timers</h4>
+            <ol type="1">
+            <li>Create a *.service file. Example:</li>
+            </ol>
+            <pre><code>[Unit]
+Description=Prints date into /tmp/date file
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sh -c &#39;/usr/bin/date &gt;&gt; /tmp/date&#39;</code></pre>
+            <ol start="2" type="1">
+            <li>Create *.date file. Example:</li>
+            </ol>
+            <pre><code>[Unit]
+Description=Run date.service every 10 minutes
+
+[Timer]
+OnCalendar=*:0/10</code></pre>
+            <p>This config will run date.service every 10 minutes.</p>
+            <ul>
+            <li><a
+            href="https://twpower.github.io/212-systemd-timer-example-en">https://twpower.github.io/212-systemd-timer-example-en</a></li>
+            </ul>
+            <p>location of timers:<br />
+            /etc/systemd/system/</p>
+            <h1 id="docs">Docs</h1>
             <ul>
             <li><a
             href="https://wiki.archlinux.org/title/Systemd">https://wiki.archlinux.org/title/Systemd</a></li>

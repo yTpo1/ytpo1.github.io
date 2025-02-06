@@ -4,6 +4,7 @@ title: VS Code
 
 # VS Code
 
+## Hotkeys
 Hotkeys:
 * `ctrl + p`: go to file
 * `ctrl + shift + p` open command pallet
@@ -20,3 +21,15 @@ Hotkeys (dependent on plugins):
 
 ## Plugins
 To do...
+
+## Other
+### Custom labels on opened files
+Useful when working on `React Next.js`.
+
+Display directory name only:
+1. Go to settings
+2. Search `custom labels`
+3. Add item
+4. Item: `**/app/**/page.js`
+
+* https://stackoverflow.com/questions/3871270/shortcut-to-create-properties-in-visual-studio

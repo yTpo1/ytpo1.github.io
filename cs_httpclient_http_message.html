@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="creating-a-http-message-in-c">Creating a HTTP
+            message in C#</h1>
+            <p>This assumes that the HttpClient is set up</p>
+            <p><code>GET</code> method request:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> httpRequest <span class="op">=</span> <span class="kw">new</span> <span class="fu">HttpRequestMessage</span><span class="op">(</span>HttpMethod<span class="op">.</span><span class="fu">Get</span><span class="op">,</span> uri<span class="op">);</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a># Attach a header</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>httpRequest<span class="op">.</span><span class="fu">Headers</span><span class="op">.</span><span class="fu">Add</span><span class="op">(</span><span class="st">&quot;Authorization&quot;</span><span class="op">,</span> $<span class="st">&quot;Bearer {accessToken}&quot;</span><span class="op">);</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>HttpResponseMessage response <span class="op">=</span> await _httpClient<span class="op">.</span><span class="fu">SendAsync</span><span class="op">(</span>httpRequest<span class="op">);</span></span></code></pre></div>
+            <p>Assuming the uri is
+            <code>https://api.example.com/users</code> and accessToken
+            is <code>your-access-token</code> the HTTP message will look
+            like this:</p>
+            <pre><code>GET /users HTTP/1.1
+Host: api.example.com
+Authorization: Bearer your-access-token</code></pre>
+            <p><code>POST</code> method request:</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> httpRequest <span class="op">=</span> <span class="kw">new</span> <span class="fu">HttpRequestMessage</span><span class="op">(</span>HttpMethod<span class="op">.</span><span class="fu">Post</span><span class="op">,</span> uri<span class="op">);</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a># Attach a header</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>httpRequest<span class="op">.</span><span class="fu">Headers</span><span class="op">.</span><span class="fu">Add</span><span class="op">(</span><span class="st">&quot;Authorization&quot;</span><span class="op">,</span> $<span class="st">&quot;Bearer {accessToken}&quot;</span><span class="op">);</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a># Create the body content</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> contentBody <span class="op">=</span> await JsonConvert<span class="op">.</span><span class="fu">SerializeObjectAsync</span><span class="op">(</span><span class="kw">new</span> <span class="op">{</span> Username <span class="op">=</span> <span class="st">&quot;foo&quot;</span> <span class="op">});</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> httpRequestContent <span class="op">=</span> <span class="kw">new</span> <span class="fu">StringContent</span><span class="op">(</span>contentBody<span class="op">,</span> Encoding<span class="op">.</span><span class="fu">UTF8</span><span class="op">,</span> <span class="st">&quot;application/json&quot;</span><span class="op">);</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a># Attach the content to the body of the HTTP message</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>httpRequest<span class="op">.</span><span class="fu">Content</span> <span class="op">=</span> httpRequestContent<span class="op">;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>HttpResponseMessage response <span class="op">=</span> await _httpClient<span class="op">.</span><span class="fu">SendAsync</span><span class="op">(</span>httpRequest<span class="op">);</span></span></code></pre></div>
+            <p>Assuming the uri is
+            <code>https://api.example.com/users</code> and accessToken
+            is <code>your-access-token</code> the HTTP message will look
+            like this:</p>
+            <pre><code>POST /users HTTP/1.1
+Host: api.example.com
+Authorization: Bearer your-access-token
+Content-Type: application/json; charset=utf-8
+Content-Length: 20
+
+{
+    &quot;Username&quot;: &quot;foo&quot;
+}</code></pre>
+            <p><code>Content-Length</code>: specifies the length of the
+            request body in bytes</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

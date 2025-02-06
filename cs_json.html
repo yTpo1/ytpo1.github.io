@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="json-in-c">JSON in C#</h1>
+            <p>Additional:</p>
+            <ul>
+            <li><a href="./cs_json.html">Working with JSON in C#</a></li>
+            </ul>
+            <h3 id="serialization">Serialization</h3>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">.</span><span class="fu">Text</span><span class="op">.</span><span class="fu">Json</span><span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> person <span class="op">=</span> <span class="kw">new</span> Person <span class="op">{</span> Name <span class="op">=</span> <span class="st">&quot;John&quot;</span><span class="op">,</span> Age <span class="op">=</span> <span class="dv">30</span> <span class="op">};</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> jsonString <span class="op">=</span> JsonSerializer<span class="op">.</span><span class="fu">Serialize</span><span class="op">(</span>person<span class="op">);</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>jsonString<span class="op">);</span> <span class="co">// Output: {&quot;Name&quot;:&quot;John&quot;,&quot;Age&quot;:30 }</span></span></code></pre></div>
+            <h3 id="deserialization">Deserialization</h3>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">.</span><span class="fu">Text</span><span class="op">.</span><span class="fu">Json</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> jsonString <span class="op">=</span> <span class="st">&quot;{</span><span class="sc">\&quot;</span><span class="st">Name</span><span class="sc">\&quot;</span><span class="st">:</span><span class="sc">\&quot;</span><span class="st">John</span><span class="sc">\&quot;</span><span class="st">,</span><span class="sc">\&quot;</span><span class="st">Age</span><span class="sc">\&quot;</span><span class="st">:30 }&quot;</span><span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> person <span class="op">=</span> JsonSerializer<span class="op">.</span><span class="fu">Deserialize</span><span class="op">&lt;</span>Person<span class="op">&gt;(</span>jsonString<span class="op">);</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>person<span class="op">.</span><span class="fu">Name</span><span class="op">);</span> <span class="co">// Output: John</span></span></code></pre></div>
+            <h2 id="jsonproperty-attribute">JsonProperty Attribute</h2>
+            <p>The <code>[JsonProperty("name")]</code> attribute is part
+            of the JSON library and is used to control the serialization
+            and deserialization of JSON data in C#. This attribute is
+            applied to a property in a class to specify how it should be
+            mapped to a JSON property.</p>
+            <p>This attribute is particularly useful when the JSON
+            property names do nto math the C# property names, or when
+            you want to control the JSON output format.</p>
+            <h2
+            id="aspnet-targeting-net-framework-and-aspnet-core">ASP.NET
+            (targeting .NET Framework) and ASP.NET Core</h2>
+            <p>JSON Libraries</p>
+            <ol type="1">
+            <li>ASP.NET (targeting .NET Framework)
+            <ul>
+            <li><strong>Newtonsoft.Json (JSON.NET)</strong>: This is the
+            most commonly used library for JSON serialization and
+            deserialization in ASP.NET applications targeting the .NET
+            Framework. It provides a rich set of features and is highly
+            configurable.</li>
+            </ul></li>
+            <li>ASP.NET Core
+            <ul>
+            <li><strong>System.Text.Json</strong>: Starting with .NET
+            Core 3.0, System.Text.Json is the default JSON library for
+            ASP.NET Core. It is a high-performance, low-overhead library
+            that is part of the .NET runtime.</li>
+            <li><strong>Newtonsoft.Json (JSON.NET)</strong>: Can also be
+            used if required</li>
+            </ul></li>
+            </ol>
+            <h2 id="is-the-tostring-method-on-a-object-serialization">Is
+            the .ToString() method on a object serialization?</h2>
+            <p>No, calling the .ToString method on an anonymous object
+            like <code>new { bla = "asdf" }</code> does not perform
+            serialization. Instead, it returns a string representation
+            of the object's type and property values. This string
+            representation is primarily intended for debugging purposes
+            and is not a proper serialization format like JSON or
+            XML.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

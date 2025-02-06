@@ -26,8 +26,10 @@
             <li><code>/</code>: Delimiters that separate the pattern and
             the replacement.</li>
             </ul>
-            <p>Example:</p>
-            <pre><code>&#39;s/\.md&quot;/\.html&quot;/g&#39;</code></pre>
+            <p>Example, convert <code>(foo.html)</code> to
+            <code>(foo.html)</code>:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="at">-i</span> <span class="st">&#39;s/\.html&quot;/\.html&quot;/g&#39;</span></span></code></pre></div>
             <ul>
             <li><code>\.html"</code>: The pattern to search for. Here:
             <ul>
@@ -39,6 +41,21 @@
             <li><code>g</code>: The global flag. It tells sed to replace
             all occurrences of the pattern in each line, not just for
             the first one.</li>
+            </ul>
+            <p>Example, convert <code>(foo.html#topic)</code> to
+            <code>(foo.html#topic)</code>:</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="at">-i</span> <span class="st">&#39;s/\.html\(#*\)/\.html\1/g&#39;</span> <span class="va">${file</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span>.html</span></code></pre></div>
+            <ul>
+            <li><code>s/</code>: Start the substitution command</li>
+            <li><code>\.html\(#*\)/</code>: The search pattern.
+            <code>\.</code> matches a literal dot, <code>md</code>
+            matches the string "md", and <code>\(#*\)</code> captures
+            zero or more <code>#</code> characters</li>
+            <li><code>.html\1/</code>: The replacement pattern.
+            <code>.html</code> is the replacement string, and
+            <code>\1</code> refers to the captured group of
+            <code>#</code> characters.</li>
             </ul>
           </div>
         </article>

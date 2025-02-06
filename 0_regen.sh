@@ -10,7 +10,8 @@ for file in *.md; do
         pandoc --standalone --template 0_template.html "$file" -f gfm -o ${file%.*}.html
 
         # Repalace all .md links with .html
-        sed -i 's/\.md"/\.html"/g' ${file%.*}.html
+        # sed -i 's/\.md"/\.html"/g' ${file%.*}.html
+        sed -i 's/\.md\(#*\)/\.html\1/g' ${file%.*}.html
         #sed -i 's/\/\/.md"/\/\.html"/g' ${file%.*}.html # doesn't work
 
         printf "."

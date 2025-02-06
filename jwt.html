@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <p>Date: </p>
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="jwt">JWT</h1>
+            <p>JWT (JSON Web Token), is a compact, URL-sage means of
+            representing claims to be transferred between two parties.
+            The claims in a JWT are encoded as a JSON object that is
+            used as the payload of a JSON Web Signature (JWS) structure
+            or as the plaintext of a JSON Web Encryption (JWE)
+            structure, enabling the claims to be digitally signed or
+            integrity protected with a MEssage Authentication Code (MAC)
+            and/or encrypted.</p>
+            <p>A JWT consists of three parts, separated by dots (.):</p>
+            <ol type="1">
+            <li><strong>Header</strong>: Contains metadata about the
+            token, such as the type of token (JWT) and the signing
+            algorithm used (e.g., HMAC SHA256 or RSA).</li>
+            <li><strong>Payload</strong>: Contains the claims. Claims
+            are statements about an entity (typically, the user) and
+            additional data. There are three types of claims:
+            <ul>
+            <li><strong>Registered claims</strong>: Predefined claims
+            that are not mandatory but recommended, such as
+            <code>iis</code> (issuer), <code>exp</code> (expiration
+            time), <code>sub</code> (subject), and <code>aud</code>
+            (audience).</li>
+            <li><strong>Public claims</strong>: Custom claims that can
+            be defined by the user.</li>
+            <li><strong>Private claims</strong>: Custom claims created
+            to share information between parties that agree on using
+            them.</li>
+            </ul></li>
+            <li><strong>Signature</strong>: Used to verify that the
+            sender of the JWT is who it says it is and to ensure that
+            the message wasn't changed along the way. The signature is
+            created by taking the encoded header, the encoded payload, a
+            secret, and the algorithm specified in the header, and
+            signing them.</li>
+            </ol>
+            <p>Example of a JWT:</p>
+            <pre><code>to do...</code></pre>
+            <ul>
+            <li><strong>Header</strong>:</li>
+            <li><strong>Payload</strong>:</li>
+            <li><strong>Signature</strong>:</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
