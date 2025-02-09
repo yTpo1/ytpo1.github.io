@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="naming-meaningful-names">Naming (Meaningful
+            Names)</h1>
+            <h3 id="use-intention-revealing-names">Use
+            Intention-Revealing Names</h3>
+            <p>The name of a variable, function, or class, should answer
+            all the big questions. It should tell you why it exists,
+            what it does, and how it is used. If a name requires a
+            comment, then the name does not reveal its intent.</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> d<span class="op">;</span> <span class="co">// elapsed time in days</span></span></code></pre></div>
+            <p>The name d reveals nothing. It does not evoke a sense of
+            elapsed time, nor of days. We should choose a name that
+            specifies what is being measured and the unit of that
+            measurement:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> elapsedTimeInDays<span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> daysSinceCreation<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> daysSinceModification<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> fileAgeInDays<span class="op">;</span></span></code></pre></div>
+            <p>Bad example:</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> List<span class="op">&lt;</span><span class="dt">int</span><span class="op">[]&gt;</span> <span class="fu">getThem</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    List<span class="op">&lt;</span><span class="dt">int</span><span class="op">[]&gt;</span> list1 <span class="op">=</span> <span class="kw">new</span> ArrayList<span class="op">&lt;</span><span class="dt">int</span><span class="op">[]&gt;();</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span><span class="op">[]</span> x <span class="op">:</span> theList<span class="op">)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>x<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">==</span> <span class="dv">4</span><span class="op">)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>            list1<span class="op">.</span><span class="fu">add</span><span class="op">(</span>x<span class="op">);</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> list1<span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+            <p>Good example:</p>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> List<span class="op">&lt;</span><span class="dt">int</span><span class="op">[]&gt;</span> <span class="fu">getFlaggedCells</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    List<span class="op">&lt;</span><span class="dt">int</span><span class="op">[]&gt;</span> flaggedCells <span class="op">=</span> <span class="kw">new</span> ArrayList<span class="op">&lt;</span><span class="dt">int</span><span class="op">[]&gt;();</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span><span class="op">[]</span> cell <span class="op">:</span> gameBoard<span class="op">)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>cell<span class="op">[</span>STATUS_VALUE<span class="op">]</span> <span class="op">==</span> FLAGGED<span class="op">)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            flaggedCells<span class="op">.</span><span class="fu">add</span><span class="op">(</span>cell<span class="op">);</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> flaggedCells<span class="op">;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+            <p>We can go further and write a simple class for cells
+            instead of using an array of ints. It can include an
+            intention-revealing function (call it isFlagged) to hide the
+            magic numbers. It results in a new version of the
+            function:</p>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> List<span class="op">&lt;</span>Cell<span class="op">&gt;</span> <span class="fu">getFlaggedCells</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    List<span class="op">&lt;</span>Cell<span class="op">&gt;</span> flaggedCells <span class="op">=</span> <span class="kw">new</span> ArrayList<span class="op">&lt;</span>Cell<span class="op">&gt;();</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> <span class="op">(</span>Cell cell <span class="op">:</span> gameBoard<span class="op">)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>cell<span class="op">.</span><span class="fu">isFlagged</span><span class="op">())</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            flaggedCells<span class="op">.</span><span class="fu">add</span><span class="op">(</span>cell<span class="op">);</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> flaggedCells<span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+            <h3 id="avoid-disinformation">Avoid Disinformation</h3>
+            <p>Do not refer to a grouping of accounts as an accountList
+            unless it’s actually a List. The word list means something
+            specific to programmers. If the container holding the
+            accounts is not actually a List, it may lead to false
+            conclusions.1 So accountGroup or bunchOfAccounts or just
+            plain accounts would be better.</p>
+            <h3 id="make-meaningful-distinctions">Make Meaningful
+            Distinctions</h3>
+            <p>Number-series naming (a1, a2, .. aN) is the opposite of
+            intentional naming. Such names are not disinformative—they
+            are noninformative; they provide no clue to the author’s
+            intention. Consider:</p>
+            <div class="sourceCode" id="cb6"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">static</span> <span class="dt">void</span> <span class="fu">copyChars</span><span class="op">(</span><span class="dt">char</span> a1<span class="op">[],</span> <span class="dt">char</span> a2<span class="op">[])</span> <span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> a1<span class="op">.</span><span class="fu">length</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        a2<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> a1<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+            <p>This function reads much better when source and
+            destination are used for the argument names.</p>
+            <p>Don't differentiate between similar variables with
+            prefixes or words that mean the same thing:</p>
+            <div class="sourceCode" id="cb7"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> money<span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> theMoney<span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Or</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> ProductInfo<span class="op">;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> ProductData<span class="op">;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">// Or</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">getActiveAccount</span><span class="op">();</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">getActiveAccounts</span><span class="op">();</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">getActiveAccountInfo</span><span class="op">();</span></span></code></pre></div>
+            <h3 id="use-pronounceable-names">Use Pronounceable
+            Names</h3>
+            <div class="sourceCode" id="cb8"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> DtaRcrd102 <span class="op">{</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> Date genymdhms<span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> Date modymdhms<span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> final String pszqint <span class="op">=</span> <span class="st">&quot;102&quot;</span><span class="op">;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">/* ... */</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">// VS</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Customer <span class="op">{</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> Date generationTimestamp<span class="op">;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> Date modificationTimestamp<span class="op">;;</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> final String recordId <span class="op">=</span> <span class="st">&quot;102&quot;</span><span class="op">;</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">/* ... */</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
+            <h3 id="dont-include-the-type-in-the-name">Don't include the
+            type in the name</h3>
+            <div class="sourceCode" id="cb9"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>PhoneNumber phoneString<span class="op">;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">// name not changed when type changed!</span></span></code></pre></div>
+            <h3 id="dont-use-single-letter-variable-names">Don't use
+            single-letter variable names.</h3>
+            <p>Certainly a loop counter may be named i or j or k (though
+            never l!) if its scope is very small and no other names can
+            conflict with it. This is because those single-letter names
+            for loop counters are traditional. However, in most other
+            contexts a single-letter name is a poor choice; it’s just a
+            place holder that the reader must mentally map to the actual
+            concept. There can be no worse reason for using the name c
+            than because a and b were already taken.</p>
+            <h3 id="class-names">Class Names</h3>
+            <p>Classes and objects should have noun or noun phrase names
+            like Customer, WikiPage, Account, and AddressParser. Avoid
+            words like Manager, Processor, Data, or Info in the name of
+            a class. A class name should not be a verb.</p>
+            <h3 id="method-names">Method Names</h3>
+            <p>Methods should have verb or verb phrase names like
+            postPayment, deletePage, or save. Accessors, mutators, and
+            predicates should be named for their value and prefixed with
+            get, set, and is according to the javabean standard.</p>
+            <div class="sourceCode" id="cb10"><pre
+            class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>string name <span class="op">=</span> employee<span class="op">.</span><span class="fu">getName</span><span class="op">();</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>customer<span class="op">.</span><span class="fu">setName</span><span class="op">(</span><span class="st">&quot;mike&quot;</span><span class="op">);</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>paycheck<span class="op">.</span><span class="fu">isPosted</span><span class="op">())</span><span class="kw">...</span></span></code></pre></div>
+            <h3 id="choose-clarity">Choose clarity.</h3>
+            <p>Smart programmer VS A professional programmer One
+            difference between a smart programmer and a professional
+            programmer is that the professional understands that clarity
+            is king. Professionals use their powers for good and write
+            code that others can understand.</p>
+            <p>Choose clarity over entertainment value.</p>
+            <p>Our goal, as authors, is to make our code as easy as
+            possible to understand. We want our code to be a quick skim,
+            not an intense study.</p>
+            <h1 id="source">Source</h1>
+            <ul>
+            <li>Robert Martin - Clean Code - A Handbook of Agile
+            Software Craftsmanship - 2008. Chapter 2: Meaningful
+            Names</li>
+            </ul>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+  </body>
+</html>

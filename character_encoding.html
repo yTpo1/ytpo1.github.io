@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="character-encoding">Character Encoding</h1>
+            <p>Character encoding is a system that pairs each character
+            in a character set with a specific numeric value (code pint)
+            that can be used to represent the character in digital form.
+            THis allows text to be stored, transmitted, and rendered
+            consistently.</p>
+            <p><strong>Common Character Encodings</strong>:</p>
+            <ul>
+            <li><strong>ASCII</strong>: A code unit in ASCII consists of
+            7 bits; It represents 128 characters, including English
+            letters, digits, and control characters. LImited to basic
+            English text.</li>
+            <li><strong>UTF-8</strong>: A code unit in UTF-8, EBCDIC and
+            GB 18030 consists of 8 bits; It is backward-compatible with
+            ASCII and is the most widely used encoding on the web.</li>
+            </ul>
+            <p>The most popular character encoding on the World Wide Web
+            is UTF-8, which is used in 98.2% of surveyed web sites, as
+            of May 2024. <a
+            href="https://en.wikipedia.org/wiki/Character_encoding">src</a></p>
+            <p><strong>Specifying Character Encoding in HTML</strong> To
+            ensure that your web pages are displayed correctly, you
+            should specify the character encoding in your HTML
+            documents.</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">&quot;UTF-8&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+            <p><strong>Character Encoding in HTTP Headers</strong> The
+            character encoding can also be specified in the HTTP headers
+            sent by the server. This is done using the
+            <code>Content-Type</code> header:</p>
+            <pre><code>Content-Type: text/html; charset=UTF-8</code></pre>
+            <p><strong>Handling character Encoding in .NET</strong> In
+            .NET, you can specify the character encoding when reading or
+            writing text files, handling HTTP responses, working with
+            streams. For example, when writing a response in an ASP.NET
+            Core application:</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> IActionResult <span class="fu">GetExample</span><span class="op">()</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> content <span class="op">=</span> <span class="st">&quot;Hello world!&quot;</span><span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> <span class="fu">Content</span><span class="op">(</span>content<span class="op">,</span> <span class="st">&quot;text/plain&quot;</span><span class="op">,</span> Encoding<span class="op">.</span><span class="fu">UTF8</span><span class="op">)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+            <p><strong>Common Issues:</strong></p>
+            <ul>
+            <li><strong>Mojibake</strong>: Garbled text that appears
+            when text is decoded using the wrong character
+            encoding.</li>
+            </ul>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+  </body>
+</html>

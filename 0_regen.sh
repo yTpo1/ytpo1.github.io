@@ -1,6 +1,6 @@
 #!/bin/bash
 
-notes_dir=ytpo1.github.io
+notes_dir=~/Dropbox/ytpo1.github.io
 server_dir=/srv/http
 
 printf "Updating. Progress: "

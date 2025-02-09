@@ -2,6 +2,8 @@
 
 * [Class organization in C#](./cc_class_organisation_csharp.md)
 
+* [Naming](./cc_naming.md###Class-Names)
+
 * Encapsulation
     * Keep variables and utility functions private. Use protected sometimes, for example to be able to unit-test it.
 

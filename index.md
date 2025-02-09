@@ -2,18 +2,35 @@
 title: Tech notes
 ---
 
-## Programming
-(Concepts?)
+## Programming 23
+(?Concepts?)
 
 Data:
+* Data Structures
+    * Key Value pairs
+    * List
+* Algorithms
+* [Character Encoding](./character_encoding.md)
 * [Serialization and Deserialization](./serialization_deserialization.md)
 
+* Abstraction.
+    * Levels of abstraction
+    * Abstracting complexity behind simple interfaces.
+
 ### Clean Code
-* ch 3. Functions
+* [Naming](./cc_naming.md)
+* [Functions](./cc_functions.md)
 * ch 6. Objects and Data structures
 * [ch 7. Exceptions](./cc_exceptions.md)
 * ch 9. Unit tests
 * [ch 10. Classes](./cc_classes.md)
+* General
+    * G25: Replace magic numbers with named constants
+    * broken windows: They used the metaphor of broken windows.3 A building with broken windows looks like nobody cares about it. So other people stop caring. They allow more windows to become broken. Eventually they actively break them. They despoil the facade with graffiti and allow garbage to collect. One broken window starts the process toward decay.
+    * The Boy Scout Rule: Leave the campground cleaner than you found it.
+        * If we all checked-in our code a little cleaner than when we checked it out, the code simply could not rot. The cleanup doesn’t have to be something big. Change one variable name for the better, break up one function that’s a little too large, eliminate one small bit of duplication, clean up one composite if statement.
+    * G23: Prefer Polymorphism to If/Else or Switch/Case
+
 
 * https://gist.github.com/cedrickchee/55ecfbaac643bf0c24da6874bf4feb08
 * https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29
@@ -22,6 +39,8 @@ Data:
     * KISS
     * [Single Responsibility Principle (SRP)](./single_responsibility_principle.md)
     * Open Closed Principle (OCP)
+
+Takes time but saves more than it takes
 
 ### Architecture
 * [Clean Architecture](./arch_clean_architecture.md)
@@ -80,11 +99,6 @@ Unit testing:
 * React
     * Next.js
 * ESLint
-
-### Scripting
-* [bash scripting](./bash_scripting.md)
-* [Powershell scripting](./powershell_scripting.md)
-* [zsh scripting](./zsh_scripting.md)
 
 ### Web
 * [HTML](./html.md)
@@ -170,12 +184,14 @@ Other:
 * [pandoc](./pandoc.md)
 * pass
 * rsync
+* scp
 
 ## Linux System
 * [Tiling window manager. "i3"](./i3.md)
 * Status bar "i3blocks"
 * [Program launchers. "rofi", "morc_menu"](./rofi.md)
 * [systemd systemctl](./linux_systemd.md)
+* [Environment Variables. Linux](./environment_variables.md##linux)
 * [Firewall](./linux_firewall.md)
 * package manager
     * pacman
@@ -184,6 +200,10 @@ Other:
 Terminal, shell:
 * [ST terminal](./st.md)
 * [zsh shell](./zsh.md)
+
+### Scripting
+* [bash scripting](./bash_scripting.md)
+* [zsh scripting](./zsh_scripting.md)
 
 ## Windows System
 * Event Viewer
@@ -198,16 +218,20 @@ Terminal, shell:
     * Initial system install script
 * linux subsystem installation
 * docker installation
+* [Environment Variables. Windows](./environment_variables.md##windows)
 * to do...
+
+### Scripting
+* [Powershell scripting](./powershell_scripting.md)
 
 ## Security. Encryption. Decryption
 * [SSH Protocol](./ssh_protocol.md)
 * SSH Keys
     * [SSH agent](./ssh_agent.md)
 * OpenSSH
+* GPG
 
 ## Other
-* [Environment Variables](./environment_variables.md)
 * [markdown](./markdown.md)
 * [Software developers library](./library.md)
 
