@@ -2,7 +2,7 @@
 title: Tech notes
 ---
 
-## Programming 23
+## Programming
 (?Concepts?)
 
 Data:
@@ -11,6 +11,7 @@ Data:
     * List
 * Algorithms
 * [Character Encoding](./character_encoding.md)
+* [Date Standards. ISO 8601, UTC](./date_standads.md)
 * [Serialization and Deserialization](./serialization_deserialization.md)
 
 * Abstraction.
@@ -72,10 +73,17 @@ Language features:
 * [Automatically implemented properties](./cs_auto_implemented_properties.md)
 
 Misc:
+* [LINQ](./cs_linq.md)
 * [Working with JSON](./cs_json.md)
 * [Serialization and Deserialization](./cs_json.md)
 * Clean code: [Class organization in C#](./cc_class_organisation_csharp.md)
     * https://www.webdevtutor.net/blog/c-sharp-class-structure-best-practices
+* Generics
+
+Networking:
+* [URIs, URLs...](./cs_uris.md)
+* HttpClient
+    * [HTTP request message](./cs_httpclient_http_message.md)
 
 WebApps:
 * Dependency Injection
@@ -83,10 +91,9 @@ WebApps:
 * (Security) Authentication, authorization, claims
 * [Configuration](./cs_web_configuration.md)
 * routing
-* HttpClient
-    * [HTTP request message](./cs_httpclient_http_message.md)
 
 Unit testing:
+* xUnit
 * [Naming conventions](./cs_unittest_naming.md)
 * Fluent Assertions
 * [Mocking](./cs_mocking.md)
@@ -106,7 +113,7 @@ Unit testing:
 
 ## IDEs, code editors, etc
 * Visual Studio
-    * Hotkeys
+    * [Hotkeys](./ide_vs_hotkeys.md)
     * [Snippets](./ide_vs_snippets.md)
 * [VS Code](./ide_vscode.md)
     * [Hotkeys](./ide_vscode.md##hotkeys)
@@ -170,6 +177,9 @@ Other:
     * [Installation](./mariadb_install.md)
 * [Sqlite](./sqlite.md)
 * [MS SQL Server](./ms_sql_server.md)
+
+Other:
+* [SQL language](./sql_language.md)
 
 ## Command line tools
 * [Basic shell commands](shell_commands.md)

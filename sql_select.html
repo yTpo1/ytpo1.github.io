@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="sql-select">SQL. SELECT</h1>
+            <h2 id="group-by-clause"><code>GROUP BY</code> clause</h2>
+            <p>The <code>GROUP BY</code> clause is used to group rows
+            that have the same values in specified columns into summary
+            rows. It is often used in conjunction with aggregate
+            functions such as <code>COUNT</code>, <code>SUM</code>,
+            <code>AVG</code>, <code>MAX</code>, AND <code>MIN</code> to
+            perform operations on each group of rows.</p>
+            <p><strong>Purpose</strong>:</p>
+            <ul>
+            <li><strong>Grouping Data</strong>: It allows you to group
+            rows that share a common value in one or more columns.</li>
+            <li><strong>Aggregating Data</strong>: It enables you to
+            perform aggregate calculation on each group, such as summing
+            values or counting rows.</li>
+            </ul>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode sql"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> column1, aggregate_function(column2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table_name</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> column1;</span></code></pre></div>
+            <p><strong>Example</strong> Consider a table named
+            <code>Order</code> with the following columns:</p>
+            <ul>
+            <li><code>OrderID</code>: unique identifier for each
+            order</li>
+            <li><code>CustomerID</code>: Identifier for the customer who
+            placed the order</li>
+            <li><code>OrderAmount</code>: The amount of the order</li>
+            </ul>
+            <table>
+            <thead>
+            <tr class="header">
+            <th>OrderID</th>
+            <th>CustomerID</th>
+            <th>OrderAmount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>1</td>
+            <td>1</td>
+            <td>100</td>
+            </tr>
+            <tr class="even">
+            <td>2</td>
+            <td>2</td>
+            <td>200</td>
+            </tr>
+            <tr class="odd">
+            <td>3</td>
+            <td>1</td>
+            <td>150</td>
+            </tr>
+            <tr class="even">
+            <td>4</td>
+            <td>3</td>
+            <td>300</td>
+            </tr>
+            <tr class="odd">
+            <td>5</td>
+            <td>2</td>
+            <td>250</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>To find the total order amount for each customer, you can
+            used the <code>GROUP BY</code> clause with the
+            <code>SUM</code> aggregate function:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> CustomerId, <span class="fu">SUM</span>(OrderAmount) <span class="kw">As</span> TotalOrderAmount</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Orders</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> CustomerId;</span></code></pre></div>
+            <table>
+            <thead>
+            <tr class="header">
+            <th>CustomerID</th>
+            <th>TotalOrderAmount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>1</td>
+            <td>250</td>
+            </tr>
+            <tr class="even">
+            <td>2</td>
+            <td>450</td>
+            </tr>
+            <tr class="odd">
+            <td>3</td>
+            <td>300</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Explanation of <code>GROUP BY CustomerId</code>: Groups
+            the results by <code>CustomerId</code>, so the
+            <code>SUM</code> function is applied to each group of the
+            rows with the same <code>CustomerID</code>.</p>
+            <p>The <code>GROUP BY</code> clause is essential for
+            summarizing data and generating reports in SQL.</p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+  </body>
+</html>

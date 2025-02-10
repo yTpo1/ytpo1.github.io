@@ -2,7 +2,7 @@
 
 * `ctrl + k, ctrl + x`: mapped to Edit.InsertSnippet and shows you the full list of snippets available.
 
-Type in the snippet and press tab twice.
+Type in the snippetId and press tab twice.
 
 `ctor`
 ```cs
