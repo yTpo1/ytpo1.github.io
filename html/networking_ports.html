@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="port">Port</h1>
+            <p>A port is a numerical identifier in networking used to
+            specify a particular process or service on a device. It
+            allows multiple services or applications to run on the same
+            IP address by directing incoming data to the appropriate
+            application based on the port number. Here’s a detailed
+            explanation:</p>
+            <h4 id="key-characteristics-of-ports">Key Characteristics of
+            Ports</h4>
+            <ol type="1">
+            <li><strong>Numerical Identifier:</strong>
+            <ul>
+            <li>Ports are represented by numbers ranging from 0 to
+            65535. They are categorized into three main ranges:
+            <ul>
+            <li><strong>Well-Known Ports (0-1023):</strong> Reserved for
+            commonly used protocols, e.g.:
+            <ul>
+            <li>HTTP on port 80</li>
+            <li>HTTPS on port 443</li>
+            <li>FTP on port 21</li>
+            <li>SSH on port 22</li>
+            </ul></li>
+            </ul></li>
+            <li><strong>Registered Ports (1024-49151):</strong> Used by
+            software applications that are not as common as those using
+            well-known ports but still need to be recognized (e.g.,
+            Microsoft SQL Server uses port 1433).</li>
+            <li><strong>Dynamic/Private Ports (49152-65535):</strong>
+            Typically used for dynamic assignment by applications,
+            especially for client-side communication.</li>
+            </ul></li>
+            <li><strong>Role in Networking:</strong>
+            <ul>
+            <li>Ports act as communication endpoints for each service
+            running on a networked device. When data packets arrive at a
+            device's IP address, the port number helps determine which
+            application or service should handle the data.</li>
+            </ul></li>
+            <li><strong>TCP and UDP:</strong>
+            <ul>
+            <li>Ports can be associated with either the Transmission
+            Control Protocol (TCP) or the User Datagram Protocol (UDP).
+            <ul>
+            <li>TCP Ports: Used for connection-oriented communication,
+            ensuring reliable data transmission.</li>
+            <li>UDP Ports: Used for connectionless communication,
+            suitable for applications where speed is more critical than
+            reliability (e.g., streaming).</li>
+            </ul></li>
+            </ul></li>
+            </ol>
+            <h4 id="example-of-port-usage">Example of Port Usage</h4>
+            <ul>
+            <li><strong>Web Server:</strong> When you access a website,
+            your browser typically communicates with a web server on
+            port 80 (HTTP) or port 443 (HTTPS). The server listens on
+            these ports for incoming requests and responds
+            accordingly.</li>
+            <li><strong>Email Server:</strong> An email client might
+            connect to a mail server on port 25 (SMTP) for sending
+            emails or port 143 (IMAP) for retrieving emails.</li>
+            </ul>
+            <h4 id="summary">Summary</h4>
+            <p>A port is a crucial component in networking, enabling
+            multiple applications to communicate over the same IP
+            address by directing traffic to the appropriate service
+            based on the port number. Understanding ports is essential
+            for network configuration, security, and
+            troubleshooting.</p>
+            <h4 id="well-known-ports">Well-known Ports</h4>
+            <p><a
+            href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers">https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers</a></p>
+            <ul>
+            <li>7 - Echo Protocol</li>
+            <li>20 - File Transfer Protocol (FTP) data transfer</li>
+            <li>21 - File Transfer Protocol (FTP) control (command)</li>
+            <li>22 - Secure Shell (SSH), secure logins, file transfers
+            (scp, sftp) and port forwarding</li>
+            <li>25 - Simple Mail Transfer Protocol (SMTP), used for
+            email routing between mail servers</li>
+            <li>80 - Hypertext Transfer Protocol (HTTP) uses TCP in
+            versions 1.x and 2. HTTP/3 uses QUIC, a transport protocol
+            on top of UDP.</li>
+            <li>109 - Post Office Protocol, version 2 (POP2)</li>
+            <li>110 - Post Office Protocol, version 3 (POP3)</li>
+            <li>143 - Internet Message Access Protocol (IMAP),
+            management of electronic mail messages on a server</li>
+            <li>220 - Internet Message Access Protocol (IMAP), version
+            3</li>
+            <li>443 - Hypertext Transfer Protocol Secure (HTTPS) uses
+            TCP in versions 1.x and 2. HTTP/3 uses QUIC, a transport
+            protocol on top of UDP.</li>
+            </ul>
+            <h1 id="source">Source</h1>
+            <p>Poe the AI</p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+  </body>
+</html>

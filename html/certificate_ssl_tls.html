@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="what-is-an-ssltls-certificate">What is an SSL/TLS
+            Certificate?</h1>
+            <ul>
+            <li><p><strong>Definition:</strong> An SSL (Secure Sockets
+            Layer) or TLS (Transport Layer Security) certificate is a
+            digital certificate that authenticates the identity of a
+            website and enables an encrypted connection between the web
+            server and the user's browser.</p></li>
+            <li><p><strong>Purpose:</strong> Certificates ensure that
+            data transmitted between the user and the server is secure
+            and that the website is genuine, helping to establish
+            trust.</p></li>
+            <li><p>When a website is hosted, the SSL/TLS certificate
+            must be installed on the web server. This allows the server
+            to establish secure connections using HTTPS.</p></li>
+            <li><p><strong>Domain Validation:</strong> To obtain a
+            certificate, the domain owner must prove ownership of the
+            domain. This is typically done through a validation process
+            by the certificate authority (CA).</p></li>
+            </ul>
+            <h4 id="types-of-certificate-validation">Types of
+            Certificate Validation:</h4>
+            <ul>
+            <li><strong>Domain Validated (DV):</strong> Basic
+            validation; verifies ownership of the domain.</li>
+            <li><strong>Organization Validated (OV):</strong> Includes
+            verification of the organization behind the website.</li>
+            <li><strong>Extended Validation (EV):</strong> Provides the
+            highest level of assurance, requiring extensive verification
+            of the organization.</li>
+            </ul>
+            <h4 id="connection-to-routing">Connection to Routing</h4>
+            <ul>
+            <li><strong>Secure Routing:</strong> When a user enters a
+            URL starting with https://, the browser requests a secure
+            connection to the server. The server presents its SSL/TLS
+            certificate during the connection process.</li>
+            <li><strong>SSL Handshake:</strong> This process involves
+            the browser and server exchanging cryptographic keys to
+            establish a secure session. The certificate is used to
+            authenticate the server's identity, ensuring that the user
+            is connecting to the intended website and not an
+            imposter.</li>
+            <li><strong>Trust Chain:</strong> Certificates are issued by
+            trusted certificate authorities (CAs). Browsers come
+            preloaded with a list of trusted CAs. If the certificate is
+            valid and signed by a trusted CA, the browser establishes a
+            secure connection.</li>
+            </ul>
+            <h1 id="source">Source</h1>
+            <p>Poe the AI</p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+  </body>
+</html>

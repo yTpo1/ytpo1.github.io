@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="virtual-hosting-virtual-domain-name-hosting">Virtual
+            Hosting (virtual domain name hosting)</h1>
+            <p>When a hostname is provided, multiple websites can be
+            hosted on the same server through a process known as virtual
+            hosting. This allows a single server to serve different
+            websites, enabling efficient resource use and cost savings.
+            Here’s how it works:</p>
+            <h4 id="key-concepts-of-virtual-hosting">Key Concepts of
+            Virtual Hosting</h4>
+            <ol type="1">
+            <li><strong>IP Address vs. Hostname:</strong>
+            <ul>
+            <li>Each website can be accessed through its unique hostname
+            (e.g., <a href="http://www.example.com">www.example.com</a>,
+            <a
+            href="http://www.anotherexample.com">www.anotherexample.com</a>),
+            but they can share the same IP address. This is made
+            possible by the Domain Name System (DNS), which translates
+            hostnames into IP addresses.</li>
+            </ul></li>
+            <li><strong>Types of Virtual Hosting:</strong>
+            <ul>
+            <li><strong>Name-Based Virtual Hosting:</strong>
+            <ul>
+            <li>The server uses the hostname in the HTTP request to
+            determine which website to serve. This is the most common
+            method and allows multiple hostnames to resolve to the same
+            IP address.</li>
+            </ul></li>
+            <li><strong>IP-Based Virtual Hosting:</strong>
+            <ul>
+            <li>Each website is assigned a unique IP address. This
+            method is less common due to the scarcity of available IPv4
+            addresses but is still used in certain scenarios.</li>
+            </ul></li>
+            </ul></li>
+            <li><strong>Web Server Configuration:</strong>
+            <ul>
+            <li>Web servers (like Apache, Nginx, etc.) are configured to
+            recognize different hostnames and serve the corresponding
+            website content. This is done through configuration files
+            that map hostnames to specific directories or files on the
+            server.</li>
+            </ul></li>
+            </ol>
+            <h4 id="example-scenario">Example Scenario</h4>
+            <p>Imagine a server with the IP address 192.168.1.1. You can
+            host multiple websites like this:</p>
+            <ul>
+            <li><a href="http://www.example.com">www.example.com</a> →
+            Directory: /var/www/example</li>
+            <li><a
+            href="http://www.anotherexample.com">www.anotherexample.com</a>
+            → Directory: /var/www/anotherexample</li>
+            </ul>
+            <p>When a user enters <a
+            href="http://www.example.com">www.example.com</a> in their
+            browser, the request is sent to 192.168.1.1, and the web
+            server checks the hostname. It then serves the content from
+            /var/www/example.</p>
+            <h1 id="source">Source</h1>
+            <p>Poe the AI</p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+  </body>
+</html>

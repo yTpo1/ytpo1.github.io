@@ -7,7 +7,7 @@
 Environment variables can be set, modified and accessed in the shell and are inherited by child processes.
 
 **Common Environment Variables**
-* **PATH**: Specifies the directories in which the shell looks for executable files.
+* `PATH`: Specifies the directories in which the shell looks for executable files.
 * **HOME**: The current user's home directory.
 * **USER**: The name of the current user.
 * **SHELL**: The path to the current user's shell.

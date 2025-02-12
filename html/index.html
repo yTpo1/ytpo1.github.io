@@ -14,16 +14,13 @@
       <div class="container-lg">
         <article class="article markdown-body">
           <div class="article-inner">
-            <h2 id="programming">Programming</h2>
-            <p>(?Concepts?)</p>
+            <h2 id="programming-and-cs-concepts">Programming and CS
+            Concepts</h2>
             <p>Data:</p>
             <ul>
-            <li><p>Data Structures</p>
-            <ul>
-            <li>Key Value pairs</li>
-            <li>List</li>
-            </ul></li>
-            <li><p>Algorithms</p></li>
+            <li><p><a href="./data_structures.html">Data
+            Structures</a></p></li>
+            <li><p><a href="./algorithms.html">Algorithms</a></p></li>
             <li><p><a href="./character_encoding.html">Character
             Encoding</a></p></li>
             <li><p><a href="./date_standads.html">Date Standards. ISO
@@ -114,24 +111,26 @@
             <ul>
             <li>Strategy</li>
             </ul>
-            <h3 id="c">C#</h3>
+            <h2 id="c-language-and-the-net-framework">C# Language and
+            the .NET Framework</h2>
             <p>Prerequisites:</p>
             <ul>
-            <li><a href="./dotnet_sdk.html">.NET SDK</a></li>
+            <li><a href="./cs_language.html">C# Language</a></li>
+            <li><a href="./dotnet_framework.html">.NET Framework</a>
+            <ul>
             <li><a href="./dotnet_runtime.html">.NET Runtime</a></li>
+            <li><a href="./cs_aspdotnet.html">ASP.NET</a></li>
+            </ul></li>
+            <li><a href="./dotnet_sdk.html">.NET SDK</a></li>
+            <li><a href="./cs_relationship_cs_dotnet.html">Relationship
+            Between C# and .NET</a></li>
             </ul>
-            <p>Language features:</p>
+            <p>C# Language Features:</p>
             <ul>
-            <li><a
-            href="./cs_auto_implemented_properties.html">Automatically
-            implemented properties</a></li>
-            </ul>
-            <p>Misc:</p>
+            <li>Classes
             <ul>
-            <li><a href="./cs_linq.html">LINQ</a></li>
-            <li><a href="./cs_json.html">Working with JSON</a></li>
-            <li><a href="./cs_json.html">Serialization and
-            Deserialization</a></li>
+            <li>Polymorphism</li>
+            <li>Generics</li>
             <li>Clean code: <a
             href="./cc_class_organisation_csharp.html">Class organization
             in C#</a>
@@ -139,7 +138,59 @@
             <li><a
             href="https://www.webdevtutor.net/blog/c-sharp-class-structure-best-practices">https://www.webdevtutor.net/blog/c-sharp-class-structure-best-practices</a></li>
             </ul></li>
-            <li>Generics</li>
+            </ul></li>
+            <li><a
+            href="./cs_auto_implemented_properties.html">Automatically
+            implemented properties</a></li>
+            <li>Exceptions</li>
+            </ul>
+            <p>C# Language and the .NET Framework:</p>
+            <ul>
+            <li><a href="./cs_attributes.html">Attributes</a></li>
+            </ul>
+            <p>Types and Collections:</p>
+            <ul>
+            <li>Value Types
+            <ul>
+            <li>enum</li>
+            <li>struct</li>
+            <li>tuple</li>
+            </ul></li>
+            <li>Reference types
+            <ul>
+            <li>array</li>
+            <li>string</li>
+            <li>class</li>
+            <li>interface</li>
+            <li><a href="./cs_collections.html">Collections</a>
+            <ul>
+            <li>IEnumerable</li>
+            <li>List</li>
+            <li>Dictionary</li>
+            <li>HashSet</li>
+            <li>NameValueCollection</li>
+            <li>Queue</li>
+            <li>Stack</li>
+            </ul></li>
+            </ul></li>
+            <li><a href="./cs_dates_and_time.html">Dates and time:
+            Datetime</a></li>
+            </ul>
+            <p>Data:</p>
+            <ul>
+            <li><a href="./cs_linq.html">LINQ</a></li>
+            <li><a href="./cs_json.html">Working with JSON. Serialization
+            and Deserialization</a></li>
+            <li>Entity Framework</li>
+            </ul>
+            <p>Unit testing:</p>
+            <ul>
+            <li>xUnit</li>
+            <li><a href="./cs_unittest_naming.html">Naming
+            conventions</a></li>
+            <li>Fluent Assertions</li>
+            <li>AutoFixture</li>
+            <li><a href="./cs_mocking.html">Mocking</a></li>
             </ul>
             <p>Networking:</p>
             <ul>
@@ -150,7 +201,99 @@
             message</a></li>
             </ul></li>
             </ul>
-            <p>WebApps:</p>
+            <p>Security: <a
+            href="https://learn.microsoft.com/en-us/dotnet/standard/security/">https://learn.microsoft.com/en-us/dotnet/standard/security/</a></p>
+            <ul>
+            <li><a
+            href="https://learn.microsoft.com/en-us/dotnet/standard/security/cryptography-model">https://learn.microsoft.com/en-us/dotnet/standard/security/cryptography-model</a></li>
+            </ul>
+            <h3 id="web-apps-and-aspnet">Web Apps and ASP.NET</h3>
+            <p><strong>WebApplicationBuilder - minimal hosting model
+            introduced with .NET 6</strong> The
+            <code>WebApplicationBuilder</code> class provides a
+            streamlined way to configure and build a web application. It
+            combines the functionality of the traditional
+            <code>Startup</code> class and <code>Program</code> class
+            into a single, cohesive setup.</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> builder <span class="op">=</span> WebApplication<span class="op">.</span><span class="fu">CreateBuilder</span><span class="op">(</span>args<span class="op">);</span> <span class="co">// This line initializes a new `WebApplicationBuilder` instance, which sets up the application&#39;s configuration, logging, and services.</span></span></code></pre></div>
+            <p>Key Responsibilities / Step-by-Step Explanation:</p>
+            <ol type="1">
+            <li><strong>Configuration</strong>: Sets up configuration
+            sources (e.g., appsettings.json, environment variables)</li>
+            <li><strong>Logging</strong>: Configures logging providers
+            and settings</li>
+            <li><strong>Dependency Injection (DI)</strong>: Registers
+            services with the DI container
+            <ul>
+            <li>Register Services
+            <ul>
+            <li>Services are registered with the DI container using
+            <code>builder.Services.AddScoped</code>,
+            <code>builder.Services.AddTransient</code> and
+            <code>builder.Services.AddSingleton</code></li>
+            </ul></li>
+            <li>Add HTTP Clients
+            <ul>
+            <li>HTTP clients are registered using
+            <code>builder.Services.AddHttpClient</code></li>
+            </ul></li>
+            <li>Add Controllers and Swagger
+            <ul>
+            <li>Controllers and Swagger/OpenAPI are configured using
+            <code>builder.Services.AddControllers</code> and
+            <code>builder.Services.AddSwaggerGen</code></li>
+            </ul></li>
+            <li>Configure Authentication and Authorization
+            <ul>
+            <li>JWT authentication and authorization policies are
+            configured using the
+            <code>builder.Services.AddAuthentication</code> and
+            <code>builder.Services.AddAuthorization</code></li>
+            </ul></li>
+            </ul></li>
+            <li><strong>Builds the Application</strong>:
+            <ul>
+            <li><code>var app = builder.Build();</code>: This line
+            builds the <code>WebApplication</code> instance, which is
+            used to configure the middleware pipeline and run the
+            application</li>
+            </ul></li>
+            <li><strong><a
+            href="./aspdotnet_middleware_pipeline.html">Middleware
+            Pipeline</a></strong>: Configures the middleware pipeline
+            for handling HTTP requests
+            <ul>
+            <li>Middleware components such as Serilog request logging,
+            <code>CORS</code>, authentication, and authorization are
+            added to the pipeline.</li>
+            <li><strong>Authentication, and Authorization</strong>: <a
+            href="./aspdotnet_appuseauthentication.html">app.UseAuthentication()</a>
+            and <a
+            href="./aspdotnet_appuseauthorization.html">app.UseAuthorization()</a>
+            are middleware components that are used to handle
+            authentication and authorization in the request processing
+            pipeline. These middleware components are essential for
+            securing your application by ensuring that only
+            authenticated and authorized users can access certain
+            resources.</li>
+            <li><strong>Routing</strong>: Routing middleware is
+            responsible for mapping incoming HTTP requests to the
+            appropriate endpoint (controller action, etc) based on teh
+            URL and HTTP method.
+            <ul>
+            <li><code>app.MapControllers()</code>: Maps attribute-routed
+            controllers. This method is used to map controller actions
+            that have route attributes defined on them.</li>
+            </ul></li>
+            </ul></li>
+            <li><strong>Runs the Application</strong>:
+            <ul>
+            <li><code>app.Run()</code>: This line starts the web
+            application and begins listening for incoming HTTP
+            requests.</li>
+            </ul></li>
+            </ol>
             <ul>
             <li>Dependency Injection</li>
             <li>Logging &amp; Audit</li>
@@ -158,14 +301,6 @@
             <li><a
             href="./cs_web_configuration.html">Configuration</a></li>
             <li>routing</li>
-            </ul>
-            <p>Unit testing:</p>
-            <ul>
-            <li>xUnit</li>
-            <li><a href="./cs_unittest_naming.html">Naming
-            conventions</a></li>
-            <li>Fluent Assertions</li>
-            <li><a href="./cs_mocking.html">Mocking</a></li>
             </ul>
             <h3 id="javascript">JavaScript</h3>
             <ul>
@@ -231,7 +366,16 @@
             </ul>
             <p>Internet layer:</p>
             <ul>
-            <li>IP (v4, v6)</li>
+            <li><a href="./protocol_ip.html">Internet Protocol
+            (IP)</a></li>
+            </ul>
+            <p>Routing and hosting:</p>
+            <ul>
+            <li><a href="./ip_address.html">IP Address</a></li>
+            <li><a href="./networking_ports.html">Ports</a></li>
+            <li><a href="./virtual_domain_name_hosting.html">Virtual
+            Hosting</a></li>
+            <li><a href="./hosts_file.html">'hosts' file</a></li>
             </ul>
             <p>Other:</p>
             <ul>
@@ -241,14 +385,19 @@
             <li><a href="./socket_exhaustion.html">Socket
             Exhaustion</a></li>
             </ul></li>
-            <li>Ports</li>
-            <li>Firewall
-            <ul>
-            <li><a href="./linux_firewall.html">Firewall in Linux</a></li>
-            </ul></li>
+            <li>Firewall</li>
             <li>Client - Server (architecture?)</li>
-            <li>Certificates, hosting</li>
-            <li><a href="./hosts_file.html">'hosts' file</a></li>
+            <li>Certificates
+            <ul>
+            <li>Public key certificate (also known as a digital
+            certificate or identity certificate)
+            <ul>
+            <li><a href="./certificate_ssl_tls.html">TLS/SSL server
+            certificate (SSL/TLS)</a></li>
+            </ul></li>
+            <li>certificate authority (CA)</li>
+            </ul></li>
+            <li>hosting</li>
             <li>proxy</li>
             <li><a href="./jwt.html">JWT (JSON Web Token)</a></li>
             </ul>
@@ -290,44 +439,59 @@
             </ul>
             <h2 id="command-line-tools">Command line tools</h2>
             <ul>
-            <li><a href="shell_commands.html">Basic shell
-            commands</a></li>
-            <li>git
+            <li><p><a href="shell_commands.html">Basic shell
+            commands</a></p></li>
+            <li><p>git</p>
             <ul>
             <li>basics</li>
             <li><a href="./git_next.html">next steps</a></li>
             </ul></li>
-            <li><a href="./tmux.html">tmux</a></li>
+            <li><p>chmod 744</p></li>
+            <li><p><a href="./pandoc.html">pandoc</a></p></li>
+            <li><p>pass</p></li>
+            <li><p>rsync</p></li>
+            <li><p>scp</p></li>
+            </ul>
+            <p>Searching files, directories:</p>
+            <ul>
             <li><a href="./sed.html">sed</a></li>
             <li>awk</li>
             <li><a href="./grep.html">grep</a></li>
-            <li>chmod 744</li>
-            <li><a href="./pandoc.html">pandoc</a></li>
-            <li>pass</li>
-            <li>rsync</li>
-            <li>scp</li>
+            <li>find</li>
             </ul>
-            <h2 id="linux-system">Linux System</h2>
+            <h2 id="linux-desktop">Linux Desktop</h2>
             <ul>
             <li><a href="./i3.html">Tiling window manager. "i3"</a></li>
             <li>Status bar "i3blocks"</li>
             <li><a href="./rofi.html">Program launchers. "rofi",
             "morc_menu"</a></li>
+            </ul>
+            <h2 id="linux-system">Linux System</h2>
+            <ul>
+            <li><a href="./linux_system_information_commands.html">System
+            Information commands</a></li>
             <li><a href="./linux_systemd.html">systemd systemctl</a></li>
             <li><a href="./environment_variables.html##linux">Environment
             Variables. Linux</a></li>
-            <li><a href="./linux_firewall.html">Firewall</a></li>
-            <li>package manager
+            <li><a href="./linux_firewall.html">Firewall configuration and
+            management</a></li>
+            <li>Package Managers
             <ul>
             <li>pacman</li>
             </ul></li>
             <li><a href="./linux_locale_and_language.html">Current locale
             and language settings</a></li>
+            <li><a
+            href="./linux_location_of_executable_files.html">Location of
+            the executable files</a></li>
             </ul>
-            <p>Terminal, shell:</p>
+            <p>shell, terminal, terminal multiplexer:</p>
             <ul>
-            <li><a href="./st.html">ST terminal</a></li>
+            <li>bash shell</li>
             <li><a href="./zsh.html">zsh shell</a></li>
+            <li><a href="./st.html">ST terminal</a></li>
+            <li>find a normal terminal, for example Alacritty</li>
+            <li><a href="./tmux.html">tmux</a></li>
             </ul>
             <h3 id="scripting">Scripting</h3>
             <ul>
