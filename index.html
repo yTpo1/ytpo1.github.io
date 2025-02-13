@@ -14,15 +14,15 @@
       <div class="container-lg">
         <article class="article markdown-body">
           <div class="article-inner">
-            <h2 id="programming-and-cs-concepts">Programming and CS
-            Concepts</h2>
+            <h2 id="programming-and-cs-concepts-123">Programming and CS
+            Concepts 123</h2>
             <p>Data:</p>
             <ul>
             <li><p><a href="./data_structures.html">Data
             Structures</a></p></li>
             <li><p><a href="./algorithms.html">Algorithms</a></p></li>
-            <li><p><a href="./character_encoding.html">Character
-            Encoding</a></p></li>
+            <li><p><a href="./character_encoding.html">Character Encoding.
+            ASCII, UTF-8</a></p></li>
             <li><p><a href="./date_standads.html">Date Standards. ISO
             8601, UTC</a></p></li>
             <li><p><a
@@ -467,9 +467,15 @@
             "morc_menu"</a></li>
             </ul>
             <h2 id="linux-system">Linux System</h2>
+            <p>Commands:</p>
             <ul>
             <li><a href="./linux_system_information_commands.html">System
             Information commands</a></li>
+            <li><a href="./linux_networking_commands.html">Networking
+            commands</a></li>
+            </ul>
+            <p>Other:</p>
+            <ul>
             <li><a href="./linux_systemd.html">systemd systemctl</a></li>
             <li><a href="./environment_variables.html##linux">Environment
             Variables. Linux</a></li>
@@ -555,5 +561,15 @@
         <p>Date: </p>
       </div>
     </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
   </body>
 </html>
