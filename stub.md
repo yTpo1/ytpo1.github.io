@@ -1,2 +1,0 @@
-# Stub
-In software development, a stub is a piece of code used to stand in for some other programming functionality. Stubs are typically used in testing to simulate the behavior or complex, real components that are not yet implemented or are difficult to incorporate into a test environment. They allow developers to test parts of the system in isolation.
