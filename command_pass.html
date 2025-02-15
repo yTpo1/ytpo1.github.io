@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="password-manager-pass">Password manager: pass</h1>
+            <p>The <code>pass</code> command is a simple and effective
+            password manager for the command line in Linux. It is
+            designed to securely store and manage passwords using GnuPG
+            (GPG) for encryption. The pass utility provides a convenient
+            way to create, retrieve, and organize passwords.</p>
+            <ul>
+            <li><strong>GPG Encryption:</strong> Passwords are stored in
+            GPG-encrypted files, ensuring that they are secure and
+            protected from unauthorized access.</li>
+            <li><strong>Directory Structure:</strong> Passwords are
+            organized in a directory structure, where each password is
+            stored as a separate file. This allows for easy
+            categorization and retrieval.</li>
+            <li><strong>Clipboard Management:</strong> pass can copy
+            passwords to the clipboard for a limited time, making it
+            easy to paste them into applications without exposing
+            them.</li>
+            </ul>
+            <p>List All Passwords:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pass</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pass</span> ls</span></code></pre></div>
+            <p>Add a New Password:</p>
+            <ul>
+            <li><code>-m</code> or <code>--multiline</code>: multiline
+            passwords or other data</li>
+            </ul>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pass</span> insert <span class="at">-m</span> mywebsite.com</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># insert command is alternatively named add</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pass</span> add</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">pass</span> insert mywebsite.com</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">pass</span> insert archlinux.org/wiki/username</span></code></pre></div>
+            <p>Generate a new random password. Where <code>n</code> is
+            the desired password length as a number:</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pass</span> generate archlinux.org/wiki/username n</span></code></pre></div>
+            <p>It uses <code>/dev/urandom</code> internally</p>
+            <p>Retrieve a password</p>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pass</span> mywebsite.com</span></code></pre></div>
+            <p>Users of Xorg with <code>xclip</code> installed can
+            retrieve the password directly onto the clipboard
+            temporarily (e.g., to paste into web forms).</p>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pass</span> <span class="at">-c</span> archlinux.org/wiki/username</span></code></pre></div>
+            <p>Edit a password/file:</p>
+            <div class="sourceCode" id="cb6"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pass</span> edit password_name</span></code></pre></div>
+            <p>Remove a password:</p>
+            <pre class="pass"><code>pass rm Business/cheese-whiz-factory</code></pre>
+            <h2 id="organisation">Organisation</h2>
+            <p>Store the password itself on the first line of the file,
+            and the additional information on subsequent lines.</p>
+            <pre><code>Yw|ZSNH!}z&quot;6{ym9pI
+URL: *.amazon.com/*
+Username: AmazonianChicken@example.com
+Secret Question 1: What is your childhood best friend&#39;s most bizarre superhero fantasy? Oh god, Amazon, it&#39;s too awful to say...
+Phone Support PIN #: 84719</code></pre>
+            <p>The <code>--clip</code> / <code>-c</code> options will
+            only copy the first line of such a file to the clipboard,
+            thereby making it easy to fetch the password for login
+            forms, while retaining additional information in the same
+            file.</p>
+            <h2 id="git-integration">Git integration</h2>
+            <p>To do...</p>
+            <p><a
+            href="https://wiki.archlinux.org/title/Pass"><span>https://wiki.archlinux.org/title/Pass</span></a></p>
+            <h2 id="setting-it-up">Setting it up</h2>
+            <p>To begin, there is a single command to initialize the
+            password store:</p>
+            <div class="sourceCode" id="cb9"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pass</span> init <span class="st">&quot;ZX2C4 Password Storage Key&quot;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pass</span> init email</span></code></pre></div>
+            <p>Here, <code>ZX2C4 Password Storage Key</code> is the ID
+            of my GPG key.</p>
+            <p>We can additionally initialize the password store as a
+            git repository:</p>
+            <div class="sourceCode" id="cb10"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pass</span> git init</span></code></pre></div>
+            <p>If a git repository is initialized, pass creates a git
+            commit each time the password store is manipulated.</p>
+            <h2 id="sources">Sources</h2>
+            <ul>
+            <li>Poe AI</li>
+            <li><a
+            href="https://wiki.archlinux.org/title/Pass"><span>https://wiki.archlinux.org/title/Pass</span></a></li>
+            <li><a
+            href="https://www.passwordstore.org/"><span>https://www.passwordstore.org/</span></a></li>
+            <li>[<a
+            href="https://web.archive.org/web/20230527122558/https://blog.sanctum.geek.nz/gnu-linux-crypto-passwords/">https://web.archive.org/web/20230527122558/https://blog.sanctum.geek.nz/gnu-linux-crypto-passwords/</a>][<a
+            href="https://web.archive.org/web/20230527122558/https://blog.sanctum.geek.nz/gnu-linux-crypto-passwords/">https://web.archive.org/web/20230527122558/https://blog.sanctum.geek.nz/gnu-linux-crypto-passwords/</a>]</li>
+            </ul>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1
+            id="display-settings-monitors-manage-multi-monitor-setups">Display
+            settings. Monitors. Manage multi-monitor setups</h1>
+            <h2 id="xrandr">xrandr</h2>
+            <h3 id="querying-display-information">Querying Display
+            Information</h3>
+            <p>You can use xrandr without any options to get a list of
+            connected displays, their resolutions, and supported
+            modes.</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xrandr</span></span></code></pre></div>
+            <p>List all monitors:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xrandr</span> <span class="at">--listmonitors</span></span></code></pre></div>
+            <h3 id="changing-screen-resolution">Changing Screen
+            Resolution</h3>
+            <p>To change the resolution of a specific display, use the
+            following syntax:</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xrandr</span> <span class="at">--output</span> <span class="op">&lt;</span> display_name <span class="op">&gt;</span> --mode <span class="op">&lt;</span> resolution <span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">xrandr</span> <span class="at">--output</span> HDMI-1 <span class="at">--mode</span> 1920x1080</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">xrandr</span> <span class="at">--output</span> HDMI-1 <span class="at">--mode</span> 2560x1440</span></code></pre></div>
+            <h3>...</h3>
+            <p>Disable a monitor. E.g. laptop monitor (eDP-1)</p>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xrandr</span> <span class="at">--output</span> eDP-1 <span class="at">--off</span></span></code></pre></div>
+            <p>Reset settings (re-enable the laptop monitor):</p>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xrandr</span> <span class="at">--auto</span></span></code></pre></div>
+            <h3 id="configuring-multiple-displays">Configuring Multiple
+            Displays</h3>
+            <p>To position multiple displays relative to each other:</p>
+            <div class="sourceCode" id="cb6"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xrandr</span> <span class="at">--output</span> <span class="op">&lt;</span> display_name1 <span class="op">&gt;</span> --left-of <span class="op">&lt;</span> display_name2 <span class="op">&gt;</span></span></code></pre></div>
+            <p>Other options include --right-of, --above, and
+            --below.</p>
+            <p>To set up a dual monitor configuration with a primary
+            monitor on the left and a secondary monitor on the left, you
+            might use:</p>
+            <div class="sourceCode" id="cb7"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xrandr</span> <span class="at">--output</span> HDMI-1 <span class="at">--primary</span> <span class="at">--auto</span> <span class="at">--output</span> eDP-1 <span class="at">--auto</span> <span class="at">--left-of</span> HDMI-1</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or a secondary monitor on the right</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">xrandr</span> <span class="at">--output</span> HDMI-1 <span class="at">--primary</span> <span class="at">--auto</span> <span class="at">--output</span> eDP-1 <span class="at">--auto</span> <span class="at">--right-of</span> HDMI-1</span></code></pre></div>
+            <h3 id="-1">...</h3>
+            <p>Print out current screen resolution</p>
+            <div class="sourceCode" id="cb8"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xdpyinfo</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&#39;dimensions:&#39;</span>  </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or  </span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">xrandr</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&#39;*&#39;</span> </span></code></pre></div>
+            <h2 id="monitor-brightness-xbacklight">Monitor Brightness:
+            xbacklight</h2>
+            <p>To do..</p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

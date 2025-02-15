@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="fundamentals">Fundamentals</h1>
+            <p>A public key is one half of a key pair used in asymmetric
+            cryptography, which is a method of encrypting data and
+            ensuring secure communication. It is designed to be shared
+            openly and is used for two main purposes: encryption and
+            digital signatures.</p>
+            <p>Key Characteristics of Public Keys:</p>
+            <ol type="1">
+            <li><strong>Asymmetric Pair:</strong> The public key is
+            paired with a private key. The private key is kept secret by
+            the owner, while the public key can be distributed
+            freely.</li>
+            <li><strong>Encryption:</strong> When someone wants to send
+            a secure message, they can encrypt the message using the
+            recipient's public key. Only the recipient, who possesses
+            the corresponding private key, can decrypt the message.</li>
+            <li><strong>Digital Signatures:</strong> A public key can
+            also be used to verify digital signatures. When a sender
+            signs a message with their private key, the recipient can
+            use the sender's public key to verify that the signature is
+            valid and that the message has not been altered.</li>
+            <li><strong>Key Distribution:</strong> Public keys are often
+            distributed via key servers or shared through secure
+            channels to ensure that recipients can obtain the correct
+            public key for encryption or verification purposes.</li>
+            <li><strong>Widely Used in Protocols:</strong> Public keys
+            are integral to various security protocols, including
+            SSL/TLS for secure web communications, email encryption
+            (like PGP and OpenPGP), and secure file transfers.</li>
+            </ol>
+            <p><strong>Example Usage:</strong></p>
+            <ul>
+            <li><strong>Email Encryption:</strong> If Alice wants to
+            send a secure email to Bob, she encrypts the message using
+            Bob's public key. Only Bob can decrypt it using his private
+            key.</li>
+            <li><strong>Digital Signatures:</strong> If Bob signs a
+            document with his private key, Alice can verify the
+            signature using Bob's public key, confirming the document's
+            authenticity.</li>
+            </ul>
+            <p><strong>Conclusion</strong> Public keys play a crucial
+            role in ensuring secure communications and data integrity in
+            asymmetric cryptography. Their ability to facilitate secure
+            exchanges without requiring the sender and recipient to
+            share secret keys makes them essential in modern security
+            protocols.</p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

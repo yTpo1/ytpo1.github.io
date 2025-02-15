@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="private-key">Private Key</h1>
+            <p>A private key is a crucial component of asymmetric
+            cryptography, serving as one half of a key pair that
+            includes a corresponding public key. The private key is kept
+            secret and is used for two primary functions: decryption and
+            digital signing.</p>
+            <p>Key Characteristics of Private Keys:</p>
+            <ul>
+            <li><strong>Secretive Nature:</strong> The private key must
+            be kept confidential and secure by its owner. If someone
+            gains access to the private key, they can decrypt messages
+            or forge signatures.</li>
+            <li><strong>Decryption:</strong> When a message is encrypted
+            with a public key, only the corresponding private key can
+            decrypt it. This ensures that only the intended recipient
+            can read the secured message.</li>
+            <li><strong>Digital Signatures:</strong> A private key is
+            used to create digital signatures. When a user signs a
+            document or message with their private key, the signature
+            can be verified by anyone using the corresponding public
+            key, confirming the authenticity and integrity of the
+            message.</li>
+            <li><strong>Key Pair:</strong> The private key forms a pair
+            with a public key. The public key can be shared openly,
+            while the private key remains confidential to the
+            owner.</li>
+            <li><strong>Security Practices:</strong> It is essential to
+            protect private keys using strong passwords, encryption, or
+            hardware security modules. Losing a private key can result
+            in the inability to access encrypted data or verify
+            signatures.</li>
+            </ul>
+            <p><strong>Example Usage:</strong></p>
+            <ul>
+            <li><strong>Email Encryption:</strong> If Bob receives an
+            encrypted email that was encrypted with his public key, he
+            uses his private key to decrypt and read the message.</li>
+            <li><strong>Digital Signatures:</strong> If Alice signs a
+            contract with her private key, Bob can use Alice's public
+            key to verify that Alice indeed signed the contract,
+            confirming its authenticity.</li>
+            </ul>
+            <p><strong>Conclusion</strong> Private keys are fundamental
+            to the security provided by asymmetric cryptography. Their
+            role in decryption and digital signatures makes them
+            essential for secure communications, data integrity, and
+            user authentication. Proper management and protection of
+            private keys are critical to maintaining security in
+            cryptographic systems.</p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

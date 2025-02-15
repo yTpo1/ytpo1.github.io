@@ -15,10 +15,18 @@
         <article class="article markdown-body">
           <div class="article-inner">
             <h1 id="grep">grep</h1>
-            <p>.zalias</p>
+            <h2 id="useful-alias-set-up">Useful alias set up</h2>
+            <p><code>.zalias</code></p>
+            <ul>
+            <li><code>-I</code>: ignore binary files</li>
+            <li><code>--color=auto</code>: add the color formatting</li>
+            </ul>
             <div class="sourceCode" id="cb1"><pre
-            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -I ignore binary files</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> grep=<span class="st">&#39;grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,venv} --exclude=\*.{o,png,jpg,jpeg,gif,webp,mp3,flac,pdf,xcf} -I&#39;</span> </span></code></pre></div>
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> grep=<span class="st">&#39;grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,venv} --exclude=\*.{o,png,jpg,jpeg,gif,webp,mp3,flac,pdf,xcf} -I&#39;</span> </span></code></pre></div>
+            <h2 id="examples">Examples</h2>
+            <p>Search only the current directory:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> “string<span class="pp">*</span>” <span class="pp">*</span></span></code></pre></div>
           </div>
         </article>
         <p>Date: </p>

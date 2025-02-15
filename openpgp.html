@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="openpgp">OpenPGP</h1>
+            <p>OpenPGP is a standard for data encryption and digital
+            signatures that provides a framework for secure
+            communication and data integrity. It is widely used for
+            encrypting emails and files, as well as for signing
+            documents to verify authenticity.</p>
+            <p>Key Features of OpenPGP:</p>
+            <ul>
+            <li><strong>Asymmetric Cryptography:</strong> OpenPGP uses a
+            combination of public and private keys, allowing users to
+            encrypt data with a public key that can only be decrypted by
+            the corresponding private key. This ensures that only the
+            intended recipient can read the message.</li>
+            <li><strong>Data Integrity:</strong> OpenPGP provides
+            mechanisms for signing messages, enabling recipients to
+            verify that the data has not been altered and confirming the
+            identity of the sender.</li>
+            <li><strong>Flexible Encryption:</strong> The standard
+            supports various encryption algorithms, allowing users to
+            choose the level of security that suits their needs. Common
+            algorithms include RSA, DSA, and ElGamal.</li>
+            <li><strong>Key Management:</strong> OpenPGP includes
+            features for managing public keys, such as key servers,
+            which allow users to publish and retrieve public keys
+            easily.</li>
+            <li><strong>Interoperability:</strong> OpenPGP is designed
+            to be compatible across different software implementations,
+            enabling secure communication between various applications
+            and platforms.</li>
+            </ul>
+            <p><strong>Use Cases:</strong></p>
+            <ul>
+            <li><strong>Email Encryption:</strong> OpenPGP is commonly
+            used to encrypt email messages, ensuring that only the
+            intended recipient can read them.</li>
+            <li><strong>File Encryption:</strong> Users can encrypt
+            files for secure storage or transmission.</li>
+            <li><strong>Digital Signatures:</strong> OpenPGP allows
+            users to sign documents and messages, providing a way to
+            verify authenticity and integrity.</li>
+            </ul>
+            <p><strong>Conclusion</strong> OpenPGP is a powerful
+            standard for securing communications and data through
+            encryption and digital signatures. Its flexibility,
+            interoperability, and strong security features make it a
+            popular choice for individuals and organizations looking to
+            protect sensitive information.</p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

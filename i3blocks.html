@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="i3blocks">i3blocks</h1>
+            <p><code>i3blocks</code> is a flexible status line generator
+            for the i3 window manager, commonly used in Linux
+            environments. It allows users to customize the status bar in
+            their i3 desktop setup by displaying various system
+            information, such as CPU usage, memory consumption, battery
+            status, network connectivity, and more.</p>
+            <p><strong>Key Features of i3blocks:</strong></p>
+            <ul>
+            <li><strong>Modular Design:</strong> i3blocks uses a modular
+            approach, enabling users to create individual scripts
+            (blocks) that fetch specific information. Each block can be
+            configured to show different data.</li>
+            <li><strong>Customizability:</strong> Users can easily
+            customize the appearance and functionality of each block,
+            including colors, icons, and update intervals.</li>
+            <li><strong>Lightweight:</strong> i3blocks is designed to be
+            lightweight and efficient, making it a suitable choice for
+            minimalistic setups.</li>
+            <li><strong>Easy Integration:</strong> It integrates
+            seamlessly with the i3 window manager, providing a status
+            bar that updates dynamically as system states change.</li>
+            <li><strong>Script-Based:</strong> Each block can be a
+            simple shell script, allowing users to leverage existing
+            command-line tools and scripts to gather the desired
+            information.</li>
+            </ul>
+            <p>Docs:</p>
+            <ul>
+            <li><a
+            href="http://vivien.github.io/i3blocks/">http://vivien.github.io/i3blocks/</a></li>
+            </ul>
+            <h2 id="basic-setup">Basic Setup</h2>
+            <p>To use i3blocks, you typically set it up in your i3
+            configuration file <code>~/.config/i3/config</code> to run
+            as the status bar. Here’s a simple example of how it might
+            look in an i3 config:</p>
+            <pre><code>bar {
+    status_command i3blocks
+}</code></pre>
+            <h2 id="example-blocks">Example Blocks</h2>
+            <p>You can create custom blocks by writing shell scripts.
+            For instance, to show the current date and time:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span> <span class="st">&#39;+%Y-%m-%d %H:%M:%S&#39;</span></span></code></pre></div>
+            <p>Collection of scripts:</p>
+            <ul>
+            <li><a
+            href="https://github.com/vivien/i3blocks-contrib">https://github.com/vivien/i3blocks-contrib</a></li>
+            <li>i3bar input protocol: <a
+            href="https://i3wm.org/docs/i3bar-protocol.html#_click_events">https://i3wm.org/docs/i3bar-protocol.html#_click_events</a></li>
+            </ul>
+            <p><code>$BLOCK_BUTTON</code> is not a standard or common
+            Linux environment variable. Instead, it is typically used in
+            specific contexts, especially in the realm of status bars or
+            desktop environments that support clickable blocks of
+            information.</p>
+            <p>Common Usage:</p>
+            <ul>
+            <li><strong>i3blocks:</strong> In the context of i3blocks, a
+            popular status bar for the i3 window manager,
+            <code>$BLOCK_BUTTON</code> is used to capture mouse button
+            clicks on the status bar blocks. Each button click (left,
+            middle, right) can trigger different commands or actions
+            defined in the script.</li>
+            </ul>
+            <p>Mouse Button Values: The value of
+            <code>$BLOCK_BUTTON</code> corresponds to the mouse button
+            clicked:</p>
+            <ul>
+            <li><code>1</code> for the left mouse button</li>
+            <li><code>2</code> for the middle mouse button</li>
+            <li><code>3</code> for the right mouse button</li>
+            </ul>
+            <h2 id="configuration">Configuration</h2>
+            <p>The main configuration file for i3blocks is typically
+            located at <code>~/.config/i3blocks/config</code>. In this
+            file, you can define blocks, their update intervals, and
+            their appearance.</p>
+            <h2 id="conclusion">Conclusion</h2>
+            <p>i3blocks is a powerful tool for users of the i3 window
+            manager who want to customize their status bar. Its modular
+            and script-based design allows for extensive
+            personalization, making it a preferred choice for those who
+            enjoy a tailored desktop environment.</p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>
