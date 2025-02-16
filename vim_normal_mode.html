@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="vim-normal-mode-hotkeys">vim normal mode
+            hotkeys</h1>
+            <p>Navigation tip. All of these commands are easy to
+            remember with some simple mnemonics: <strong>u</strong>p
+            <strong>d</strong>own <strong>f</strong>orward
+            <strong>b</strong>ack <strong>H</strong>ome
+            <strong>M</strong>iddle <strong>L</strong>ast <a
+            href="https://medium.com/usevim/vim-101-quick-movement-c12889e759e0">src</a></p>
+            <p>Navigation:</p>
+            <ul>
+            <li><code>ctrl+u</code>, <code>ctrl+d</code>: Moves cursor
+            &amp; screen Up/Down half a page</li>
+            <li><code>H</code>, <code>M</code>, <code>L</code>: Go to
+            Top/Middle/Bottom of the screen</li>
+            <li><code>ctrl+y</code>, <code>ctrl+e</code>: Move screen
+            Up/Down with one line</li>
+            <li><code>)</code>, <code>(</code>: Line
+            forward/backward</li>
+            <li><code>}</code>, <code>{</code>: Paragraph
+            forward/backward</li>
+            <li><code>]m</code>, <code>[m</code>: Go to next/previous
+            start of method</li>
+            <li><code>]M</code>, <code>[M</code>:Go to next/previous end
+            of method</li>
+            </ul>
+            <p>Editing:</p>
+            <ul>
+            <li><code>YP</code>: Duplicate line</li>
+            </ul>
+            <p>Switch to Insertion Mode:</p>
+            <ul>
+            <li><a href="./vim_normal_to_insert.html">Switch to Insertion
+            Mode</a></li>
+            </ul>
+            <p>Other:</p>
+            <ul>
+            <li><code>ctrl+l</code>: Redraw screen</li>
+            </ul>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

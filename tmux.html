@@ -17,8 +17,8 @@
             <h1 id="tmux">tmux</h1>
             <p>tmux (Terminal Multiplexer). It allows users to manage
             multiple terminal sessions from a single window.</p>
-            <p>Configuration: <code>~/.tmux.conf</code></p>
-            <h2 id="hotkeys">Hotkeys</h2>
+            <p>Configuration location: <code>~/.tmux.conf</code></p>
+            <h2 id="hotkeys-shortcuts">Hotkeys, shortcuts</h2>
             <ul>
             <li><code>ctrl+b c</code> Create a new window</li>
             <li><code>ctrl+b n</code> &amp; <code>ctrl+b p</code> Go to
@@ -33,21 +33,75 @@
             <li><code>ctrl+b d</code> Detatch from current session in
             current terminal</li>
             </ul>
-            <p>Split panes</p>
+            <p>Windows/panes:</p>
             <ul>
-            <li><code>ctrl+"</code> Create new window in horizontal
-            split screen</li>
-            <li><code>ctrl+UP</code> <code>ctrl+Down</code> Change size
-            of the current split pane</li>
-            <li><code>ctrl+!</code> Move split pane into its own
-            window</li>
-            <li><code>ctrl+j</code> &amp; <code>ctrl+k</code> Focus on
-            top/bottom pane</li>
+            <li><code>ctrl+b space</code>: Change layout (vertical /
+            horizontal)</li>
+            <li><code>ctrl+b ,</code>: rename window</li>
+            <li><code>ctrl+b alt+2</code>: Vertically balance out split
+            pane sizes</li>
+            <li><code>ctrl+b alt+1</code>: Horizontally balance out
+            split pane sizes</li>
             </ul>
+            <p>Split panes:</p>
+            <ul>
+            <li><code>ctrl+j</code> or <code>ctrl+k</code>: Focus on
+            top/bottom pane (go to)</li>
+            <li><code>ctrl+"</code>: Create new window in horizontal
+            split screen</li>
+            <li><code>ctrl+UP</code> or <code>ctrl+Down</code>: Change
+            size of the current split pane</li>
+            <li><code>ctrl+!</code>: Move split pane into its own
+            window</li>
+            </ul>
+            <h2 id="commands-actions">Commands, actions</h2>
+            <p>To enter command mode use: <code>ctrl+b :</code></p>
+            <ul>
+            <li><code>move-window -t [num]</code>: move the current
+            window to a new window number</li>
+            </ul>
+            <h2>???</h2>
+            <ul>
+            <li><code>-d</code>: any other clients attached to the
+            session are detached</li>
+            <li><code>-t</code>: attach to target with name:id</li>
+            <li><code>-n</code>: name the window</li>
+            </ul>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tmux</span> new-window <span class="at">-t</span> hawkhost:1 <span class="at">-n</span> <span class="st">&#39;Server1&#39;</span> <span class="st">&#39;ssh root@10.x.x.x&#39;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">tmux</span> new-session <span class="at">-d</span> <span class="st">&#39;vi /etc/passwd&#39;</span> <span class="dt">\;</span> split-window <span class="at">-d</span> <span class="dt">\;</span> attach</span></code></pre></div>
             <h2 id="docs">Docs</h2>
             <ul>
             <li><a
             href="https://tmuxcheatsheet.com/">https://tmuxcheatsheet.com/</a></li>
+            </ul>
+            <h4 id="cheatsheet">Cheatsheet</h4>
+            <ul>
+            <li><a
+            href="https://gist.github.com/henrik/1967800">https://gist.github.com/henrik/1967800</a></li>
+            </ul>
+            <h4 id="blogs">Blogs</h4>
+            <ul>
+            <li><a
+            href="https://tmuxp.readthedocs.io/en/latest/about_tmux.html#text-based-window-manager">https://tmuxp.readthedocs.io/en/latest/about_tmux.html#text-based-window-manager</a></li>
+            <li><a
+            href="https://www.bugsnag.com/blog/benefits-of-using-tmux">https://www.bugsnag.com/blog/benefits-of-using-tmux</a></li>
+            <li><a
+            href="https://www.bugsnag.com/blog/tmux-and-vim">https://www.bugsnag.com/blog/tmux-and-vim</a>
+            (has very good Related reading articles at the bottom)</li>
+            <li><a
+            href="https://blog.hawkhost.com/2010/07/02/tmux-%e2%80%93-the-terminal-multiplexer-part-2/#tmux-shell-scripting">https://blog.hawkhost.com/2010/07/02/tmux-%e2%80%93-the-terminal-multiplexer-part-2/#tmux-shell-scripting</a></li>
+            </ul>
+            <h4 id="wiki">Wiki</h4>
+            <ul>
+            <li><a
+            href="https://gitlab.com/gnachman/iterm2/-/wikis/tmux-Integration-Best-Practices">https://gitlab.com/gnachman/iterm2/-/wikis/tmux-Integration-Best-Practices</a></li>
+            <li><a
+            href="https://wiki.archlinux.org/index.php/Tmux">https://wiki.archlinux.org/index.php/Tmux</a></li>
+            <li><a
+            href="https://wiki.archlinux.org/index.php/Tmuxp">https://wiki.archlinux.org/index.php/Tmuxp</a></li>
             </ul>
           </div>
         </article>

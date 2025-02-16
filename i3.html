@@ -16,6 +16,8 @@
           <div class="article-inner">
             <h1 id="i3">i3</h1>
             <p>i3 is a tiling window manager.</p>
+            <p>Docs: <a
+            href="https://i3wm.org/docs/userguide.html">https://i3wm.org/docs/userguide.html</a></p>
             <p><code>$mod</code> is set to the Windows key</p>
             <p>Hotkeys:</p>
             <ul>
@@ -29,8 +31,28 @@
             <li><code>$mod+shift+space</code> toggle for floating mode
             for the current window</li>
             </ul>
-            <p>Docs: <a
-            href="https://i3wm.org/docs/userguide.html">https://i3wm.org/docs/userguide.html</a></p>
+            <h2 id="font-size">Font size</h2>
+            <ol type="1">
+            <li>Edit <code>.config/i3/config</code></li>
+            </ol>
+            <p>Syntax:</p>
+            <pre><code>font &lt;X core font description&gt;
+font pango:[family list] [style options] [size]</code></pre>
+            <p>For example:</p>
+            <pre><code>font xft:URWGothic-Book 11
+
+# 
+font xft:URWGothic-Book 14</code></pre>
+            <h2 id="adding-icons-to-i3-workspace-names">Adding icons to
+            i3 workspace names</h2>
+            <ul>
+            <li><a
+            href="https://boddy.im/i3-workspace-names.html">https://boddy.im/i3-workspace-names.html</a></li>
+            <li><a
+            href="https://github.com/cboddy/i3-workspace-names-daemon/blob/master/i3_workspace_names_daemon.py">https://github.com/cboddy/i3-workspace-names-daemon/blob/master/i3_workspace_names_daemon.py</a></li>
+            <li><a
+            href="https://github.com/mihalea/i3-workspace-names">https://github.com/mihalea/i3-workspace-names</a></li>
+            </ul>
           </div>
         </article>
         <p>Date: </p>

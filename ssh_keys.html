@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="ssh-keys">SSH Keys</h1>
+            <h2 id="key-location">Key Location</h2>
+            <p>SSH keys are typically located in the /etc/ssh/
+            directory:</p>
+            <pre><code>ssh_host_rsa_key.pub (for RSA keys)
+ssh_host_ecdsa_key.pub (for ECDSA keys)
+ssh_host_ed25519_key.pub (for Ed25519 keys)</code></pre>
+            <h2 id="what-key-or-algorithm-to-use">What key or algorithm
+            to use</h2>
+            <p>When choosing an SSH key type for logging into a server,
+            the most recommended options are <code>ED25519</code> and
+            <code>RSA</code>. Here’s a comparison of the different key
+            types:</p>
+            <ol type="1">
+            <li><strong>ED25519</strong> *** Security:** Very strong
+            security properties; resistant to common attacks.
+            <ul>
+            <li><strong>Performance:</strong> Fast signing and
+            verification, efficient in terms of CPU and memory
+            usage.</li>
+            <li><strong>Key Size:</strong> Fixed size of 256 bits (32
+            bytes), producing 64-byte signatures.</li>
+            <li><strong>Recommendation:</strong> Generally considered
+            the best option for new implementations due to its balance
+            of security and performance.</li>
+            </ul></li>
+            <li><strong>RSA</strong>
+            <ul>
+            <li><strong>Security:</strong> Depends on key size; a
+            minimum of 2048 bits is recommended for security. 4096 bits
+            is better for long-term security.</li>
+            <li><strong>Performance:</strong> Slower than ED25519,
+            especially for larger keys.</li>
+            <li><strong>Key Size:</strong> Key sizes can vary (2048,
+            3072, 4096 bits).</li>
+            <li><strong>Recommendation:</strong> A good choice if
+            compatibility with older systems is a concern, but ED25519
+            is preferred for new setups.</li>
+            </ul></li>
+            <li><strong>DSA (Digital Signature Algorithm)</strong>
+            <ul>
+            <li><strong>Security:</strong> Older and less commonly used;
+            has limitations and is not recommended for new
+            applications.</li>
+            <li><strong>Performance:</strong> Generally slower compared
+            to the others.</li>
+            <li><strong>Recommendation:</strong> Not recommended for new
+            implementations due to security vulnerabilities and
+            limitations.</li>
+            </ul></li>
+            </ol>
+            <h2 id="check-the-ssh-key-fingerprint">Check the SSH Key
+            Fingerprint</h2>
+            <p>Command:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-l</span> <span class="at">-f</span> /etc/ssh/ssh_host_rsa_key.pub</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-l</span> <span class="at">-f</span> /etc/ssh/ssh_host_ecdsa_key.pub</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-l</span> <span class="at">-f</span> /etc/ssh/ssh_host_ed25519_key.pub</span></code></pre></div>
+            <p>The output will show the key type, its fingerprint, and
+            the key size. For example:</p>
+            <pre><code>2048 SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx root@raspberrypi (RSA)</code></pre>
+            <h2 id="how-to-use-multiple-keys">How to Use Multiple
+            Keys</h2>
+            <p>It's advisable to use separate keys, especially for
+            services with different access levels or for work
+            environments.</p>
+            <p>Configure your SSH client to manage them using the
+            ~/.ssh/config file. Here’s an example:</p>
+            <pre class="conf"><code># GitHub
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_github
+
+# Bitbucket
+Host bitbucket.org
+    HostName bitbucket.org
+    User git
+    IdentityFile ~/.ssh/id_rsa_bitbucket
+
+# Raspberry Pi
+Host raspberrypi
+    HostName &lt;your_pi_ip&gt;
+    User pi
+    IdentityFile ~/.ssh/id_rsa_raspberrypi</code></pre>
+            <p>If you don't have a ~/.ssh/config file, you can easily
+            create one to manage your SSH keys. And then add your SSH
+            configuration.</p>
+            <p><strong>Set Proper Permissions:</strong> Ensure that the
+            config file has the correct permissions to keep your SSH
+            configurations secure:</p>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> 600 ~/.ssh/config</span></code></pre></div>
+            <h2 id="load-the-ssh-keys-into-the-ssh-agent">Load the SSH
+            keys into the SSH agent</h2>
+            <p>Edit your shell configuration file (e.g., ~/.bashrc,
+            ~/.bash_profile, or ~/.zshrc, etc) and add the following
+            lines:</p>
+            <div class="sourceCode" id="cb6"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start SSH agent and add key</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">ssh-agent</span> <span class="at">-s</span><span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-add</span> ~/.ssh/github_y <span class="op">&gt;</span>/dev/null <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span></code></pre></div>
+            <p>Or this:</p>
+            <div class="sourceCode" id="cb7"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start the SSH Agent automatically</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="ot">! </span><span class="ex">pgrep</span> <span class="at">-u</span> <span class="st">&quot;</span><span class="va">$USER</span><span class="st">&quot;</span> ssh-agent <span class="op">&gt;</span> /dev/null<span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ssh-agent</span> <span class="at">-t</span> 1h <span class="op">&gt;</span> <span class="st">&quot;</span><span class="va">$XDG_RUNTIME_DIR</span><span class="st">/ssh-agent.env&quot;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">&quot;</span><span class="va">$SSH_AUTH_SOCK</span><span class="st">&quot;</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">source</span> <span class="st">&quot;</span><span class="va">$XDG_RUNTIME_DIR</span><span class="st">/ssh-agent.env&quot;</span> <span class="op">&gt;</span>/dev/null</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code></pre></div>
+            <p>Explanation:</p>
+            <div class="sourceCode" id="cb8"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="ot">! </span><span class="ex">pgrep</span> <span class="at">-u</span> <span class="st">&quot;</span><span class="va">$USER</span><span class="st">&quot;</span> ssh-agent <span class="op">&gt;</span> /dev/null<span class="kw">;</span> <span class="cf">then</span></span></code></pre></div>
+            <ul>
+            <li><code>pgrep -u "$USER" ssh-agent</code>: This command
+            checks if there is a running instance of ssh-agent for the
+            current user ($USER).</li>
+            <li><code>!</code>: This negates the result, so the
+            condition is true if ssh-agent is not running.</li>
+            <li><code>&gt; /dev/null</code>: This part suppresses the
+            output of the pgrep command, sending it to /dev/null, which
+            is a common practice to avoid cluttering the terminal with
+            output when it's not needed.</li>
+            <li><code>then</code>: If the condition is true (i.e.,
+            ssh-agent is not running), the following commands will
+            execute.</li>
+            </ul>
+            <div class="sourceCode" id="cb9"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-agent</span> <span class="at">-t</span> 1h <span class="op">&gt;</span> <span class="st">&quot;</span><span class="va">$XDG_RUNTIME_DIR</span><span class="st">/ssh-agent.env&quot;</span></span></code></pre></div>
+            <ul>
+            <li><code>ssh-agent -t 1h</code>: This starts a new instance
+            of the SSH agent with a timeout of 1 hour. After this
+            period, the agent will stop running.</li>
+            <li><code>&gt; "$XDG_RUNTIME_DIR/ssh-agent.env"</code>: The
+            output, which includes environment variables needed to
+            connect to the SSH agent, is redirected to a file named
+            ssh-agent.env in the directory specified by the
+            XDG_RUNTIME_DIR environment variable. This file will later
+            be sourced to set up the SSH environment.</li>
+            </ul>
+            <div class="sourceCode" id="cb10"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">&quot;</span><span class="va">$SSH_AUTH_SOCK</span><span class="st">&quot;</span> <span class="kw">]];</span> <span class="cf">then</span></span></code></pre></div>
+            <ul>
+            <li><code>[[ ! -f "$SSH_AUTH_SOCK" ]]</code>: This condition
+            checks if the file specified by the SSH_AUTH_SOCK
+            environment variable does not exist. SSH_AUTH_SOCK is a
+            socket file used for communication with the SSH agent.</li>
+            </ul>
+            <div class="sourceCode" id="cb11"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> <span class="st">&quot;</span><span class="va">$XDG_RUNTIME_DIR</span><span class="st">/ssh-agent.env&quot;</span> <span class="op">&gt;</span>/dev/null</span></code></pre></div>
+            <ul>
+            <li><code>source "$XDG_RUNTIME_DIR/ssh-agent.env"</code>: If
+            the SSH_AUTH_SOCK does not exist, this command sources the
+            environment variables from the ssh-agent.env file. This sets
+            up the current shell session to use the new SSH agent.</li>
+            <li><code>&gt;/dev/null</code>: Again, this suppresses any
+            output from the source command.</li>
+            </ul>
+            <p><strong>Summary:</strong></p>
+            <ul>
+            <li>The script checks if an SSH agent is running for the
+            current user. If it’s not running, it starts a new SSH agent
+            with a timeout of one hour and saves the environment
+            variables to a file.</li>
+            <li>If the SSH_AUTH_SOCK does not exist (indicating that the
+            agent is not set up), it sources the environment variables
+            from the file to configure the current shell session to
+            communicate with the new SSH agent.</li>
+            </ul>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

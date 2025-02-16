@@ -14,14 +14,13 @@
       <div class="container-lg">
         <article class="article markdown-body">
           <div class="article-inner">
-            <ul>
-            <li>(Clean Code) Martin Fowler (Uncle Bob)</li>
-            <li>(PPP) Martin Fowler (Uncle Bob): Agile Software
-            Development: Principles, Patterns, and Practices, Robert C.
-            Martin, Prentice Hall, 2002.</li>
-            <li>Refactoring - Martin Fowler</li>
-            <li>GOF</li>
-            </ul>
+            <h1 id="ssh-directory-and-file-permissions">SSH directory
+            and file permissions</h1>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> 700 ~/.ssh</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The config file must be readable and writeable only by the user and not accessible by others</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> 600 ~/.ssh/config</span></code></pre></div>
           </div>
         </article>
         <p>Date: </p>

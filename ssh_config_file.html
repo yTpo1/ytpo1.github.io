@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="ssh-configuration-files">SSH configuration
+            files</h1>
+            <h2 id="ssh-client-configuration-file">SSH client
+            configuration file</h2>
+            <p>This file is usually located at:</p>
+            <ul>
+            <li><strong>Linux/Unix:</strong>
+            <code>/etc/ssh/ssh_config</code> (system-wide) or
+            <code>~/.ssh/config</code> (user-specific)</li>
+            <li><strong>Windows:</strong>
+            <code>C:\ProgramData\ssh\ssh_config</code></li>
+            </ul>
+            <p>Common Directives:</p>
+            <ul>
+            <li><code>Host</code>: Specifies a pattern for matching host
+            names.</li>
+            <li><code>User</code>: Sets the username for the SSH
+            connection.</li>
+            <li><code>Port</code>: Specifies the port number to connect
+            to on the remote host.</li>
+            <li><code>IdentityFile</code>: Specifies the file from which
+            the user's private key is read.</li>
+            </ul>
+            <p>Sample ssh_config</p>
+            <pre class="conf"><code># Default SSH options
+Host how_i_would_identify_the_server
+    User your_username
+    Port 22
+    IdentityFile ~/.ssh/id_rsa</code></pre>
+            <h2 id="ssh-daemon-configuration-file">SSH daemon
+            configuration file</h2>
+            <p>This file is usually located at:</p>
+            <ul>
+            <li><strong>Linux/Unix:</strong>
+            <code>/etc/ssh/sshd_config</code></li>
+            <li><strong>Windows:</strong>
+            <code>C:\ProgramData\ssh\sshd_config</code></li>
+            </ul>
+            <p>Common Directives:</p>
+            <ul>
+            <li><code>Port</code>: Specifies the port number for the SSH
+            daemon.</li>
+            <li><code>ListenAddress</code>: Sets the IP addresses that
+            the SSH server listens on.</li>
+            <li><code>PermitRootLogin</code>: Controls whether the root
+            user can log in directly.</li>
+            <li><code>PasswordAuthentication</code>: Enables or disables
+            password authentication.</li>
+            <li><code>PubkeyAuthentication</code>: Enables or disables
+            public key authentication.</li>
+            <li><code>AllowUsers</code>: Restricts which users can log
+            in.</li>
+            </ul>
+            <p>Sample sshd_config</p>
+            <pre class="conf"><code># Port to listen on
+Port 22
+
+# Allow root login
+PermitRootLogin no
+
+# Use public key authentication
+PubkeyAuthentication yes
+
+# Allow specific users
+AllowUsers user1 user2</code></pre>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

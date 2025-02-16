@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="archived-and-compressed-files">Archived and
+            Compressed Files</h1>
+            <h2 id="compressing-and-decompressing-files">Compressing and
+            Decompressing Files</h2>
+            <p>link - <a
+            href="https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-gsg-en-7.3/s1-managing-compressing-archiving.html">https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-gsg-en-7.3/s1-managing-compressing-archiving.html</a></p>
+            <p>Common compression tools: <code>gzip</code>,
+            <code>bzip2</code>, or <code>zip</code>.</p>
+            <p>The <code>bzip2</code> compression tool is recommended
+            because it provides the most compression and is found on
+            most UNIX-like operating systems. The <code>gzip</code>
+            compression tool can also be found on most UNIX-like
+            operating systems. If you need to transfer files between
+            Linux and other operating system such as MS Windows, you
+            should use <code>zip</code> because it is more commonly used
+            on these other operating systems.</p>
+            <table>
+            <thead>
+            <tr class="header">
+            <th>Compression Tool</th>
+            <th>File extension</th>
+            <th>Decompression Tool</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td><code>gzip</code></td>
+            <td><code>.gz</code></td>
+            <td><code>gunzip</code></td>
+            </tr>
+            <tr class="even">
+            <td><code>bzip</code></td>
+            <td><code>.bz2</code></td>
+            <td><code>bunzip2</code></td>
+            </tr>
+            <tr class="odd">
+            <td><code>zip</code></td>
+            <td><code>.zip</code></td>
+            <td><code>unzip</code></td>
+            </tr>
+            <tr class="even">
+            <td></td>
+            <td><code>.xz</code></td>
+            <td><code>xz -d</code></td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Command: <code>xz</code>. It uses the XZ compression
+            algorithm.</p>
+            <ul>
+            <li><code>-d, --decompress, --uncompress</code>:
+            Decompress</li>
+            <li>Aliases: <code>unxz</code> is equivalent to
+            <code>xz --decompress</code> Notes: Once the target file has
+            been successfully closed, the source file is removed unless
+            --keep was specified.</li>
+            </ul>
+            <p>Example:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xz</span> <span class="at">-d</span> filename</span></code></pre></div>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

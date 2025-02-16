@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="unit-tests">Unit Tests</h1>
+            <p>A test suite:</p>
+            <ul>
+            <li>give the ability to ensure that changes to the code base
+            work as expected</li>
+            <li>give the ability to ensure that changes to one part of
+            the system does not break the other part of the system</li>
+            <li>Removes the fear of making changes.</li>
+            </ul>
+            <ol type="1">
+            <li>Keep your test code clean.</li>
+            </ol>
+            <p>It is unit tests that keep our code flexible,
+            maintainable, and reusable.</p>
+            <p>What makes a clean test? Three things. Readability,
+            readability, and readability. Readability is perhaps even
+            more important in unit tests than it is in production code.
+            What makes tests readable? The same thing that makes all
+            code readable: clarity, simplicity, and density of
+            expression. In a test you want to say a lot with as few
+            expressions as possible.</p>
+            <p>When writing unit test, design them to be read.<br />
+            Abstract the details that will need to be understood before
+            the test makes any sense.</p>
+            <h2 id="naming-convention">Naming convention</h2>
+            <p>RSpec: given-when-then convention</p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

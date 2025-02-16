@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="date" content=''>
-    <title>rofi</title>
+    <title>Program Launchers. rofi. morc_menu</title>
     <link rel="stylesheet" href="0_style.css">
   </head>
   <body>
@@ -14,13 +14,20 @@
       <div class="container-lg">
         <article class="article markdown-body">
           <div class="article-inner">
-            <h1 id="rofi">rofi</h1>
+            <h1 id="program-launchers">Program Launchers</h1>
             <p><code>$mod</code> is set to the Windows key</p>
-            <p><code>$mod+d</code> launch rofi binding set in the i3
-            config file</p>
-            <h1 id="morc_menu">morc_menu</h1>
-            <p><code>$mod+z</code> launch morc_menu binding set in the
-            i3 config file</p>
+            <p>When using i3, the binding is set in the i3 config
+            file:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># start program launcher</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bindsym</span> <span class="va">$mod</span>+d exec rofi <span class="at">-show</span> run</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># launch categorized menu</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">bindsym</span> <span class="va">$mod</span>+z exec <span class="at">--no-startup-id</span> morc_menu</span></code></pre></div>
+            <h2 id="rofi">rofi</h2>
+            <p>to do..</p>
+            <h2 id="morc_menu">morc_menu</h2>
+            <p>to do..</p>
           </div>
         </article>
         <p>Date: </p>

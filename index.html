@@ -14,8 +14,8 @@
       <div class="container-lg">
         <article class="article markdown-body">
           <div class="article-inner">
-            <h2 id="programming-and-cs-concepts-123">Programming and CS
-            Concepts 123</h2>
+            <h2 id="programming-and-cs-concepts">Programming and CS
+            Concepts</h2>
             <p>Data:</p>
             <ul>
             <li><p><a href="./data_structures.html">Data
@@ -34,18 +34,19 @@
             <li>Abstracting complexity behind simple interfaces.</li>
             </ul></li>
             </ul>
-            <h3 id="clean-code">Clean Code</h3>
+            <h3 id="clean-code-coding-principles-conventions">Clean
+            Code. Coding Principles. Conventions</h3>
             <ul>
             <li><p><a href="./cc_naming.html">Naming</a></p></li>
             <li><p><a href="./cc_functions.html">Functions</a></p></li>
             <li><p>ch 6. Objects and Data structures</p></li>
             <li><p><a href="./cc_exceptions.html">ch 7.
             Exceptions</a></p></li>
-            <li><p>ch 9. Unit tests</p></li>
+            <li><p>ch 9. <a href="./cc_unit_tests.html">Unit
+            tests</a></p></li>
             <li><p><a href="./cc_classes.html">ch 10. Classes</a></p></li>
             <li><p>General</p>
             <ul>
-            <li>G25: Replace magic numbers with named constants</li>
             <li>broken windows: They used the metaphor of broken
             windows.3 A building with broken windows looks like nobody
             cares about it. So other people stop caring. They allow more
@@ -63,14 +64,20 @@
             little too large, eliminate one small bit of duplication,
             clean up one composite if statement.</li>
             </ul></li>
-            <li>G23: Prefer Polymorphism to If/Else or Switch/Case</li>
+            <li>G5: Duplication. Don't repeat yourself (DRY)</li>
+            <li>G23: Prefer Polymorphism to If/Else or Switch/Case
+            (Question for self: how to do it? Needs a concrete
+            example.)</li>
+            <li>G25: Replace magic numbers with named constants</li>
             </ul></li>
             <li><p><a
             href="https://gist.github.com/cedrickchee/55ecfbaac643bf0c24da6874bf4feb08">https://gist.github.com/cedrickchee/55ecfbaac643bf0c24da6874bf4feb08</a></p></li>
             <li><p><a
             href="https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29">https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29</a></p></li>
-            <li><p><a href="./coding_principles.html">Coding
-            principles</a></p>
+            </ul>
+            <p>Coding Principles:</p>
+            <ul>
+            <li><a href="./coding_principles.html">Coding principles</a>
             <ul>
             <li><a
             href="http://wiki.c2.com/?DontRepeatYourself">DRY</a></li>
@@ -334,6 +341,301 @@
             </ul></li>
             <li><a href="./ide_vim.html">vim</a></li>
             </ul>
+            <h2 id="linux-desktop">Linux Desktop</h2>
+            <ul>
+            <li>X Window System environment</li>
+            <li>Tiling window manager: <a href="./i3.html">i3</a></li>
+            <li>Status bar: <a href="./i3blocks.html">i3blocks</a></li>
+            <li>Program launchers: <a href="./rofi.html">rofi,
+            morc_menu</a></li>
+            <li>Lock Screen: blurlock</li>
+            <li><a href="./linux_display_monitor.html">Display settings.
+            Monitors. Manage multi-monitor setups</a></li>
+            <li>Fonts
+            <ul>
+            <li><a href="./fonts_fontawesome.html">FontAwesome (icons,
+            Glyph)</a></li>
+            </ul></li>
+            <li>Audio: PulseAudio</li>
+            <li><a href="./dotfiles.html">dotfiles</a></li>
+            </ul>
+            <h2 id="linux-system">Linux System</h2>
+            <p>Commands:</p>
+            <ul>
+            <li><a href="./linux_system_information_commands.html">System
+            Information commands</a></li>
+            <li><a href="./linux_networking_commands.html">Networking
+            commands</a></li>
+            <li><a href="./environment_variables.html##linux">Environment
+            Variables. Linux</a></li>
+            </ul>
+            <p>Filesystem. Users and Permissions:</p>
+            <ul>
+            <li>Users</li>
+            <li>chmod 744</li>
+            </ul>
+            <p>Networking:</p>
+            <ul>
+            <li><a href="./linux_firewall.html">Firewall configuration and
+            management</a></li>
+            </ul>
+            <p>Locale, Language, Keyboard Layout:</p>
+            <ul>
+            <li><a href="./linux_locale_and_language.html">Current locale
+            and language settings</a></li>
+            <li><a href="./linux_keyboard_layout.html">Keyboard
+            Layout</a></li>
+            </ul>
+            <p>System Management:</p>
+            <ul>
+            <li><a href="./linux_systemd.html">systemd systemctl</a>: Used
+            for managing systemd services and the system itself
+            (starting, stopping, and checking the status of
+            services).</li>
+            </ul>
+            <p>Disk and Filesystem Management:</p>
+            <ul>
+            <li><code>lsblk</code>: Lists information about block
+            devices, showing their hierarchy and mount points.</li>
+            <li><code>fdisk</code>: A utility for partitioning disks;
+            allows you to create, delete, and manage disk
+            partitions.</li>
+            <li><code>udisksctl</code>: A command-line tool for managing
+            disks and storage devices using UDisks.</li>
+            <li><code>mount</code>: Used to mount filesystems or devices
+            to a directory in the filesystem hierarchy.</li>
+            <li><code>umount</code>: Used to unmount filesystems or
+            devices that were previously mounted.</li>
+            <li><code>dd</code>: A low-level utility for copying and
+            converting files, often used for backing up and restoring
+            disk images.</li>
+            </ul>
+            <p>Hardware Information:</p>
+            <ul>
+            <li><code>lspci</code>: Lists all PCI devices on the system,
+            providing information about hardware connected via the PCI
+            bus.</li>
+            <li><code>lsusb</code>: Lists all USB devices connected to
+            the system, showing details about USB hardware.</li>
+            <li><code>inxi</code>: A comprehensive system information
+            tool that provides detailed output about hardware and
+            software components.</li>
+            </ul>
+            <p>System Logs and Monitoring:</p>
+            <ul>
+            <li><code>journalctl</code>: A command for querying and
+            displaying messages from the journal, which is the logging
+            system used by systemd.</li>
+            </ul>
+            <p>Other:</p>
+            <ul>
+            <li><a
+            href="./linux_location_of_executable_files.html">Location of
+            the executable files</a></li>
+            <li>Package Managers
+            <ul>
+            <li>pacman</li>
+            <li><a href="./package_manager_apt.html">APT (Advanced Package
+            Tool). Raspberry Pi OS (Debian-based)</a></li>
+            </ul></li>
+            <li>sha256sum, checking the hash.
+            <code>sha256sum 2018-06-27-raspbian-stretch.zip</code>
+            should match the one on the website</li>
+            <li><a href="./linux_archival_compression.html">Archived and
+            Compressed files</a></li>
+            </ul>
+            <p>Shell:</p>
+            <ul>
+            <li>bash shell</li>
+            <li><a href="./zsh.html">zsh shell</a></li>
+            </ul>
+            <p>Terminal:</p>
+            <ul>
+            <li><a href="./st.html">ST terminal</a></li>
+            <li>find a normal terminal, for example Alacritty</li>
+            </ul>
+            <p>Terminal Multiplexer:</p>
+            <ul>
+            <li><a href="./tmux.html">tmux</a></li>
+            </ul>
+            <p>Scripting:</p>
+            <ul>
+            <li>General
+            <ul>
+            <li><a href="./linux_scripting_silencing.html">Running a
+            command silently (silencing a command)</a></li>
+            </ul></li>
+            <li><a href="./bash_scripting.html">bash scripting</a></li>
+            <li><a href="./zsh_scripting.html">zsh scripting</a></li>
+            </ul>
+            <h2 id="command-line-tools">Command line tools</h2>
+            <ul>
+            <li><a href="shell_commands.html">Basic shell
+            commands</a></li>
+            <li>git
+            <ul>
+            <li>basics</li>
+            <li><a href="./git_next.html">next steps</a></li>
+            </ul></li>
+            <li><a href="./command_pass.html">Password manager:
+            pass</a></li>
+            <li>rsync</li>
+            <li>scp</li>
+            </ul>
+            <p>Editing files:</p>
+            <ul>
+            <li>vim
+            <ul>
+            <li>Exit vim. Save file.</li>
+            <li><a href="./vim_normal_mode.html">Normal mode
+            hotkeys</a></li>
+            <li><a href="./vim_insertion_mode.html">Insertion Mode
+            hotkeys. (Edit Mode)</a></li>
+            <li><a href="./vim_normal_to_insert.html">Switching from
+            Normal Mode to Insertion Mode. Quick Movements.</a></li>
+            <li><a href="./vim_copy_paste.html">Copying and
+            pasting</a></li>
+            <li>Commands</li>
+            <li><a href="./vim_plugins.html">Plugins</a></li>
+            <li><a href="./vim_tutorial.html">tutorial, lessons,
+            etc</a></li>
+            </ul></li>
+            </ul>
+            <p>Searching files, directories:</p>
+            <ul>
+            <li><a href="./sed.html">sed</a></li>
+            <li>awk</li>
+            <li><a href="./grep.html">grep</a></li>
+            <li>find</li>
+            </ul>
+            <p>Documents:</p>
+            <ul>
+            <li><a href="./pandoc.html">pandoc</a></li>
+            </ul>
+            <h2 id="raspberry-pi-os">Raspberry Pi OS</h2>
+            <p>Initial:</p>
+            <ul>
+            <li><a href="./raspberrypi_os_install.html">Install OS on
+            MircoSD</a></li>
+            </ul>
+            <p>Administration:</p>
+            <ul>
+            <li><a href="./package_manager_apt.html">APT (Advanced Package
+            Tool). Raspberry Pi OS (Debian-based)</a></li>
+            <li><a href="./raspberrypi_os_ssh.html">Enabling SSH</a></li>
+            </ul>
+            <h2 id="server-administration">Server Administration</h2>
+            <ul>
+            <li><p>SSH - SSH suite is provided by OpenSSH</p></li>
+            <li><p><a href="./ssh_onto_a_server.html">Log onto a server
+            with SSH</a></p></li>
+            <li><p><a href="./ssh_keys.html">SSH Keys</a></p></li>
+            <li><p><a href="./ssh_agent.html">SSH agent</a></p></li>
+            <li><p><a href="./ssh_config_file.html">SSH config
+            file</a></p></li>
+            <li><p><a href="./ssh_dir_permissions.html">SSH directory and
+            file permissions</a></p></li>
+            <li><p><code>known_hosts</code> file</p></li>
+            <li><p>How to check if SSH is enabled on my linux
+            machine?</p></li>
+            </ul>
+            <h2 id="web-servers">Web servers</h2>
+            <p>A web server serves HTML web pages and other files via
+            HTTP to clients like web browsers. The major web servers can
+            be interfaced with programs to serve dynamic content (web
+            applications). <a
+            href="https://wiki.archlinux.org/title/List_of_applications/Internet#Web_servers">[1]</a></p>
+            <ul>
+            <li>nginx</li>
+            <li><a href="./web_server_apache.html">apache</a></li>
+            <li><a href="./iis.html">IIS</a>
+            <ul>
+            <li><a href="./iis_manual_management.html">Manual Management
+            (using GUI)</a></li>
+            <li><a href="./iis_scripting.html">Programmatically managing
+            IIS</a></li>
+            <li>urlrewrite</li>
+            </ul></li>
+            </ul>
+            <p>Other:</p>
+            <ul>
+            <li>Reverse proxy</li>
+            <li>Load Balancing</li>
+            </ul>
+            <h2 id="git-server">git server</h2>
+            <ul>
+            <li><a href="./git_server.html">git server</a></li>
+            </ul>
+            <h2 id="databases">Databases</h2>
+            <ul>
+            <li>MariaDb (MySql)
+            <ul>
+            <li><a href="./mariadb_install.html">Installation</a></li>
+            </ul></li>
+            <li><a href="./sqlite.html">Sqlite</a></li>
+            <li><a href="./ms_sql_server.html">MS SQL Server</a></li>
+            </ul>
+            <p>Other:</p>
+            <ul>
+            <li><a href="./sql_language.html">SQL language</a></li>
+            </ul>
+            <h2 id="windows-system">Windows System</h2>
+            <ul>
+            <li>Event Viewer</li>
+            <li>Remote Desktop Connection</li>
+            <li><a href="./windows_certmgr.html">Manage certificates.
+            certmgr</a></li>
+            <li><a href="./ms_sql_server.html">MS SQL Server</a>
+            <ul>
+            <li>installation</li>
+            </ul></li>
+            <li><a href="./iis.html">IIS</a>
+            <ul>
+            <li>installation</li>
+            </ul></li>
+            <li>Windows Powershell ISE</li>
+            <li>Chocolatey (package manager for Windows)
+            <ul>
+            <li>Initial system install script</li>
+            </ul></li>
+            <li>linux subsystem installation</li>
+            <li>docker installation</li>
+            <li><a
+            href="./environment_variables.html##windows">Environment
+            Variables. Windows</a></li>
+            <li>to do...</li>
+            </ul>
+            <h3 id="scripting">Scripting</h3>
+            <ul>
+            <li><a href="./powershell_scripting.html">Powershell
+            scripting</a></li>
+            </ul>
+            <h2
+            id="security-encryption-decryption-digital-signatures">Security.
+            Encryption. Decryption. Digital signatures</h2>
+            <p>Fundamentals:</p>
+            <ul>
+            <li>Asymmetric Cryptography (public-key cryptography)
+            <ul>
+            <li><a href="./encryption_public_key.html">Public Key</a></li>
+            <li><a href="./encryption_private_key.html">Private
+            Key</a></li>
+            </ul></li>
+            <li><a href="./ssh_protocol.html">SSH Protocol</a></li>
+            </ul>
+            <p>Encryption Standards:</p>
+            <ul>
+            <li><a href="./openpgp.html">OpenPGP (RFC 4880)</a>
+            <ul>
+            <li>Implementation: GnuPG (GPG)</li>
+            </ul></li>
+            </ul>
+            <p>Encryption Algorithms:</p>
+            <ul>
+            <li>RSA</li>
+            <li>DSA</li>
+            <li>ElGamal</li>
+            </ul>
             <h2 id="computer-networking">Computer Networking</h2>
             <p>Application Layer Protocols:</p>
             <ul>
@@ -401,197 +703,13 @@
             <li>proxy</li>
             <li><a href="./jwt.html">JWT (JSON Web Token)</a></li>
             </ul>
-            <h4 id="web-servers">Web servers</h4>
-            <p>A web server serves HTML web pages and other files via
-            HTTP to clients like web browsers. The major web servers can
-            be interfaced with programs to serve dynamic content (web
-            applications). <a
-            href="https://wiki.archlinux.org/title/List_of_applications/Internet#Web_servers">[1]</a></p>
-            <ul>
-            <li>nginx</li>
-            <li><a href="./web_server_apache.html">apache</a></li>
-            <li><a href="./iis.html">IIS</a>
-            <ul>
-            <li><a href="./iis_manual_management.html">Manual Management
-            (using GUI)</a></li>
-            <li><a href="./iis_scripting.html">Programmatically managing
-            IIS</a></li>
-            <li>urlrewrite</li>
-            </ul></li>
-            </ul>
-            <p>Other:</p>
-            <ul>
-            <li>Reverse proxy</li>
-            <li>Load Balancing</li>
-            </ul>
-            <h2 id="databases">Databases</h2>
-            <ul>
-            <li>MariaDb (MySql)
-            <ul>
-            <li><a href="./mariadb_install.html">Installation</a></li>
-            </ul></li>
-            <li><a href="./sqlite.html">Sqlite</a></li>
-            <li><a href="./ms_sql_server.html">MS SQL Server</a></li>
-            </ul>
-            <p>Other:</p>
-            <ul>
-            <li><a href="./sql_language.html">SQL language</a></li>
-            </ul>
-            <h2 id="command-line-tools">Command line tools</h2>
-            <ul>
-            <li><p><a href="shell_commands.html">Basic shell
-            commands</a></p></li>
-            <li><p>git</p>
-            <ul>
-            <li>basics</li>
-            <li><a href="./git_next.html">next steps</a></li>
-            </ul></li>
-            <li><p>chmod 744</p></li>
-            <li><p><a href="./pandoc.html">pandoc</a></p></li>
-            <li><p><a href="./command_pass.html">Password manager:
-            pass</a></p></li>
-            <li><p>rsync</p></li>
-            <li><p>scp</p></li>
-            </ul>
-            <p>Searching files, directories:</p>
-            <ul>
-            <li><a href="./sed.html">sed</a></li>
-            <li>awk</li>
-            <li><a href="./grep.html">grep</a></li>
-            <li>find</li>
-            </ul>
-            <h2 id="linux-desktop">Linux Desktop</h2>
-            <ul>
-            <li>X Window System environment</li>
-            <li><a href="./i3.html">Tiling window manager. "i3"</a></li>
-            <li><a href="./i3blocks.html">Status bar: i3blocks</a></li>
-            <li><a href="./rofi.html">Program launchers. "rofi",
-            "morc_menu"</a></li>
-            <li><a href="./linux_display_monitor.html">Display settings.
-            Monitors. Manage multi-monitor setups</a></li>
-            </ul>
-            <h2 id="linux-system">Linux System</h2>
-            <p>Commands:</p>
-            <ul>
-            <li><a href="./linux_system_information_commands.html">System
-            Information commands</a></li>
-            <li><a href="./linux_networking_commands.html">Networking
-            commands</a></li>
-            <li><a href="./environment_variables.html##linux">Environment
-            Variables. Linux</a></li>
-            </ul>
-            <p>Filesystem. Users and Permissions:</p>
-            <ul>
-            <li>Users</li>
-            </ul>
-            <p>Networking:</p>
-            <ul>
-            <li><a href="./linux_firewall.html">Firewall configuration and
-            management</a></li>
-            </ul>
-            <p>Other:</p>
-            <ul>
-            <li><a href="./linux_systemd.html">systemd systemctl</a></li>
-            <li><a
-            href="./linux_location_of_executable_files.html">Location of
-            the executable files</a></li>
-            <li>Package Managers
-            <ul>
-            <li>pacman</li>
-            </ul></li>
-            <li><a href="./linux_locale_and_language.html">Current locale
-            and language settings</a></li>
-            </ul>
-            <p>Shell:</p>
-            <ul>
-            <li>bash shell</li>
-            <li><a href="./zsh.html">zsh shell</a></li>
-            </ul>
-            <p>Terminal:</p>
-            <ul>
-            <li><a href="./st.html">ST terminal</a></li>
-            <li>find a normal terminal, for example Alacritty</li>
-            </ul>
-            <p>Terminal Multiplexer</p>
-            <ul>
-            <li><a href="./tmux.html">tmux</a></li>
-            </ul>
-            <h3 id="scripting">Scripting</h3>
-            <ul>
-            <li><a href="./bash_scripting.html">bash scripting</a></li>
-            <li><a href="./zsh_scripting.html">zsh scripting</a></li>
-            </ul>
-            <h2 id="windows-system">Windows System</h2>
-            <ul>
-            <li>Event Viewer</li>
-            <li>Remote Desktop Connection</li>
-            <li><a href="./windows_certmgr.html">Manage certificates.
-            certmgr</a></li>
-            <li><a href="./ms_sql_server.html">MS SQL Server</a>
-            <ul>
-            <li>installation</li>
-            </ul></li>
-            <li><a href="./iis.html">IIS</a>
-            <ul>
-            <li>installation</li>
-            </ul></li>
-            <li>Windows Powershell ISE</li>
-            <li>Chocolatey (package manager for Windows)
-            <ul>
-            <li>Initial system install script</li>
-            </ul></li>
-            <li>linux subsystem installation</li>
-            <li>docker installation</li>
-            <li><a
-            href="./environment_variables.html##windows">Environment
-            Variables. Windows</a></li>
-            <li>to do...</li>
-            </ul>
-            <h3 id="scripting-1">Scripting</h3>
-            <ul>
-            <li><a href="./powershell_scripting.html">Powershell
-            scripting</a></li>
-            </ul>
-            <h2
-            id="security-encryption-decryption-digital-signatures">Security.
-            Encryption. Decryption. Digital signatures</h2>
-            <ul>
-            <li><a href="./ssh_protocol.html">SSH Protocol</a></li>
-            <li>SSH Keys
-            <ul>
-            <li><a href="./ssh_agent.html">SSH agent</a></li>
-            </ul></li>
-            <li>OpenSSH</li>
-            </ul>
-            <p>Fundamentals:</p>
-            <ul>
-            <li>Asymmetric Cryptography (public-key cryptography)
-            <ul>
-            <li><a href="./encryption_public_key.html">Public Key</a></li>
-            <li><a href="./encryption_private_key.html">Private
-            Key</a></li>
-            </ul></li>
-            </ul>
-            <p>Standards:</p>
-            <ul>
-            <li><a href="./openpgp.html">OpenPGP (RFC 4880)</a>
-            <ul>
-            <li>Implementation: GnuPG (GPG)</li>
-            </ul></li>
-            </ul>
-            <p>Encryption Algorithms:</p>
-            <ul>
-            <li>RSA</li>
-            <li>DSA</li>
-            <li>ElGamal</li>
-            </ul>
             <h2 id="other">Other</h2>
             <ul>
             <li><a href="./markdown.html">markdown</a></li>
             <li><a href="./library.html">Software developers
             library</a></li>
             <li><a
-            href="https://en.wikipedia.org/wiki/Unix_philosophy"><span>https://en.wikipedia.org/wiki/Unix_philosophy</span></a></li>
+            href="https://en.wikipedia.org/wiki/Unix_philosophy">https://en.wikipedia.org/wiki/Unix_philosophy</a></li>
             </ul>
             <h2 id="glossary">Glossary</h2>
             <ul>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="install-raspberry-pi-os-on-mircosd">Install
+            Raspberry Pi OS on MircoSD</h1>
+            <p>Preparation:</p>
+            <ol type="1">
+            <li>Download the image. Run
+            <code>sha256sum 2018-06-27-raspbian-stretch.zip</code>. The
+            generated hash should match the one given on the website;
+            for the 2018-06-27 zip, this is
+            <code>8636ab9fdd8f58a8ec7dde33b83747696d31711d17ef68267dbbcd6cfb968c24</code>.</li>
+            <li>Uncompress it, for example
+            <code>xz -d filename</code></li>
+            </ol>
+            <p>Installation:</p>
+            <ol type="1">
+            <li>Insert your SD card into your computer.</li>
+            <li>Locate the device, by running <code>sudo fdisk -l</code>
+            or <code>lsblk</code>. Note down the device name; let us
+            suppose it is <code>/dev/sdx</code> or
+            <code>/dev/mmcblk0</code></li>
+            <li>Unmount the partitions by running sudo
+            <code>umount /dev/sdx*</code>. It may give an error saying
+            the disk isn't mounted - that's fine.</li>
+            <li>Copy the contents of the image file (.iso, .img) onto
+            the SD card by running</li>
+            </ol>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dd bs=4M if=/path/to/manjaro.iso of=/dev/sd[drive letter] status=progress</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dd bs=4M if=2024-11-19-raspios-bookworm-armhf.img of=/dev/mmcblk0 status=progress</span></code></pre></div>
+            <ul>
+            <li>Please note that block size set to 4M will work most of
+            the time, if not, please try 1M, although 1M will take
+            considerably longer.</li>
+            </ul>
+            <p><code>dd</code> command:</p>
+            <ul>
+            <li><code>if=FILE</code>: read from FILE instead of
+            stdin</li>
+            <li><code>of=FILE</code>: write to FILE instead of
+            stdout</li>
+            <li><code>status=LEVEL</code>: ’progress’ shows periodic
+            transfer statistics</li>
+            </ul>
+            <h2 id="sources-references">Sources. References</h2>
+            <ul>
+            <li><a
+            href="https://raspberrypi.stackexchange.com/questions/931/how-do-i-install-an-os-image-onto-an-sd-card">https://raspberrypi.stackexchange.com/questions/931/how-do-i-install-an-os-image-onto-an-sd-card</a></li>
+            <li><a
+            href="https://elinux.org/RPi_Easy_SD_Card_Setup">https://elinux.org/RPi_Easy_SD_Card_Setup</a></li>
+            </ul>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

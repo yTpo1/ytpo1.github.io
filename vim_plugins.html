@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="vim-plugins">Vim. Plugins</h1>
+            <p>Plug in manager: <a
+            href="https://github.com/junegunn/vim-plug">https://github.com/junegunn/vim-plug</a></p>
+            <p>Markdown: <a
+            href="https://github.com/suan/vim-instant-markdown">https://github.com/suan/vim-instant-markdown</a></p>
+            <h2 id="nerdtree">Nerdtree</h2>
+            <p><a
+            href="https://code.tutsplus.com/tutorials/vim-essential-plugin-nerdtree--net-19692">https://code.tutsplus.com/tutorials/vim-essential-plugin-nerdtree--net-19692</a><br />
+            Installed with pacman.<br />
+            Start nerdtree</p>
+            <pre><code>:NERDTree  </code></pre>
+            <p>Open any file by typing <code>o</code>, or with the more
+            convenient alias, the Enter key.</p>
+            <h4 id="menu">Menu</h4>
+            <p>Press the letter m to bring up a menu that will allow you
+            to quickly add, move, copy, and delete nodes (or files). So,
+            for example, if I want to create a new html file within a
+            particular directory, I can type ma newfile.html.</p>
+            <h2 id="tagbar">Tagbar</h2>
+            <p>Installed with pacman.<br />
+            Start tagbar</p>
+            <pre><code>:Tagbar</code></pre>
+            <h2 id="vim-airline">Vim-airline</h2>
+            <p>Installed with pacman.</p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>
