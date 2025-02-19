@@ -27,6 +27,24 @@
             <p>Search only the current directory:</p>
             <div class="sourceCode" id="cb2"><pre
             class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> “string<span class="pp">*</span>” <span class="pp">*</span></span></code></pre></div>
+            <h2>???</h2>
+            <p>OPTIONS</p>
+            <ul>
+            <li>Pattern Syntax
+            <ul>
+            <li><code>-E</code>, <code>--extended-regexp</code>:
+            Interpret PATTERNS as extended regular expressions (EREs,
+            see below).</li>
+            </ul></li>
+            </ul>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-E</span> PATTERN</span></code></pre></div>
+            <p>Basic vs Extended Regular Expressions:</p>
+            <ul>
+            <li>In basic regular expressions the meta-characters ?, +,
+            {, |, (, and ) lose their special meaning; instead use the
+            backslashed versions ?, +, {, |, (, and ).</li>
+            </ul>
           </div>
         </article>
         <p>Date: </p>

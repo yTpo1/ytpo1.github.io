@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="public-key-certificate">Public Key Certificate</h1>
+            <p>Other names:</p>
+            <ul>
+            <li>digital certificate</li>
+            <li>identity certificate</li>
+            </ul>
+            <p>In cryptography, a public key certificate is an
+            electronic document used to prove the validity of a <a
+            href="">public key</a>./encryption_public_key.html). The
+            certificate includes the public key and information about
+            it, information about the identity of its owner (called the
+            subject), and the <code>digital signature</code> of an
+            entity that has verified the certificate's contents (called
+            the issuer). If the device examining the certificate trusts
+            the issuer and finds the signature to be a valid signature
+            of that issuer, then it can use the included public key to
+            communicate securely with the certificate's subject.</p>
+            <p><a
+            href="https://en.wikipedia.org/wiki/Public_key_certificate">https://en.wikipedia.org/wiki/Public_key_certificate</a></p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

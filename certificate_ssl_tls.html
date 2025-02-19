@@ -14,36 +14,94 @@
       <div class="container-lg">
         <article class="article markdown-body">
           <div class="article-inner">
-            <h1 id="what-is-an-ssltls-certificate">What is an SSL/TLS
-            Certificate?</h1>
+            <h1 id="tlsssl-certificate">TLS/SSL Certificate</h1>
+            <p>Other names:</p>
             <ul>
-            <li><p><strong>Definition:</strong> An SSL (Secure Sockets
+            <li>SSL Certificate</li>
+            <li>TSL Certificate</li>
+            <li>TLS/SSL server certificate</li>
+            </ul>
+            <p>What is an SSL/TLS Certificate?</p>
+            <p><strong>Definition:</strong> An SSL (Secure Sockets
             Layer) or TLS (Transport Layer Security) certificate is a
             digital certificate that authenticates the identity of a
             website and enables an encrypted connection between the web
-            server and the user's browser.</p></li>
-            <li><p><strong>Purpose:</strong> Certificates ensure that
-            data transmitted between the user and the server is secure
-            and that the website is genuine, helping to establish
-            trust.</p></li>
-            <li><p>When a website is hosted, the SSL/TLS certificate
-            must be installed on the web server. This allows the server
-            to establish secure connections using HTTPS.</p></li>
-            <li><p><strong>Domain Validation:</strong> To obtain a
-            certificate, the domain owner must prove ownership of the
-            domain. This is typically done through a validation process
-            by the certificate authority (CA).</p></li>
-            </ul>
-            <h4 id="types-of-certificate-validation">Types of
-            Certificate Validation:</h4>
+            server and the user's browser.</p>
+            <p><strong>Purpose:</strong> Certificates ensure that data
+            transmitted between the user and the server is secure and
+            that the website is genuine, helping to establish trust.</p>
+            <h2 id="how-ssl-certificates-work">How SSL Certificates
+            work</h2>
+            <h3 id="step-1-certificate-issuance">Step 1: Certificate
+            Issuance</h3>
+            <ol type="1">
+            <li><strong>Certificate Signing Request (CSR):</strong>
             <ul>
-            <li><strong>Domain Validated (DV):</strong> Basic
-            validation; verifies ownership of the domain.</li>
-            <li><strong>Organization Validated (OV):</strong> Includes
-            verification of the organization behind the website.</li>
-            <li><strong>Extended Validation (EV):</strong> Provides the
-            highest level of assurance, requiring extensive verification
-            of the organization.</li>
+            <li>The website owner generates a CSR, which includes the
+            public key and information about the organization (e.g.,
+            domain name, organization name).</li>
+            <li>This CSR is sent to a Certificate Authority (CA) to
+            request an SSL certificate.</li>
+            </ul></li>
+            <li><strong>Validation:</strong>
+            <ul>
+            <li>The CA verifies the information provided in the CSR.
+            Depending on the type of certificate (Domain Validation,
+            Organization Validation, or Extended Validation), this
+            process may vary in complexity.</li>
+            </ul></li>
+            <li><strong>Certificate Issuance:</strong>
+            <ul>
+            <li>Once validated, the CA issues the SSL certificate, which
+            includes the website's public key, information about the
+            issuer, the validity period, and the digital signature of
+            the CA.</li>
+            </ul></li>
+            </ol>
+            <h3 id="step-2-ssl-handshake">Step 2: SSL Handshake</h3>
+            <ol type="1">
+            <li><strong>Client Connection:</strong>
+            <ul>
+            <li>When a user accesses a website (e.g., <a
+            href="https://www.example.com">https://www.example.com</a>),
+            the browser initiates a connection to the server.</li>
+            </ul></li>
+            <li><strong>Server Response:</strong>
+            <ul>
+            <li>The server responds by sending its SSL certificate to
+            the browser.</li>
+            </ul></li>
+            <li><strong>Validation by Client:</strong>
+            <ul>
+            <li>The browser checks the certificate:
+            <ul>
+            <li>It verifies the certificate's validity period.</li>
+            <li>It checks that the certificate is issued by a trusted
+            CA.</li>
+            <li>It ensures that the domain name matches the one in the
+            certificate.</li>
+            </ul></li>
+            </ul></li>
+            <li><strong>Public Key Exchange:</strong>
+            <ul>
+            <li>If the certificate is valid, the browser uses the public
+            key from the certificate to encrypt a randomly generated
+            session key.</li>
+            </ul></li>
+            <li><strong>Session Key Establishment:</strong>
+            <ul>
+            <li>The encrypted session key is sent to the server, which
+            uses its private key to decrypt it. Now both the server and
+            client share a session key for symmetric encryption.</li>
+            </ul></li>
+            </ol>
+            <h3 id="step-3-encrypted-communication">Step 3: Encrypted
+            Communication</h3>
+            <ul>
+            <li>With the session key established, all subsequent data
+            transmitted between the client and server is encrypted using
+            this symmetric key, ensuring confidentiality and
+            integrity.</li>
             </ul>
             <h4 id="connection-to-routing">Connection to Routing</h4>
             <ul>
@@ -63,8 +121,6 @@
             valid and signed by a trusted CA, the browser establishes a
             secure connection.</li>
             </ul>
-            <h1 id="source">Source</h1>
-            <p>Poe the AI</p>
           </div>
         </article>
         <p>Date: </p>

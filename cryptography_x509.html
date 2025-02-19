@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="x509">X.509</h1>
+            <h2 id="certificate-fields">Certificate Fields</h2>
+            <p>Its <strong>Subject</strong> field describes Wikipedia as
+            an organization, and its <strong>Subject Alternative Name
+            (SAN)</strong> field for DNS describes the hostnames for
+            which it could be used.</p>
+            <h3 id="subject-field">Subject field</h3>
+            <p>The "Subject" field of a certificate contains information
+            that identifies the entity (such as a person, organization,
+            or device) to which the certificate is issued. Here’s a
+            breakdown of its components and significance:</p>
+            <p><strong>Components of the Subject Field</strong></p>
+            <ol type="1">
+            <li><strong>Common Name (CN):</strong>
+            <ul>
+            <li>This is the primary identifier in the "Subject"
+            field.</li>
+            <li>For TLS/SSL certificates, the Common Name typically
+            represents the domain of the website (e.g., <a
+            href="http://www.example.com">www.example.com</a>).</li>
+            <li>For other types of certificates, it might represent the
+            name of an individual or an organization.</li>
+            <li>In the case of wildcard certificates, it may appear as
+            *.example.com.</li>
+            </ul></li>
+            <li><strong>Organization (O):</strong> The legal name of the
+            organization that owns the certificate.</li>
+            <li><strong>Organizational Unit (OU):</strong> A subdivision
+            or department within the organization (optional).</li>
+            <li><strong>Country (C):</strong> The <a
+            href="./data_standards_country_codes.html">two-letter ISO code
+            for the country</a> where the organization is located (e.g.,
+            US for the United States).</li>
+            <li><strong>State or Province (ST):</strong> The state or
+            province where the organization is registered (not always
+            included).</li>
+            <li><strong>Locality (L):</strong> The city or locality of
+            the organization (optional).</li>
+            </ol>
+            <pre><code>Certificate:
+   Data:
+       Subject: C=US, ST=California, L=San Francisco, O=Wikimedia Foundation, Inc., CN=*.wikipedia.org</code></pre>
+            <p>In summary, the Subject field is a crucial part of a
+            TLS/SSL certificate that provides identifying information
+            about the certificate holder, helping to establish trust and
+            secure communications.</p>
+            <h3 id="subject-alternative-name-san">Subject Alternative
+            Name (SAN)</h3>
+            <p>The Subject Alternative Name (SAN) field is an extension
+            in a TLS/SSL certificate that allows the specification of
+            additional identities for which the certificate is
+            valid.</p>
+            <p><strong>Purpose of the SAN Field</strong></p>
+            <ol type="1">
+            <li><strong>Multiple Domain Support:</strong> The SAN field
+            enables a single certificate to secure multiple domain names
+            and subdomains. This is particularly useful for
+            organizations that manage several websites or services.</li>
+            <li><strong>Flexibility:</strong> It provides flexibility in
+            certificate management by allowing multiple domains to be
+            covered under one certificate, reducing the need for
+            multiple certificates.</li>
+            </ol>
+            <p>Example of a SAN field:</p>
+            <pre><code>Subject Alternative Name:
+    DNS Name=www.example.com
+    DNS Name=example.com
+    DNS Name=mail.example.com
+    IP Address=192.0.2.1</code></pre>
+            <h4 id="summary">Summary</h4>
+            <p>The Subject Alternative Name (SAN) field is an essential
+            component of modern TLS/SSL certificates, allowing multiple
+            domain names, IP addresses, and email addresses to be
+            associated with a single certificate. This flexibility
+            enhances security, simplifies certificate management, and
+            ensures broader compatibility with web browsers and
+            clients.</p>
+            <h2 id="certificate-thumbprint">Certificate Thumbprint</h2>
+            <p>A <strong>Certificate Thumbprint</strong> (or
+            <strong>Fingerprint</strong>) is a unique identifier for a
+            digital certificate. It is a hash value computed from the
+            certificate's data using a cryptographic hash function such
+            as SHA-1 or SHA-256.</p>
+            <p>The thumbprint can be used to verify the integrity of the
+            certificate. If even a small change occurs in the
+            certificate's data, the thumbprint will change, indicating
+            that the certificate has been altered.</p>
+            <p>A certificate thumbprint <strong>is not a field</strong>
+            within the certificate itself, but rather a unique
+            identifier derived from the certificate.</p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

@@ -107,7 +107,7 @@
             <ul>
             <li>Singleton</li>
             <li>Factory</li>
-            <li>Builder</li>
+            <li>Builder -</li>
             </ul>
             <p>Structural:</p>
             <ul>
@@ -427,11 +427,14 @@
             displaying messages from the journal, which is the logging
             system used by systemd.</li>
             </ul>
-            <p>Other:</p>
+            <p>Linux Directory Structure:</p>
             <ul>
             <li><a
             href="./linux_location_of_executable_files.html">Location of
-            the executable files</a></li>
+            the executable files</a> Where to place executables</li>
+            </ul>
+            <p>Other:</p>
+            <ul>
             <li>Package Managers
             <ul>
             <li>pacman</li>
@@ -603,6 +606,7 @@
             <li><a
             href="./environment_variables.html##windows">Environment
             Variables. Windows</a></li>
+            <li>Active Directory</li>
             <li>to do...</li>
             </ul>
             <h3 id="scripting">Scripting</h3>
@@ -611,16 +615,65 @@
             scripting</a></li>
             </ul>
             <h2
-            id="security-encryption-decryption-digital-signatures">Security.
-            Encryption. Decryption. Digital signatures</h2>
-            <p>Fundamentals:</p>
+            id="security-cryptography-encryption-decryption-digital-signatures-certificates-secure-communications">Security.
+            Cryptography. Encryption. Decryption. Digital Signatures.
+            Certificates. Secure Communications.</h2>
+            <p>Cryptography Fundamentals:</p>
             <ul>
+            <li>Symmetric-key cryptography
+            <ul>
+            <li>Symmetric key ciphers are implemented as either:
+            <ul>
+            <li><code>block ciphers</code>
+            <ul>
+            <li>Data Encryption Standard (DES)</li>
+            <li>Advanced Encryption Standard (AES) (Rijndael)</li>
+            </ul></li>
+            <li><code>stream ciphers</code></li>
+            </ul></li>
+            <li>cryptographic hash functions
+            <ul>
+            <li>MD4</li>
+            <li>MD5</li>
+            <li>SHA-1</li>
+            <li>SHA-2
+            <ul>
+            <li>SHA-256</li>
+            </ul></li>
+            </ul></li>
+            <li><a href="./cryptography_mac.html">Message authentication
+            codes (MACs)</a></li>
+            </ul></li>
             <li>Asymmetric Cryptography (public-key cryptography)
             <ul>
             <li><a href="./encryption_public_key.html">Public Key</a></li>
             <li><a href="./encryption_private_key.html">Private
             Key</a></li>
+            <li><a
+            href="./cryptography_public_key_certificate.html">Public Key
+            Certificate</a>
+            <ul>
+            <li><a href="./cryptography_x509.html">X.509</a> is an
+            International Telecommunication Union (ITU) standard
+            defining the format of public key certificates
+            <ul>
+            <li><a href="./certificate_ssl_tls.html">TLS/SSL
+            Certificate</a></li>
+            <li><a
+            href="./cryptography_x509.html###Subject-field">Certificate
+            Fields</a></li>
             </ul></li>
+            <li>Certificate Authority (CA)</li>
+            <li><a
+            href="./certificate_management_on_windows.html">Certificate
+            Management on Windows</a></li>
+            <li>Filename extensions: <code>.pem</code>,
+            <code>.cer</code></li>
+            </ul></li>
+            </ul></li>
+            </ul>
+            <p>Protocols:</p>
+            <ul>
             <li><a href="./ssh_protocol.html">SSH Protocol</a></li>
             </ul>
             <p>Encryption Standards:</p>
@@ -689,19 +742,19 @@
             </ul></li>
             <li>Firewall</li>
             <li>Client - Server (architecture?)</li>
-            <li>Certificates
-            <ul>
-            <li>Public key certificate (also known as a digital
-            certificate or identity certificate)
-            <ul>
-            <li><a href="./certificate_ssl_tls.html">TLS/SSL server
-            certificate (SSL/TLS)</a></li>
-            </ul></li>
-            <li>certificate authority (CA)</li>
-            </ul></li>
             <li>hosting</li>
             <li>proxy</li>
             <li><a href="./jwt.html">JWT (JSON Web Token)</a></li>
+            </ul>
+            <h2 id="iso-standards-data-formatting-standards">ISO
+            Standards. Data Formatting Standards</h2>
+            <ul>
+            <li><a href="./character_encoding.html">Character Encoding.
+            ASCII, UTF-8</a></li>
+            <li><a href="./date_standads.html">Date Standards. ISO 8601,
+            UTC</a></li>
+            <li><a href="./data_standards_country_codes.html">Country
+            Codes. ISO 3166</a></li>
             </ul>
             <h2 id="other">Other</h2>
             <ul>

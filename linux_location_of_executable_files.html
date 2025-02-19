@@ -16,10 +16,41 @@
           <div class="article-inner">
             <h1 id="linux-location-of-the-executable-files">Linux.
             Location of the executable files</h1>
+            <p>In Linux, application executables can be placed in
+            several standard directories, depending on their intended
+            use and scope. Here are some common locations:</p>
+            <p><strong>System-wide executables:</strong></p>
+            <ul>
+            <li><code>/bin</code>: Essential command binaries (e.g., ls,
+            cp).</li>
+            <li><code>/sbin</code>: System binaries, usually for system
+            administration (e.g., shutdown, mount).</li>
+            <li><code>/usr/bin</code>: Non-essential user binaries and
+            applications (e.g., user-installed applications).</li>
+            <li><code>/usr/sbin</code>: Non-essential system binaries
+            (e.g., server daemons).</li>
+            <li><code>/usr/local/bin</code>: Binaries for user-installed
+            applications that are not managed by the package
+            manager.</li>
+            <li><code>/usr/local/sbin</code>: System administration
+            binaries for locally installed software.</li>
+            </ul>
+            <p>Will output the directories in which the shell looks for
+            executable files:</p>
             <div class="sourceCode" id="cb1"><pre
-            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Will output the directories in which the shell looks for executable files.</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$PATH</span> </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># For example: /home/username/.local/bin</span></span></code></pre></div>
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$PATH</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># For example:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># /home/username/.local/bin</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># /usr/local/bin</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># /usr/bin</span></span></code></pre></div>
+            <h2 id="finding-executables">Finding Executables</h2>
+            <p>You can locate executables using the which command:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> <span class="op">&lt;</span>executable_name<span class="op">&gt;</span></span></code></pre></div>
+            <p>Or use the whereis command for more comprehensive
+            results:</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">whereis</span> <span class="op">&lt;</span>executable_name<span class="op">&gt;</span></span></code></pre></div>
           </div>
         </article>
         <p>Date: </p>

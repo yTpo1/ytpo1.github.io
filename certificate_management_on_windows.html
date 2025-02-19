@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="certificate-management-on-windows">Certificate
+            Management on Windows</h1>
+            <h2 id="using-certificate-manager-certlmmsc">Using
+            'Certificate Manager (certlm.msc)'</h2>
+            <p>To see what certificates are installed on your Windows
+            machine, you can use the Certificate Manager
+            (certlm.msc):</p>
+            <ul>
+            <li>Press <code>Win + R</code> to open the Run dialog</li>
+            <li>Type <code>certlm.msc</code> and press
+            <code>Enter</code>. This opens the Certificate Manager for
+            the local machine</li>
+            </ul>
+            <h2 id="import-a-certificate---to-do-">Import a certificate
+            - To do: ...</h2>
+            <h2 id="powershell">Powershell</h2>
+            <p>Find a certificate by its <code>Issued To</code> name
+            using PowerShell in the Local Machine's Personal story:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span> <span class="op">-</span>Path Cert<span class="op">:</span>\LocalMachine\My <span class="op">|</span> <span class="fu">Where-Object</span> <span class="op">{</span> <span class="va">$_</span><span class="op">.</span><span class="fu">Subject</span> <span class="op">-</span>like <span class="st">&quot;*domain.net*&quot;</span> <span class="op">}</span></span></code></pre></div>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>
