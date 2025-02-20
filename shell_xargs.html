@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="xargs">xargs</h1>
+            <p>xargs is a command-line utility in Unix/Linux that is
+            commonly used to handle the output of commands and pass them
+            as arguments to another command.</p>
+            <p><strong>Argument Handling:</strong> xargs converts input
+            from standard input (stdin) into arguments for another
+            command. This is particularly useful when the input contains
+            a large number of items or when the input items are
+            generated dynamically.</p>
+            <p>Here are a few examples of how xargs can be used:</p>
+            <p>This will translate to rm file1 file2 file3, effectively
+            deleting those files.</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;file1 file2 file3&quot;</span> <span class="kw">|</span> <span class="fu">xargs</span> rm</span></code></pre></div>
+            <p>This command finds all .tmp files in the current
+            directory and its subdirectories and deletes them.</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-name</span> <span class="st">&quot;*.tmp&quot;</span> <span class="kw">|</span> <span class="fu">xargs</span> rm</span></code></pre></div>
+            <p>This will output each file name on a new line:</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;file1 file2 file3&quot;</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 echo</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Result:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">file1</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">file2</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">file3</span></span></code></pre></div>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="vim-splitting-viewport">Vim. Splitting viewport</h1>
+            <ul>
+            <li><strong>:sp</strong>: will split the Vim window
+            horizontally. Can be written out entirely as
+            <strong>:split</strong></li>
+            <li><strong>:vsp</strong>: will split the Vim window
+            vertically. Can be written out as
+            <strong>:vspliti</strong>.</li>
+            <li><strong>:sp</strong> filename</li>
+            <li><strong>Ctrl-w q</strong>: will close the active
+            window.</li>
+            <li><strong>Ctrl-w n</strong>: create new</li>
+            <li><strong>Ctrl-w Ctrl-w</strong>: moves between Vim
+            viewports.</li>
+            </ul>
+            <p><code>Ctrl+w</code> followed by <code>H</code>,
+            <code>J</code>, <code>K</code> or <code>L</code> (capital)
+            will move the current window to the far left, bottom, top or
+            right respectively like normal cursor navigation.</p>
+            <p><a
+            href="https://www.linux.com/tutorials/vim-tips-using-viewports/">https://www.linux.com/tutorials/vim-tips-using-viewports/</a></p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="zshrc">.zshrc</h1>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># .zshenv is souced automatically</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># .zprofile is being sourced automatically</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.zalias</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.zfunctions</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.zsensitive</span></code></pre></div>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

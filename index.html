@@ -14,6 +14,7 @@
       <div class="container-lg">
         <article class="article markdown-body">
           <div class="article-inner">
+            <h1 id="tech-notes">Tech notes</h1>
             <h2 id="programming-and-cs-concepts">Programming and CS
             Concepts</h2>
             <p>Data:</p>
@@ -21,6 +22,10 @@
             <li><p><a href="./data_structures.html">Data
             Structures</a></p></li>
             <li><p><a href="./algorithms.html">Algorithms</a></p></li>
+            <li><p>Models of computation:</p>
+            <ul>
+            <li>State machine</li>
+            </ul></li>
             <li><p><a href="./character_encoding.html">Character Encoding.
             ASCII, UTF-8</a></p></li>
             <li><p><a href="./date_standads.html">Date Standards. ISO
@@ -427,11 +432,12 @@
             displaying messages from the journal, which is the logging
             system used by systemd.</li>
             </ul>
-            <p>Linux Directory Structure:</p>
+            <p>Linux Directory Structure (organisation):</p>
             <ul>
             <li><a
             href="./linux_location_of_executable_files.html">Location of
             the executable files</a> Where to place executables</li>
+            <li>/tmp</li>
             </ul>
             <p>Other:</p>
             <ul>
@@ -449,8 +455,17 @@
             </ul>
             <p>Shell:</p>
             <ul>
-            <li>bash shell</li>
-            <li><a href="./zsh.html">zsh shell</a></li>
+            <li>bash shell
+            <ul>
+            <li><a href="./bashrc.html">.bashrc</a></li>
+            </ul></li>
+            <li><a href="./zsh.html">zsh shell</a>
+            <ul>
+            <li><a href="./zshrc.html">.zshrc</a></li>
+            </ul></li>
+            <li><a href="./shell_aliases.html">aliases</a></li>
+            <li><a href="./shell_functions.html">functions (.zfunctions,
+            .bash_functions)</a></li>
             </ul>
             <p>Terminal:</p>
             <ul>
@@ -461,29 +476,38 @@
             <ul>
             <li><a href="./tmux.html">tmux</a></li>
             </ul>
+            <h2 id="command-line-tools-and-scripting">Command Line Tools
+            and Scripting</h2>
+            <p><a
+            href="./glossary_shell_command_line_scripting.html">Glossary:
+            Shell, Command Line Tools and Scripting</a></p>
             <p>Scripting:</p>
             <ul>
-            <li>General
+            <li><p>shell scripting</p>
+            <ul>
+            <li><a href="./shell_xargs.html">xargs</a></li>
+            <li>printf</li>
+            </ul></li>
+            <li><p><a href="./bash_scripting.html">bash
+            scripting</a></p></li>
+            <li><p><a href="./zsh_scripting.html">zsh
+            scripting</a></p></li>
+            <li><p>General</p>
             <ul>
             <li><a href="./linux_scripting_silencing.html">Running a
             command silently (silencing a command)</a></li>
             </ul></li>
-            <li><a href="./bash_scripting.html">bash scripting</a></li>
-            <li><a href="./zsh_scripting.html">zsh scripting</a></li>
-            </ul>
-            <h2 id="command-line-tools">Command line tools</h2>
-            <ul>
-            <li><a href="shell_commands.html">Basic shell
-            commands</a></li>
-            <li>git
+            <li><p><a href="shell_commands.html">Basic shell
+            commands</a></p></li>
+            <li><p>git</p>
             <ul>
             <li>basics</li>
             <li><a href="./git_next.html">next steps</a></li>
             </ul></li>
-            <li><a href="./command_pass.html">Password manager:
-            pass</a></li>
-            <li>rsync</li>
-            <li>scp</li>
+            <li><p><a href="./command_pass.html">Password manager:
+            pass</a></p></li>
+            <li><p>rsync</p></li>
+            <li><p>scp</p></li>
             </ul>
             <p>Editing files:</p>
             <ul>
@@ -499,6 +523,8 @@
             <li><a href="./vim_copy_paste.html">Copying and
             pasting</a></li>
             <li>Commands</li>
+            <li><a href="./vim_splitting_viewport.html">Splitting
+            viewport</a></li>
             <li><a href="./vim_plugins.html">Plugins</a></li>
             <li><a href="./vim_tutorial.html">tutorial, lessons,
             etc</a></li>

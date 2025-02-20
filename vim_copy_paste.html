@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="vim-copying-and-pasting">Vim. Copying and
+            pasting</h1>
+            <p>Buffers, registers</p>
+            <p>Pasting:</p>
+            <ul>
+            <li>Paste in insertion mode: <code>crtl+r "</code></li>
+            <li>Paste in normal mode: <code>p</code></li>
+            </ul>
+            <p>Copying:</p>
+            <ul>
+            <li>In normal mode:
+            <ul>
+            <li>using mouse</li>
+            <li>select with <code>v</code> then <code>y</code></li>
+            <li>copy word <code>yw</code>, <code>y2w</code></li>
+            </ul></li>
+            </ul>
+            <h2 id="pasting">Pasting</h2>
+            <p>Start thinking in registers. Copying in pasting in vim is
+            more complex than <code>ctrl-c</code> <code>ctrl-v</code>,
+            be it for better or worse.</p>
+            <p>The most important things to keep in mind:</p>
+            <ul>
+            <li><code>y</code>: yank (yw - yank word)</li>
+            <li><code>p</code>: paste</li>
+            <li><code>ctrl+"</code></li>
+            <li><code>*</code> register: all vim deletes, cuts and yanks
+            go into this register</li>
+            <li><code>+</code> register: all OS copies go into this
+            register</li>
+            <li><code>0</code> register: only yanks will go into this
+            register. Have you ever been frustrated with yanking
+            something, then going to another line, deleting the unwanted
+            word and then pasting with <strong>p</strong> the deleted
+            word instead of the yanked? so next time you delete
+            something with <code>dw</code>, use <code>ctrl+" 0</code> to
+            paste what you yanked and not what you deleted</li>
+            </ul>
+            <p><a
+            href="https://stackoverflow.com/questions/2514445/turning-off-auto-indent-when-pasting-text-into-vim">https://stackoverflow.com/questions/2514445/turning-off-auto-indent-when-pasting-text-into-vim</a><br />
+            To avoid messed up indentation after pasting use:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">:set</span> paste</span></code></pre></div>
+            <p>Then paste your code. Note that the text in the tooltip
+            now says -- INSERT (paste) --.</p>
+            <p>And turn it off after:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">:set</span> nopaste</span></code></pre></div>
+            <p>However, I always found that cumbersome. That's why I map
+            &lt; F3 &gt; such that it can switch between paste and
+            nopaste modes while editing the text! I add this to
+            <code>.vimrc</code></p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> pastetoggle=<span class="op">&lt;</span>F3<span class="op">&gt;</span></span></code></pre></div>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>
