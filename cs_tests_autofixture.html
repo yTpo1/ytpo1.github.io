@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="autofixture">AutoFixture</h1>
+            <p>AutoFixture is a .NET library designed to simplify the
+            process of creating test data for unit tests. It helps
+            automate the generation of object graphs and eliminates the
+            need for manual setup of test objects, making your tests
+            cleaner and easier to maintain.</p>
+            <h4 id="summary">Summary</h4>
+            <p>AutoFixture is a powerful tool that streamlines the
+            process of creating test data in .NET applications. By
+            automating object creation and allowing for easy
+            customization, it helps improve the readability and
+            maintainability of your unit tests. This makes it a valuable
+            addition to any testing strategy within a .NET development
+            environment.</p>
+            <h2 id="installation">Installation</h2>
+            <pre><code>dotnet add package AutoFixture</code></pre>
+            <h2 id="example">Example</h2>
+            <p>Create a Sample Class</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Person</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">string</span> Name <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> Age <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+            <p>Test:</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> AutoFixture<span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Xunit<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> PersonTests</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="kw">readonly</span> IFixture _fixture<span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">PersonTests</span><span class="op">()</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        _fixture <span class="op">=</span> <span class="kw">new</span> <span class="fu">Fixture</span><span class="op">();</span> <span class="co">// Create a new instance of Fixture</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>Fact<span class="op">]</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">Person_ShouldHaveNameAndAge_WhenCreated</span><span class="op">()</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Arrange</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="dt">var</span> person <span class="op">=</span> _fixture<span class="op">.</span><span class="fu">Create</span><span class="op">&lt;</span>Person<span class="op">&gt;();</span> <span class="co">// Automatically create a Person object</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Act &amp; Assert</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        person<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">NotBeNull</span><span class="op">();</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        person<span class="op">.</span><span class="fu">Name</span><span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">NotBeNullOrWhiteSpace</span><span class="op">();</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        person<span class="op">.</span><span class="fu">Age</span><span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">BeGreaterThan</span><span class="op">(</span><span class="dv">0</span><span class="op">);</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+            <p>You can also customize how AutoFixture creates
+            objects:</p>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Fact<span class="op">]</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">Person_ShouldHaveSpecificAge_WhenConfigured</span><span class="op">()</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Arrange</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> person <span class="op">=</span> _fixture<span class="op">.</span><span class="fu">Build</span><span class="op">&lt;</span>Person<span class="op">&gt;()</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                         <span class="op">.</span><span class="fu">With</span><span class="op">(</span>p <span class="op">=&gt;</span> p<span class="op">.</span><span class="fu">Age</span><span class="op">,</span> <span class="dv">30</span><span class="op">)</span> <span class="co">// Set specific value for Age</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                         <span class="op">.</span><span class="fu">Create</span><span class="op">();</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Act &amp; Assert</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    person<span class="op">.</span><span class="fu">Age</span><span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">Be</span><span class="op">(</span><span class="dv">30</span><span class="op">);</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

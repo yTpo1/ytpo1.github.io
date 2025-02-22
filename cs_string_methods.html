@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="string-methods">String Methods</h1>
+            <p><code>Length</code>: Returns the number of characters in
+            the string</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> text <span class="op">=</span> <span class="st">&quot;Hello&quot;</span><span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> length <span class="op">=</span> text<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> <span class="co">// 5</span></span></code></pre></div>
+            <p><code>Substring</code>: Extracts a substring from a
+            string.</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> text <span class="op">=</span> <span class="st">&quot;Hello, World!&quot;</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> sub <span class="op">=</span> text<span class="op">.</span><span class="fu">Substring</span><span class="op">(</span><span class="dv">7</span><span class="op">,</span> <span class="dv">5</span><span class="op">);</span> <span class="co">// &quot;World&quot;</span></span></code></pre></div>
+            <p><code>IndexOf</code>: Finds the index of the first
+            occurrence of a specified substring.</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> text <span class="op">=</span> <span class="st">&quot;Hello, World!&quot;</span><span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> index <span class="op">=</span> text<span class="op">.</span><span class="fu">IndexOf</span><span class="op">(</span><span class="st">&quot;World&quot;</span><span class="op">);</span> <span class="co">// 7</span></span></code></pre></div>
+            <p><code>Contains</code>: Checks if the string contains a
+            specified substring.</p>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> text <span class="op">=</span> <span class="st">&quot;Hello, World!&quot;</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> contains <span class="op">=</span> text<span class="op">.</span><span class="fu">Contains</span><span class="op">(</span><span class="st">&quot;Hello&quot;</span><span class="op">);</span> <span class="co">// true</span></span></code></pre></div>
+            <p><code>Replace</code>: Replaces all occurrences of a
+            specified substring with another substring.</p>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> text <span class="op">=</span> <span class="st">&quot;Hello, World!&quot;</span><span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> replaced <span class="op">=</span> text<span class="op">.</span><span class="fu">Replace</span><span class="op">(</span><span class="st">&quot;World&quot;</span><span class="op">,</span> <span class="st">&quot;C#&quot;</span><span class="op">);</span> <span class="co">// &quot;Hello, C#!&quot;</span></span></code></pre></div>
+            <p><code>ToUpper</code> and <code>ToLower</code>: Converts
+            the string to uppercase or lowercase.</p>
+            <div class="sourceCode" id="cb6"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> text <span class="op">=</span> <span class="st">&quot;Hello, World!&quot;</span><span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> upper <span class="op">=</span> text<span class="op">.</span><span class="fu">ToUpper</span><span class="op">();</span> <span class="co">// &quot;HELLO, WORLD!&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> lower <span class="op">=</span> text<span class="op">.</span><span class="fu">ToLower</span><span class="op">();</span> <span class="co">// &quot;hello, world!&quot;</span></span></code></pre></div>
+            <p><code>Trim</code>, <code>TrimStart</code>,
+            <code>TrimEnd</code>: Removes whitespace from the beginning
+            and/or end of the string.</p>
+            <div class="sourceCode" id="cb7"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> text <span class="op">=</span> <span class="st">&quot;   Hello, World!   &quot;</span><span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> trimmed <span class="op">=</span> text<span class="op">.</span><span class="fu">Trim</span><span class="op">();</span> <span class="co">// &quot;Hello, World!&quot;</span></span></code></pre></div>
+            <p><code>Split</code>: Splits the string into an array of
+            substrings based on a specified delimiter.</p>
+            <div class="sourceCode" id="cb8"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> text <span class="op">=</span> <span class="st">&quot;apple,banana,cherry&quot;</span><span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span><span class="op">[]</span> fruits <span class="op">=</span> text<span class="op">.</span><span class="fu">Split</span><span class="op">(</span><span class="ch">&#39;,&#39;</span><span class="op">);</span> <span class="co">// [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]</span></span></code></pre></div>
+            <p><code>Join</code>: Concatenates the elements of a string
+            array into a single string with a specified separator.</p>
+            <div class="sourceCode" id="cb9"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span><span class="op">[]</span> fruits <span class="op">=</span> <span class="op">{</span> <span class="st">&quot;apple&quot;</span><span class="op">,</span> <span class="st">&quot;banana&quot;</span><span class="op">,</span> <span class="st">&quot;cherry&quot;</span> <span class="op">};</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> result <span class="op">=</span> <span class="dt">string</span><span class="op">.</span><span class="fu">Join</span><span class="op">(</span><span class="st">&quot;, &quot;</span><span class="op">,</span> fruits<span class="op">);</span> <span class="co">// &quot;apple, banana, cherry&quot;</span></span></code></pre></div>
+            <p><code>StartsWith</code> and <code>EndsWith</code>: Checks
+            if the string starts or ends with a specified substring.</p>
+            <div class="sourceCode" id="cb10"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> text <span class="op">=</span> <span class="st">&quot;Hello, World!&quot;</span><span class="op">;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> starts <span class="op">=</span> text<span class="op">.</span><span class="fu">StartsWith</span><span class="op">(</span><span class="st">&quot;Hello&quot;</span><span class="op">);</span> <span class="co">// true</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> ends <span class="op">=</span> text<span class="op">.</span><span class="fu">EndsWith</span><span class="op">(</span><span class="st">&quot;World!&quot;</span><span class="op">);</span> <span class="co">// true</span></span></code></pre></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

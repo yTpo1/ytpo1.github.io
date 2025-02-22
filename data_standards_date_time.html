@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="date-and-time-standards">Date and Time
+            Standards</h1>
+            <h2 id="iso-8601">ISO 8601</h2>
+            <p>This is an international standard for date and time
+            representations. It is widely used in APIs and data
+            interchange formats.</p>
+            <ul>
+            <li>Format: <code>YYYY-MM-DDTHH:MM:SSZ</code></li>
+            <li>Example: <code>2023-10-05T14:48:00Z</code></li>
+            </ul>
+            <p>Links:</p>
+            <ul>
+            <li><a
+            href="https://en.wikipedia.org/wiki/ISO_8601">https://en.wikipedia.org/wiki/ISO_8601</a></li>
+            </ul>
+            <h2>...</h2>
+            <ul>
+            <li><strong>TFC 2822</strong>:
+            <ul>
+            <li>Format:
+            <code>Day, DD Mon YYYY HH:MM:SS +0000</code></li>
+            <li>Example:
+            <code>Tue, 05 Oct 2023 14:48:00 +0000</code></li>
+            <li>Commonly using in email headers.</li>
+            </ul></li>
+            <li><strong>Unix Timestamp</strong>:
+            <ul>
+            <li>Format: Seconds since January 1, 1970 (UTC)</li>
+            <li>Example: <code>1696512480</code></li>
+            <li>Used in many programming languages and systems to
+            represent a point in time</li>
+            </ul></li>
+            <li><strong>RFC 3339</strong>:
+            <ul>
+            <li>Format: <code>YYYY-MM-DDTHH:MM:SSZ</code> or
+            <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code></li>
+            <li>Example: <code>2023-10-05T14:48:00Z</code> or
+            <code>2023-10-05T14:48:00+00:00</code></li>
+            <li>A profile of ISO 8601 used in internet protocols</li>
+            </ul></li>
+            </ul>
+            <h2 id="difference-between-iso-8601-and-utc">Difference
+            between ISO 8601 and UTC</h2>
+            <p>ISO 8601 is a format for representing date and time,
+            which can include UTC times, while UTC is a time standard
+            that can be represented using the ISO 8601 format</p>
+            <ul>
+            <li><strong>ISO 8601</strong>: It ensures a consistent and
+            unambiguous representation of date and time across different
+            systems and platforms.</li>
+            <li><strong>UTC (Coordinated Universal Time)</strong>: Is
+            the primary time standard by which the world regulates
+            clocks and time. It is effectively the same as Greenwich
+            Mean Time (GMT).
+            <ul>
+            <li><strong>Format</strong>: UTC itself is not a format but
+            a time standard. It is often representd in ISO 8601 format
+            with a <code>Z</code> suffix to indicate zero offset from
+            UTC.</li>
+            <li><strong>Purpose</strong>: It provides a uniform time
+            reference that is not affected by time zones or daylight
+            saving time.</li>
+            </ul></li>
+            </ul>
+            <p>Key Differences:</p>
+            <ul>
+            <li><strong>Usage</strong>: ISO 8601 can represent both UTC
+            and local times with offsets, whereas UTC specifically
+            refers to the time standard without any offsets.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

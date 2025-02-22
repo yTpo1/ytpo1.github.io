@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="pacman">pacman</h1>
+            <p><code>pacman</code> is the package manager for Arch
+            Linux. It is used to install, update, and manage packages on
+            the system. Pacman handles package installation, removal,
+            and upgrades, along with package dependencies.</p>
+            <p>package and application are used interchangingbly.</p>
+            <h2 id="updating-the-system-and-applications">Updating the
+            system and applications</h2>
+            <p>Explanation of options:</p>
+            <ul>
+            <li><code>-S</code>: This option tells pacman to synchronize
+            packages. It can be used to install new packages or to
+            update existing ones.</li>
+            <li><code>-y</code>: This option stands for "refresh." It
+            instructs pacman to refresh the package databases before
+            performing the operation. This ensures that you have the
+            latest information about available packages and their
+            versions.</li>
+            <li><code>-u</code>: This option stands for "upgrade." It
+            tells pacman to upgrade all the installed packages on the
+            system to their latest versions.</li>
+            </ul>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pacman <span class="at">-Syu</span></span></code></pre></div>
+            <h2 id="commands">Commands</h2>
+            <p>Removing a package:</p>
+            <ul>
+            <li><code>-R</code>: This option tells pacman to remove a
+            package.</li>
+            <li><code>-s</code>: This option indicates that it should
+            also remove any unused dependencies that were installed with
+            the package.</li>
+            <li><code>-c</code>: This option is used to remove
+            configuration files associated with the package.</li>
+            </ul>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pacman <span class="at">-R</span> packagename</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pacman <span class="at">-Rsc</span> ruby</span></code></pre></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

@@ -17,21 +17,39 @@
             <h1 id="vim-copying-and-pasting">Vim. Copying and
             pasting</h1>
             <p>Buffers, registers</p>
-            <p>Pasting:</p>
+            <h2 id="pasting">Pasting</h2>
             <ul>
-            <li>Paste in insertion mode: <code>crtl+r "</code></li>
-            <li>Paste in normal mode: <code>p</code></li>
+            <li>Insertion mode
+            <ul>
+            <li><code>crtl+r "</code>: from normal register</li>
+            </ul></li>
+            <li>Normal mode
+            <ul>
+            <li><code>p</code>: from normal register</li>
+            </ul></li>
             </ul>
-            <p>Copying:</p>
+            <p>Pasting from a register.</p>
             <ul>
-            <li>In normal mode:
+            <li>Insertion mode
+            <ul>
+            <li><code>ctrl+r letter_of_your_register</code></li>
+            </ul></li>
+            <li>Normal mode
+            <ul>
+            <li><code>" letter_of_your_register p</code></li>
+            </ul></li>
+            </ul>
+            <h2 id="copying">Copying</h2>
+            <p>In normal mode:</p>
             <ul>
             <li>using mouse</li>
             <li>select with <code>v</code> then <code>y</code></li>
             <li>copy word <code>yw</code>, <code>y2w</code></li>
-            </ul></li>
             </ul>
-            <h2 id="pasting">Pasting</h2>
+            <p>Copying to a register: select your text with
+            <code>v</code> and then <code>"qy</code> with <code>q</code>
+            being an example of a register letter</p>
+            <h2 id="pasting-1">Pasting</h2>
             <p>Start thinking in registers. Copying in pasting in vim is
             more complex than <code>ctrl-c</code> <code>ctrl-v</code>,
             be it for better or worse.</p>
@@ -70,18 +88,7 @@
             class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> pastetoggle=<span class="op">&lt;</span>F3<span class="op">&gt;</span></span></code></pre></div>
           </div>
         </article>
-        <p>Date: </p>
       </div>
     </div>
-    <h1>Screen Dimensions</h1>
-    <button id="showDimensions">Show Dimensions</button>
-    <div class="dimensions" id="dimensionsDisplay"></div>
-    <script>
-      document.getElementById('showDimensions').addEventListener('click', function() {
-          const width = window.innerWidth;
-          const height = window.innerHeight;
-          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
-      });
-  </script>
   </body>
 </html>

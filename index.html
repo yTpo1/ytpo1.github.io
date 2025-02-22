@@ -137,6 +137,13 @@
             <li><a href="./cs_relationship_cs_dotnet.html">Relationship
             Between C# and .NET</a></li>
             </ul>
+            <p>Set up on Linux:</p>
+            <ul>
+            <li><a href="./cs_linux_arch_setup.html">Initial dev set up:
+            arch linux</a></li>
+            <li><a href="./cs_linux_creating_projects.html">Creating a
+            project</a></li>
+            </ul>
             <p>C# Language Features:</p>
             <ul>
             <li>Classes
@@ -171,7 +178,11 @@
             <li>Reference types
             <ul>
             <li>array</li>
-            <li>string</li>
+            <li>string
+            <ul>
+            <li><a href="./cs_string_formatting.html">Formatting</a></li>
+            <li><a href="./cs_string_methods.html">Methods</a></li>
+            </ul></li>
             <li>class</li>
             <li>interface</li>
             <li><a href="./cs_collections.html">Collections</a>
@@ -185,8 +196,8 @@
             <li>Stack</li>
             </ul></li>
             </ul></li>
-            <li><a href="./cs_dates_and_time.html">Dates and time:
-            Datetime</a></li>
+            <li>Dates and time: <a
+            href="./cs_dates_and_time.html">Datetime</a></li>
             </ul>
             <p>Data:</p>
             <ul>
@@ -197,12 +208,14 @@
             </ul>
             <p>Unit testing:</p>
             <ul>
-            <li>xUnit</li>
+            <li><a href="./cs_testing_xunit.html">xUnit</a></li>
             <li><a href="./cs_unittest_naming.html">Naming
             conventions</a></li>
-            <li>Fluent Assertions</li>
-            <li>AutoFixture</li>
+            <li><a href="./cs_tests_fluent_assertions.html">Fluent
+            Assertions</a></li>
+            <li><a href="./cs_tests_autofixture.html">AutoFixture</a></li>
             <li><a href="./cs_mocking.html">Mocking</a></li>
+            <li><a href="./cs_testing_automoq.html">Automoq</a></li>
             </ul>
             <p>Networking:</p>
             <ul>
@@ -314,10 +327,14 @@
             href="./cs_web_configuration.html">Configuration</a></li>
             <li>routing</li>
             </ul>
-            <h3 id="javascript">JavaScript</h3>
+            <h2 id="javascript">JavaScript</h2>
             <ul>
-            <li><a href="./javascript.html">Javascript</a></li>
-            <li>TypeScript</li>
+            <li><a href="./javascript.html">Javascript</a>
+            <ul>
+            <li><a href="./js_dom_manipulation.html">JS DOM
+            Manipulation</a></li>
+            </ul></li>
+            <li><a href="./typescript.html">TypeScript</a></li>
             <li><a href="./nodejs.html">Node.js</a>
             <ul>
             <li><a href="./npm_npx.html">npm, npx</a></li>
@@ -328,11 +345,16 @@
             </ul></li>
             <li>ESLint</li>
             </ul>
-            <h3 id="web">Web</h3>
+            <h2 id="web-html-css">Web: HTML, CSS</h2>
             <ul>
             <li><a href="./html.html">HTML</a></li>
             <li><a href="./css.html">CSS</a></li>
             </ul>
+            <h2 id="other-programming-languages">Other programming
+            languages</h2>
+            <h3 id="java">Java</h3>
+            <p><a href="./linux_arch_java.html">Environment and set up on
+            arch linux</a></p>
             <h2 id="ides-code-editors-etc">IDEs, code editors, etc</h2>
             <ul>
             <li>Visual Studio
@@ -345,6 +367,58 @@
             <li><a href="./ide_vscode.html##hotkeys">Hotkeys</a></li>
             </ul></li>
             <li><a href="./ide_vim.html">vim</a></li>
+            </ul>
+            <h2 id="databases">Databases</h2>
+            <p>Linux and Windows:</p>
+            <ul>
+            <li>MariaDb (MySql)
+            <ul>
+            <li><a href="./mariadb_install.html">Installation</a></li>
+            </ul></li>
+            <li><a href="./sqlite.html">Sqlite</a></li>
+            </ul>
+            <p>Windows only:</p>
+            <ul>
+            <li><a href="./ms_sql_server.html">MS SQL Server</a></li>
+            </ul>
+            <p>Other:</p>
+            <ul>
+            <li><a href="./sql_language.html">SQL language</a></li>
+            </ul>
+            <h2 id="containers">Containers</h2>
+            <p><a href="./docker.html">Docker</a>:</p>
+            <ul>
+            <li><a href="./docker_dockerfile.html">Dockerfile</a></li>
+            <li><a href="./docker_compose.html">Docker Compose</a></li>
+            </ul>
+            <p>Running sonarqube analysis for a local project from
+            docker.</p>
+            <h2 id="web-servers">Web servers</h2>
+            <p>A web server serves HTML web pages and other files via
+            HTTP to clients like web browsers. The major web servers can
+            be interfaced with programs to serve dynamic content (web
+            applications). <a
+            href="https://wiki.archlinux.org/title/List_of_applications/Internet#Web_servers">[1]</a></p>
+            <p>Linux:</p>
+            <ul>
+            <li>nginx</li>
+            <li><a href="./web_server_apache.html">apache</a></li>
+            </ul>
+            <p>Windows:</p>
+            <ul>
+            <li><a href="./iis.html">IIS</a>
+            <ul>
+            <li><a href="./iis_manual_management.html">Manual Management
+            (using GUI)</a></li>
+            <li><a href="./iis_scripting.html">Programmatically managing
+            IIS</a></li>
+            <li>urlrewrite</li>
+            </ul></li>
+            </ul>
+            <p>Other:</p>
+            <ul>
+            <li>Reverse proxy</li>
+            <li>Load Balancing</li>
             </ul>
             <h2 id="linux-desktop">Linux Desktop</h2>
             <ul>
@@ -364,6 +438,12 @@
             <li>Audio: PulseAudio</li>
             <li><a href="./dotfiles.html">dotfiles</a></li>
             </ul>
+            <p>Music:</p>
+            <ul>
+            <li>Ardour</li>
+            <li><a href="./musescore.html">MuseScore</a></li>
+            </ul>
+            <p>Office Suite: Libreoffice</p>
             <h2 id="linux-system">Linux System</h2>
             <p>Commands:</p>
             <ul>
@@ -398,39 +478,19 @@
             (starting, stopping, and checking the status of
             services).</li>
             </ul>
-            <p>Disk and Filesystem Management:</p>
-            <ul>
-            <li><code>lsblk</code>: Lists information about block
-            devices, showing their hierarchy and mount points.</li>
-            <li><code>fdisk</code>: A utility for partitioning disks;
-            allows you to create, delete, and manage disk
-            partitions.</li>
-            <li><code>udisksctl</code>: A command-line tool for managing
-            disks and storage devices using UDisks.</li>
-            <li><code>mount</code>: Used to mount filesystems or devices
-            to a directory in the filesystem hierarchy.</li>
-            <li><code>umount</code>: Used to unmount filesystems or
-            devices that were previously mounted.</li>
-            <li><code>dd</code>: A low-level utility for copying and
-            converting files, often used for backing up and restoring
-            disk images.</li>
-            </ul>
-            <p>Hardware Information:</p>
-            <ul>
-            <li><code>lspci</code>: Lists all PCI devices on the system,
-            providing information about hardware connected via the PCI
-            bus.</li>
-            <li><code>lsusb</code>: Lists all USB devices connected to
-            the system, showing details about USB hardware.</li>
-            <li><code>inxi</code>: A comprehensive system information
-            tool that provides detailed output about hardware and
-            software components.</li>
-            </ul>
             <p>System Logs and Monitoring:</p>
             <ul>
             <li><code>journalctl</code>: A command for querying and
             displaying messages from the journal, which is the logging
             system used by systemd.</li>
+            </ul>
+            <p><a href="./linux_disk_and_filesystem_management.html">Disk
+            and Filesystem Management</a></p>
+            <p>Finding out information:</p>
+            <ul>
+            <li>About commands: man, info</li>
+            <li><a href="./linux_hardware_information.html">Hardware
+            Information</a></li>
             </ul>
             <p>Linux Directory Structure (organisation):</p>
             <ul>
@@ -438,20 +498,21 @@
             href="./linux_location_of_executable_files.html">Location of
             the executable files</a> Where to place executables</li>
             <li>/tmp</li>
+            <li><a href="./linux_file_naming_best_practices.html">Best
+            practices for Linux file naming</a></li>
             </ul>
             <p>Other:</p>
             <ul>
-            <li>Package Managers
-            <ul>
-            <li>pacman</li>
-            <li><a href="./package_manager_apt.html">APT (Advanced Package
-            Tool). Raspberry Pi OS (Debian-based)</a></li>
-            </ul></li>
             <li>sha256sum, checking the hash.
             <code>sha256sum 2018-06-27-raspbian-stretch.zip</code>
             should match the one on the website</li>
             <li><a href="./linux_archival_compression.html">Archived and
             Compressed files</a></li>
+            </ul>
+            <p>Multimedia:</p>
+            <ul>
+            <li><a href="./linux_ffmpeg.html">ffmpeg</a> - multimedia
+            conversion and processing tool</li>
             </ul>
             <p>Shell:</p>
             <ul>
@@ -467,6 +528,10 @@
             <li><a href="./shell_functions.html">functions (.zfunctions,
             .bash_functions)</a></li>
             </ul>
+            <p>turn on/off mode that prints contents of the dir when
+            cd-ing into it alias function</p>
+            <p>run app that accepts torrent magnet links until i press
+            ctrl-c</p>
             <p>Terminal:</p>
             <ul>
             <li><a href="./st.html">ST terminal</a></li>
@@ -478,9 +543,12 @@
             </ul>
             <h2 id="command-line-tools-and-scripting">Command Line Tools
             and Scripting</h2>
-            <p><a
-            href="./glossary_shell_command_line_scripting.html">Glossary:
-            Shell, Command Line Tools and Scripting</a></p>
+            <p>Where to place what scripts:</p>
+            <ul>
+            <li>alias: 1 command, no arguments</li>
+            <li>zfunctions: 1 command, with arguments</li>
+            <li>Scripts: &gt; 1 command</li>
+            </ul>
             <p>Scripting:</p>
             <ul>
             <li><p>shell scripting</p>
@@ -514,6 +582,13 @@
             <li>vim
             <ul>
             <li>Exit vim. Save file.</li>
+            <li>Navigation:
+            <ul>
+            <li>normal mode: <code>ctrl+o</code> to go to previous
+            location</li>
+            <li>normal mode: <code>gf</code> go to file under
+            cursor</li>
+            </ul></li>
             <li><a href="./vim_normal_mode.html">Normal mode
             hotkeys</a></li>
             <li><a href="./vim_insertion_mode.html">Insertion Mode
@@ -522,7 +597,15 @@
             Normal Mode to Insertion Mode. Quick Movements.</a></li>
             <li><a href="./vim_copy_paste.html">Copying and
             pasting</a></li>
+            <li><a href="./vim_undo_redo.html">undo, redo</a></li>
             <li>Commands</li>
+            <li>Buffers (think of tabs/windows):
+            <ul>
+            <li>click on it</li>
+            <li><code>:bn</code> to go to next buffer</li>
+            <li><code>:bp</code> to go to previous buffer</li>
+            <li><code>:db</code>, <code>:db1</code>: close buffer</li>
+            </ul></li>
             <li><a href="./vim_splitting_viewport.html">Splitting
             viewport</a></li>
             <li><a href="./vim_plugins.html">Plugins</a></li>
@@ -541,7 +624,17 @@
             <ul>
             <li><a href="./pandoc.html">pandoc</a></li>
             </ul>
-            <h2 id="raspberry-pi-os">Raspberry Pi OS</h2>
+            <h2 id="linux-distributions">Linux Distributions</h2>
+            <h3 id="arch--manjaro">Arch / Manjaro</h3>
+            <p>Administration:</p>
+            <ul>
+            <li>Package Manager: <a
+            href="./linux_arch_pacman.html">pacman</a></li>
+            <li><a
+            href="./linux_arch_pacman.html##Updating-the-system-and-applications">Updating
+            the system and applications</a></li>
+            </ul>
+            <h3 id="raspberry-pi-os">Raspberry Pi OS</h3>
             <p>Initial:</p>
             <ul>
             <li><a href="./raspberrypi_os_install.html">Install OS on
@@ -549,64 +642,28 @@
             </ul>
             <p>Administration:</p>
             <ul>
-            <li><a href="./package_manager_apt.html">APT (Advanced Package
-            Tool). Raspberry Pi OS (Debian-based)</a></li>
+            <li>Package Manager: <a href="./package_manager_apt.html">APT
+            (Advanced Package Tool). Raspberry Pi OS
+            (Debian-based)</a></li>
             <li><a href="./raspberrypi_os_ssh.html">Enabling SSH</a></li>
             </ul>
             <h2 id="server-administration">Server Administration</h2>
+            <p>Remote login:</p>
             <ul>
-            <li><p>SSH - SSH suite is provided by OpenSSH</p></li>
-            <li><p><a href="./ssh_onto_a_server.html">Log onto a server
-            with SSH</a></p></li>
-            <li><p><a href="./ssh_keys.html">SSH Keys</a></p></li>
-            <li><p><a href="./ssh_agent.html">SSH agent</a></p></li>
-            <li><p><a href="./ssh_config_file.html">SSH config
-            file</a></p></li>
-            <li><p><a href="./ssh_dir_permissions.html">SSH directory and
-            file permissions</a></p></li>
-            <li><p><code>known_hosts</code> file</p></li>
-            <li><p>How to check if SSH is enabled on my linux
-            machine?</p></li>
-            </ul>
-            <h2 id="web-servers">Web servers</h2>
-            <p>A web server serves HTML web pages and other files via
-            HTTP to clients like web browsers. The major web servers can
-            be interfaced with programs to serve dynamic content (web
-            applications). <a
-            href="https://wiki.archlinux.org/title/List_of_applications/Internet#Web_servers">[1]</a></p>
-            <ul>
-            <li>nginx</li>
-            <li><a href="./web_server_apache.html">apache</a></li>
-            <li><a href="./iis.html">IIS</a>
-            <ul>
-            <li><a href="./iis_manual_management.html">Manual Management
-            (using GUI)</a></li>
-            <li><a href="./iis_scripting.html">Programmatically managing
-            IIS</a></li>
-            <li>urlrewrite</li>
-            </ul></li>
-            </ul>
-            <p>Other:</p>
-            <ul>
-            <li>Reverse proxy</li>
-            <li>Load Balancing</li>
+            <li>SSH - SSH suite is provided by OpenSSH</li>
+            <li><a href="./ssh_onto_a_server.html">Log onto a server with
+            SSH</a></li>
+            <li><a href="./ssh_keys.html">SSH Keys</a></li>
+            <li><a href="./ssh_agent.html">SSH agent</a></li>
+            <li><a href="./ssh_config_file.html">SSH config file</a></li>
+            <li><a href="./ssh_dir_permissions.html">SSH directory and
+            file permissions</a></li>
+            <li><code>known_hosts</code> file</li>
+            <li>How to check if SSH is enabled on my linux machine?</li>
             </ul>
             <h2 id="git-server">git server</h2>
             <ul>
             <li><a href="./git_server.html">git server</a></li>
-            </ul>
-            <h2 id="databases">Databases</h2>
-            <ul>
-            <li>MariaDb (MySql)
-            <ul>
-            <li><a href="./mariadb_install.html">Installation</a></li>
-            </ul></li>
-            <li><a href="./sqlite.html">Sqlite</a></li>
-            <li><a href="./ms_sql_server.html">MS SQL Server</a></li>
-            </ul>
-            <p>Other:</p>
-            <ul>
-            <li><a href="./sql_language.html">SQL language</a></li>
             </ul>
             <h2 id="windows-system">Windows System</h2>
             <ul>
@@ -731,7 +788,10 @@
             <li>Status Codes</li>
             <li>HTTPS</li>
             <li><a href="./http_auth_jwt.html">Authentication /
-            Authorization - JWT Token</a></li>
+            Authorization - JWT Token</a>
+            <ul>
+            <li>Implementation using javascript</li>
+            </ul></li>
             </ul></li>
             <li><a href="./ssh_protocol.html">SSH Protocol</a></li>
             <li><a href="./dns.html">DNS</a></li>
@@ -772,15 +832,45 @@
             <li>proxy</li>
             <li><a href="./jwt.html">JWT (JSON Web Token)</a></li>
             </ul>
-            <h2 id="iso-standards-data-formatting-standards">ISO
-            Standards. Data Formatting Standards</h2>
+            <h2 id="financial-services">Financial Services</h2>
+            <p>Messaging platform:</p>
+            <ul>
+            <li><a href="./swift_network.html">SWIFT network</a>
+            <ul>
+            <li><a href="./swift_messages.html">SWIFT messages</a></li>
+            </ul></li>
+            </ul>
+            <h2 id="international-standards">International
+            Standards</h2>
+            <p>Data representation and formatting standards, which help
+            with data exchange and communication. Which include ISO
+            standards, etc.</p>
+            <p>Examples:</p>
             <ul>
             <li><a href="./character_encoding.html">Character Encoding.
             ASCII, UTF-8</a></li>
-            <li><a href="./date_standads.html">Date Standards. ISO 8601,
-            UTC</a></li>
+            <li><a href="./data_standards_date_time.html">Date Standards.
+            ISO 8601, UTC, Unix Timestamp</a></li>
             <li><a href="./data_standards_country_codes.html">Country
             Codes. ISO 3166</a></li>
+            <li><a href="./data_standards_language.html">Language Codes.
+            ISO 639, IETF BCP 47</a></li>
+            <li><a href="./data_standards_currency.html">Currency Codes.
+            ISO 4217</a></li>
+            <li>Measurement Standards. ISO 80000. Quantities and
+            units.</li>
+            </ul>
+            <p>Financial Services (banking, finance, etc):</p>
+            <ul>
+            <li><a
+            href="./data_standards_banks_financial_institutions.html">Identifying
+            banks and financial institutions. Bank Identifier Code
+            (BIC). SWIFT Code. ISO 9362</a></li>
+            <li><a href="./data_standards_bank_accounts.html">Identify
+            Individual Bank Accounts. ISO 13616 IBAN</a></li>
+            <li><a
+            href="./data_standards_financial_information.html">Financial
+            Information. ISO 20022</a></li>
             </ul>
             <h2 id="other">Other</h2>
             <ul>
@@ -794,21 +884,14 @@
             <ul>
             <li><a href="./stub.html">stub</a></li>
             <li><a href="./metadata.html">metadata</a></li>
+            <li>command line options or flags</li>
+            <li><a
+            href="./glossary_shell_command_line_scripting.html">Shell,
+            Command Line Tools and Scripting</a></li>
             </ul>
           </div>
         </article>
-        <p>Date: </p>
       </div>
     </div>
-    <h1>Screen Dimensions</h1>
-    <button id="showDimensions">Show Dimensions</button>
-    <div class="dimensions" id="dimensionsDisplay"></div>
-    <script>
-      document.getElementById('showDimensions').addEventListener('click', function() {
-          const width = window.innerWidth;
-          const height = window.innerHeight;
-          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
-      });
-  </script>
   </body>
 </html>

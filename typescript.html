@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="typescript">TypeScript</h1>
+            <p>Allows you to catch errors earlier.</p>
+            <p>Tutorials:</p>
+            <ul>
+            <li><a
+            href="https://www.youtube.com/watch?v=d56mG7DezGs">https://www.youtube.com/watch?v=d56mG7DezGs</a>
+            (Programming with Mosh)</li>
+            </ul>
+            <h2 id="general-knowledge">General Knowledge</h2>
+            <p>Build-in types JS types TS types</p>
+            <p>Custom types</p>
+            <h2 id="initial-project-set-up">Initial project set-up</h2>
+            <p>Initialize a new Node.js project:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> init <span class="at">-y</span></span></code></pre></div>
+            <p>Install TypeScript:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># globally</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> i <span class="at">-g</span> typescript</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># locally</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install typescript <span class="at">--save-dev</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># verify install</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">tsc</span> <span class="at">-v</span></span></code></pre></div>
+            <h4 id="generate-a-typescript-configuration-file">Generate a
+            TypeScript configuration file</h4>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tsc</span> <span class="at">--init</span></span></code></pre></div>
+            <p>Settings:</p>
+            <ul>
+            <li>target: "ES2016", "ES2018"</li>
+            <li>rootDir: "./", "./src"</li>
+            <li>outdit: "./dist"</li>
+            <li>removeComments: true</li>
+            <li>NoEmitOnError: true</li>
+            </ul>
+            <p>With config file, running <code>tsc</code> with no
+            arguments will compile the whole project.</p>
+            <h2 id="compile-typescript-to-javascript">Compile TypeScript
+            to JavaScript</h2>
+            <p>Create a <code>.ts</code> file and add the code, for
+            example:</p>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode ts"><code class="sourceCode typescript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Hello world!&#39;</span>)<span class="op">;</span></span></code></pre></div>
+            <p>In terminal run:</p>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tsc</span> index.ts</span></code></pre></div>
+            <p>This will generate a <code>.js</code> file.</p>
+            <h2 id="debugging-typescript">Debugging TypeScript</h2>
+            <p>Debug using VS Code.</p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

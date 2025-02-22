@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="formatting-strings">Formatting strings</h1>
+            <p>In C#, the preferred method for formatting strings is
+            using <strong>interpolated strings</strong> (string
+            interpolation), which was introduced in C# 6.0. It provides
+            a more readable and convenient syntax compared to other
+            methods.</p>
+            <p>The <code>$</code> character identifies a string literal
+            as an interpolated string. An interpolated string is a
+            string literal that might contain interpolation expressions.
+            When an interpolated string is resolved to a result string,
+            the compiler replaces items with interpolation expressions
+            by the string representations of the expression results.</p>
+            <p>You can embed expressions directly within a string by
+            prefixing the string with a dollar sign ($). Here’s an
+            example:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> name <span class="op">=</span> <span class="st">&quot;Alice&quot;</span><span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> age <span class="op">=</span> <span class="dv">30</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> greeting <span class="op">=</span> $<span class="st">&quot;Hello, my name is {name} and I am {age} years old.&quot;</span><span class="op">;</span></span></code></pre></div>
+            <h3 id="other-methods-of-string-formatting">Other Methods of
+            String Formatting</h3>
+            <p>While string interpolation is preferred, there are other
+            methods you can use:</p>
+            <p><strong>Composite formatting - String.Format
+            Method:</strong></p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> name <span class="op">=</span> <span class="st">&quot;Alice&quot;</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> age <span class="op">=</span> <span class="dv">30</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> greeting <span class="op">=</span> String<span class="op">.</span><span class="fu">Format</span><span class="op">(</span><span class="st">&quot;Hello, my name is {0} and I am {1} years old.&quot;</span><span class="op">,</span> name<span class="op">,</span> age<span class="op">);</span></span></code></pre></div>
+            <p><strong>Concatenation (plus operator +, plus equals
+            operator +=, join strings):</strong></p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> name <span class="op">=</span> <span class="st">&quot;Alice&quot;</span><span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> age <span class="op">=</span> <span class="dv">30</span><span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> greeting <span class="op">=</span> <span class="st">&quot;Hello, my name is &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot; and I am &quot;</span> <span class="op">+</span> age <span class="op">+</span> <span class="st">&quot; years old.&quot;</span><span class="op">;</span></span></code></pre></div>
+            <p><strong>StringBuilder (for more complex
+            scenarios):</strong></p>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">.</span><span class="fu">Text</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>StringBuilder sb <span class="op">=</span> <span class="kw">new</span> <span class="fu">StringBuilder</span><span class="op">();</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>sb<span class="op">.</span><span class="fu">Append</span><span class="op">(</span><span class="st">&quot;Hello, my name is &quot;</span><span class="op">);</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>sb<span class="op">.</span><span class="fu">Append</span><span class="op">(</span>name<span class="op">);</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>sb<span class="op">.</span><span class="fu">Append</span><span class="op">(</span><span class="st">&quot; and I am &quot;</span><span class="op">);</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>sb<span class="op">.</span><span class="fu">Append</span><span class="op">(</span>age<span class="op">);</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>sb<span class="op">.</span><span class="fu">Append</span><span class="op">(</span><span class="st">&quot; years old.&quot;</span><span class="op">);</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span><span class="op">[]</span> values <span class="op">=</span> <span class="op">...</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">var</span> value <span class="kw">in</span> values<span class="op">)</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    sb<span class="op">.</span><span class="fu">Append</span><span class="op">(</span>value<span class="op">);</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> finalString <span class="op">=</span> sb<span class="op">.</span><span class="fu">ToString</span><span class="op">();</span></span></code></pre></div>
+            <h3 id="concatinating-collections">Concatinating
+            Collections</h3>
+            <p>Using <code>string.Concat</code> method</p>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span><span class="op">[]</span> words <span class="op">=</span> <span class="op">...</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> concatenated <span class="op">=</span> <span class="dt">string</span><span class="op">.</span><span class="fu">Concat</span><span class="op">(</span>words<span class="op">);</span></span></code></pre></div>
+            <p>Use <code>string.Join</code> method if a delimiter should
+            sepparate source strings.</p>
+            <div class="sourceCode" id="cb6"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span><span class="op">[]</span> words <span class="op">=</span> <span class="op">...</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span><span class="op">.</span><span class="fu">Join</span><span class="op">(</span><span class="st">&quot; &quot;</span><span class="op">,</span> words<span class="op">);</span></span></code></pre></div>
+            <p>Don't use the LINQ
+            <code>.Aggregate((a, b) =&gt; a + b)</code> method as it can
+            cause more allocations than other methods for concatenating
+            collections, as it creates an intermediate string for each
+            iteration. If optimizing performance is critical, consider
+            the <code>StringBuilder</code> class or the
+            <code>string.Concat</code> or <code>string.Join</code>
+            methods to concatenate a collection.</p>
+            <h2 id="links">Links</h2>
+            <ul>
+            <li><a
+            href="https://learn.microsoft.com/en-us/dotnet/csharp/how-to/concatenate-multiple-strings">https://learn.microsoft.com/en-us/dotnet/csharp/how-to/concatenate-multiple-strings</a></li>
+            <li><a
+            href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated">https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated</a></li>
+            <li><a
+            href="https://learn.microsoft.com/en-us/dotnet/csharp/tutorials/string-interpolation">https://learn.microsoft.com/en-us/dotnet/csharp/tutorials/string-interpolation</a></li>
+            <li><a
+            href="https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/performance/interpolated-string-handler">https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/performance/interpolated-string-handler</a></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

@@ -15,14 +15,30 @@
         <article class="article markdown-body">
           <div class="article-inner">
             <h1 id="dotfiles">dotfiles</h1>
-            <p>dotfiles manager: <code>stow</code></p>
-            <ul>
-            <li><code>stow-setup</code></li>
-            <li><code>stow-remove</code></li>
-            </ul>
+            <p>Dotfiles manager: <code>stow</code></p>
+            <p>After creating a new user, remove
+            <code>.bash_profile</code>, <code>.bashrc</code>, or any
+            other files that were there initially.</p>
+            <p>Create symlinks. Run the following from the directory
+            that mimics the original directory</p>
             <div class="sourceCode" id="cb1"><pre
-            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> stow-setup=<span class="st">&#39;stow * -t ~/&#39;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> stow-remove=<span class="st">&#39;stow -D * -t ~/&#39;</span></span></code></pre></div>
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">stow</span> <span class="pp">*</span> <span class="at">-t</span> ~/</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Or</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">stow</span> <span class="pp">*</span> </span></code></pre></div>
+            <p>To restow:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">stow</span> <span class="pp">*</span> <span class="at">-R</span> ~/ </span></code></pre></div>
+            <p>To remove/delete:</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">stow</span> <span class="at">-D</span> <span class="pp">*</span> <span class="at">-t</span> ~/ </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Or (if created in git repo):</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">stow</span> <span class="at">-D</span> <span class="pp">*</span></span></code></pre></div>
+            <p>Aliases:</p>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> stow-setup=<span class="st">&#39;stow * -t ~/&#39;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> stow-remove=<span class="st">&#39;stow -D * -t ~/&#39;</span></span></code></pre></div>
             <p>To read/watch:</p>
             <ul>
             <li><a
@@ -31,6 +47,11 @@
             href="https://www.youtube.com/watch?v=y6XCebnB9gs">https://www.youtube.com/watch?v=y6XCebnB9gs</a></li>
             <li><a
             href="https://www.youtube.com/watch?v=CxAT1u8G7is">https://www.youtube.com/watch?v=CxAT1u8G7is</a></li>
+            </ul>
+            <p>Dotfiles examples:</p>
+            <ul>
+            <li><a
+            href="https://gist.github.com/jonlaing/26798917e073cc8f799f6d40922d90a0">https://gist.github.com/jonlaing/26798917e073cc8f799f6d40922d90a0</a></li>
             </ul>
           </div>
         </article>

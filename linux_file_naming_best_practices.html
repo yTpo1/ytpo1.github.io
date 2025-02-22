@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="best-practices-for-linux-file-naming">Best practices
+            for Linux file naming</h1>
+            <p>Linux servers are case sensitive. Windows servers are not
+            case sensitive, so if you are moving your files from a
+            Windows development platform to a Linux web platform you may
+            need to watch out for the following common mistakes.</p>
+            <p>Mixing Upper case and lower case A common mistake is
+            naming files a mixture of upper case and lower case. Like
+            the following:</p>
+            <p>MyFileName.html</p>
+            <p>Linux reads the file name exactly the way its typed.
+            So,</p>
+            <p>MyFileName.html</p>
+            <p>Is NOT the same as:</p>
+            <p>myfilename.html</p>
+            <p>Incorrect types file extension File extensions are case
+            sensitive as well. Some file types have 4 letters and others
+            3. See the following example:</p>
+            <p>Likewise, file extensions need to be exact as well:</p>
+            <p>MyFileName.HTML</p>
+            <p>Is NOT the same as:</p>
+            <p>myfilename.html</p>
+            <p>To prevent running into problems with your file paths on
+            your site, we recommend following the best practices for
+            file naming. See the below:</p>
+            <p>Name all your files lower case. Instead of using a space,
+            use an ( _ ) or a ( – )</p>
+            <p>In Linux, the convention is to use lowercase for
+            directory and file names. Here are some key points regarding
+            this convention:</p>
+            <p>Case Sensitivity: Linux is case-sensitive, meaning
+            File.txt and file.txt are considered two different files.
+            Using lowercase helps avoid confusion. Readability:
+            Lowercase names are generally easier to read and type,
+            especially in commands. Standard Practices: Many software
+            projects and open-source communities adopt lowercase naming
+            conventions for consistency. Underscores and Dashes: It's
+            common to use underscores (_) or dashes (-) to separate
+            words in file names, e.g., my_script.sh or my-script.sh.</p>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="js-dom-manipulation">JS DOM Manipulation</h1>
+            <p>JavaScript provides a variety of methods for interacting
+            with the Document Object Model (DOM). These methods provide
+            powerful tools for manipulating the HTML structure and
+            styles dynamically in web applications.</p>
+            <p>Tutorials:</p>
+            <ul>
+            <li><a
+            href="https://www.w3schools.com/js/js_htmldom.asp">https://www.w3schools.com/js/js_htmldom.asp</a></li>
+            </ul>
+            <h2 id="selecting-elements">Selecting Elements</h2>
+            <ul>
+            <li><code>document.getElementById(id)</code>: Selects an
+            element by its ID.</li>
+            <li><code>document.getElementsByClassName(className)</code>:
+            Selects a collection of elements by their class name.</li>
+            <li><code>document.getElementsByTagName(tagName)</code>:
+            Selects a collection of elements by their tag name.</li>
+            <li><code>document.querySelector(selector)</code>: Selects
+            the first element that matches a CSS selector.</li>
+            <li><code>document.querySelectorAll(selector)</code>:
+            Selects all elements that match a CSS selector.</li>
+            </ul>
+            <h2 id="creating-and-inserting-elements">Creating and
+            Inserting Elements</h2>
+            <ul>
+            <li><code>document.createElement(tagName)</code>: Creates a
+            new element of the specified type.</li>
+            <li><code>element.appendChild(child)</code>: Adds a child
+            element to the specified parent element.</li>
+            <li><code>element.insertBefore(newNode, referenceNode)</code>:
+            Inserts a new node before a reference node as a child of a
+            specified parent node.</li>
+            <li><code>element.replaceChild(newChild, oldChild)</code>:
+            Replaces an old child with a new child in a specified
+            parent.</li>
+            </ul>
+            <h2 id="modifying-elements">Modifying Elements</h2>
+            <ul>
+            <li><code>element.setAttribute(name, value)</code>: Sets an
+            attribute on the specified element.</li>
+            <li><code>element.getAttribute(name)</code>: Gets the value
+            of the specified attribute.</li>
+            <li><code>element.removeAttribute(name)</code>: Removes the
+            specified attribute from the element.</li>
+            <li><code>element.classList.add(className)</code>: Adds a
+            class to the element.</li>
+            <li><code>element.classList.remove(className)</code>:
+            Removes a class from the element.</li>
+            <li><code>element.innerHTML</code>: Gets or sets the HTML
+            content of an element.</li>
+            <li><code>element.textContent</code>: Gets or sets the text
+            content of an element.</li>
+            </ul>
+            <h2 id="event-handling">Event Handling</h2>
+            <ul>
+            <li><code>element.addEventListener(event, function)</code>:
+            Attaches an event handler to the specified element.</li>
+            <li><code>element.removeEventListener(event, function)</code>:
+            Removes an event handler from the specified element.</li>
+            </ul>
+            <h2 id="traversing-the-dom">Traversing the DOM</h2>
+            <ul>
+            <li><code>element.parentNode</code>: Gets the parent node of
+            the specified element.</li>
+            <li><code>element.childNodes</code>: Gets a live NodeList of
+            child nodes of the specified element.</li>
+            <li><code>element.firstChild / element.lastChild</code>:
+            Gets the first or last child of the specified element.</li>
+            <li><code>element.nextSibling / element.previousSibling</code>:
+            Gets the next or previous sibling of the specified
+            element.</li>
+            </ul>
+            <h2 id="styling-elements">Styling Elements</h2>
+            <ul>
+            <li><code>element.style</code>: Accesses the inline style of
+            the element.</li>
+            <li><code>element.className</code>: Gets or sets the CSS
+            class of the element.</li>
+            </ul>
+          </div>
+        </article>
+        <p>Date: </p>
+      </div>
+    </div>
+    <h1>Screen Dimensions</h1>
+    <button id="showDimensions">Show Dimensions</button>
+    <div class="dimensions" id="dimensionsDisplay"></div>
+    <script>
+      document.getElementById('showDimensions').addEventListener('click', function() {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
+      });
+  </script>
+  </body>
+</html>
