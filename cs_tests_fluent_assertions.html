@@ -9,55 +9,81 @@
   <body>
     <div class="container-lg">
       <a href="/">Home</a>
+      <div>Tags: </div>
     </div>
     <div class="content">
       <div class="container-lg">
         <article class="article markdown-body">
           <div class="article-inner">
             <h1 id="c-fluent-assertions">C#. Fluent Assertions</h1>
-            <h2 id="basic-assertions">Basic Assertions</h2>
-            <p>Equal Assertions</p>
+            <h2 id="should">Should</h2>
+            <p>Fluent Assertions <code>Should</code>: Used to assert
+            that the actual result of an operation meets the expected
+            condition.</p>
+            <h3 id="basic-assertions">Basic Assertions</h3>
             <div class="sourceCode" id="cb1"><pre
-            class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>result<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">Be</span><span class="op">(</span>expected<span class="op">);</span></span></code></pre></div>
-            <p>Not Equal</p>
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a># Equal Assertions</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>result<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">Be</span><span class="op">(</span>expected<span class="op">);</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a># Null Assertions</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">object</span><span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">BeNull</span><span class="op">();</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dt">object</span><span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">NotBeNull</span><span class="op">();</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a># Not Equal</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>result<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">NotBe</span><span class="op">(</span>unexpected<span class="op">);</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a># Greater Than <span class="op">/</span> Less Than</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>result<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">BeGreaterThan</span><span class="op">(</span>value<span class="op">);</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>result<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">BeLessThan</span><span class="op">(</span>value<span class="op">);</span></span></code></pre></div>
+            <h3 id="collection-assertions">Collection Assertions</h3>
             <div class="sourceCode" id="cb2"><pre
-            class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>result<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">NotBe</span><span class="op">(</span>unexpected<span class="op">);</span></span></code></pre></div>
-            <p>Greater Than / Less Than</p>
-            <div class="sourceCode" id="cb3"><pre
-            class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>result<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">BeGreaterThan</span><span class="op">(</span>value<span class="op">);</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>result<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">BeLessThan</span><span class="op">(</span>value<span class="op">);</span></span></code></pre></div>
-            <p>Null Assertions</p>
-            <div class="sourceCode" id="cb4"><pre
-            class="sourceCode cs"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">object</span><span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">BeNull</span><span class="op">();</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">object</span><span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">NotBeNull</span><span class="op">();</span></span></code></pre></div>
-            <h2 id="collection-assertions">Collection Assertions</h2>
-            <p>Contain Items</p>
-            <div class="sourceCode" id="cb5"><pre
-            class="sourceCode cs"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>collection<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">Contain</span><span class="op">(</span>expectedItem<span class="op">);</span></span></code></pre></div>
-            <p>Contain Exactly</p>
-            <div class="sourceCode" id="cb6"><pre
-            class="sourceCode cs"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>collection<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">ContainInOrder</span><span class="op">(</span>expectedItems<span class="op">);</span></span></code></pre></div>
-            <p>Be Empty / Have Count</p>
-            <div class="sourceCode" id="cb7"><pre
-            class="sourceCode cs"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>collection<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">BeEmpty</span><span class="op">();</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>collection<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">HaveCount</span><span class="op">(</span>expectedCount<span class="op">);</span></span></code></pre></div>
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a># Contain Items</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>collection<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">Contain</span><span class="op">(</span>expectedItem<span class="op">);</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a># Be Empty <span class="op">/</span> Have Count</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>collection<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">BeEmpty</span><span class="op">();</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>collection<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">HaveCount</span><span class="op">(</span>expectedCount<span class="op">);</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a># Contain Exactly</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>collection<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">ContainInOrder</span><span class="op">(</span>expectedItems<span class="op">);</span></span></code></pre></div>
             <h2 id="exception-assertions">Exception Assertions</h2>
-            <p>Throw Exception</p>
-            <div class="sourceCode" id="cb8"><pre
-            class="sourceCode cs"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Action action <span class="op">=</span> <span class="op">()</span> <span class="op">=&gt;</span> <span class="fu">methodThatShouldThrow</span><span class="op">();</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>action<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">Throw</span><span class="op">&lt;</span>ExpectedExceptionType<span class="op">&gt;();</span></span></code></pre></div>
-            <p>With message: To do:...</p>
+            <p>Links:</p>
+            <ul>
+            <li><a
+            href="https://fluentassertions.com/exceptions/">https://fluentassertions.com/exceptions/</a></li>
+            </ul>
+            <p>There are 2 ways of testing exceptions:</p>
+            <ol type="1">
+            <li>Using Action</li>
+            <li>Using Invoking</li>
+            </ol>
+            <h3 id="using-action">Using Action</h3>
+            <p>If you prefer the arrange-act-assert syntax, you can also
+            use an action in your act part.</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a># Act</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Action act <span class="op">=</span> <span class="op">()</span> <span class="op">=&gt;</span> _sut<span class="op">.</span><span class="fu">Foo2</span><span class="op">(</span><span class="st">&quot;Hello&quot;</span><span class="op">);</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a># Assert</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>act<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">Throw</span><span class="op">&lt;</span>InvalidOperationException<span class="op">&gt;()</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">WithInnerException</span><span class="op">&lt;</span>ArgumentException<span class="op">&gt;()</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">WithMessage</span><span class="op">(</span><span class="st">&quot;whatever&quot;</span><span class="op">);</span></span></code></pre></div>
+            <h3 id="using-invoking">Using Invoking</h3>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a># Act <span class="op">&amp;</span> Assert</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>_sut<span class="op">.</span><span class="fu">Invoking</span><span class="op">(</span>y <span class="op">=&gt;</span> y<span class="op">.</span><span class="fu">Foo</span><span class="op">(</span><span class="st">&quot;Hello&quot;</span><span class="op">))</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">Throw</span><span class="op">&lt;</span>InvalidOperationException<span class="op">&gt;()</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">WithMessage</span><span class="op">(</span><span class="st">&quot;Hello is not allowed at this moment&quot;</span><span class="op">);</span></span></code></pre></div>
             <h2 id="object-assertions">Object Assertions</h2>
-            <p>Be Equivalent To</p>
-            <div class="sourceCode" id="cb9"><pre
-            class="sourceCode cs"><code class="sourceCode cs"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>actualObject<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">BeEquivalentTo</span><span class="op">(</span>expectedObject<span class="op">);</span></span></code></pre></div>
-            <p>Have Property</p>
-            <div class="sourceCode" id="cb10"><pre
-            class="sourceCode cs"><code class="sourceCode cs"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>actualObject<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">HaveProperty</span><span class="op">(</span><span class="st">&quot;PropertyName&quot;</span><span class="op">).</span><span class="fu">Which</span><span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">Be</span><span class="op">(</span>expectedValue<span class="op">);</span></span></code></pre></div>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a># Be Equivalent To</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>actualObject<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">BeEquivalentTo</span><span class="op">(</span>expectedObject<span class="op">);</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a># Have Property</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>actualObject<span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">HaveProperty</span><span class="op">(</span><span class="st">&quot;PropertyName&quot;</span><span class="op">).</span><span class="fu">Which</span><span class="op">.</span><span class="fu">Should</span><span class="op">().</span><span class="fu">Be</span><span class="op">(</span>expectedValue<span class="op">);</span></span></code></pre></div>
             <h2 id="installation">Installation</h2>
-            <div class="sourceCode" id="cb11"><pre
-            class="sourceCode cs"><code class="sourceCode cs"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>dotnet add package FluentAssertions</span></code></pre></div>
+            <div class="sourceCode" id="cb6"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dotnet add package FluentAssertions</span></code></pre></div>
           </div>
         </article>
       </div>

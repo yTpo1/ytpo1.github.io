@@ -9,6 +9,7 @@
   <body>
     <div class="container-lg">
       <a href="/">Home</a>
+      <div>Tags: </div>
     </div>
     <div class="content">
       <div class="container-lg">
@@ -35,13 +36,22 @@
             backwards</li>
             <li><code>ctrl + delete</code>: delete word forwards</li>
             </ul>
-            <p>Navigation:</p>
+            <p>Navigation between files and tabs:</p>
             <ul>
-            <li><p><code>ctrl + p</code>: go to file</p></li>
-            <li><p><code>ctrl + tab</code>: open next tab</p></li>
-            <li><p><code>ctrl + shift + tab</code>: open previous
-            tab</p></li>
-            <li><p><code>ctrl + ,</code> open settings</p></li>
+            <li><code>ctrl + p</code>: go to file</li>
+            <li><code>ctrl + tab</code> or
+            <code>ctrl + shift + tab</code>: display list of open tabs
+            and open it</li>
+            <li><code>Ctrl+PgUp</code> or <code>Ctrl+PgDn</code>: Go to
+            next/previous tab</li>
+            </ul>
+            <p>Settings:</p>
+            <ul>
+            <li><code>ctrl + ,</code> open settings</li>
+            </ul>
+            <p>Markdown:</p>
+            <ul>
+            <li><p><code>Ctrl+Shift+v</code>: markdown preview</p></li>
             <li><p><a
             href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf">https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf</a></p></li>
             <li><p>Color Theme command <code>(ctrl+k ctrl+t)</code> to
@@ -76,18 +86,7 @@
             </ul>
           </div>
         </article>
-        <p>Date: </p>
       </div>
     </div>
-    <h1>Screen Dimensions</h1>
-    <button id="showDimensions">Show Dimensions</button>
-    <div class="dimensions" id="dimensionsDisplay"></div>
-    <script>
-      document.getElementById('showDimensions').addEventListener('click', function() {
-          const width = window.innerWidth;
-          const height = window.innerHeight;
-          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
-      });
-  </script>
   </body>
 </html>

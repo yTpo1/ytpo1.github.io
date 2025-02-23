@@ -9,6 +9,7 @@
   <body>
     <div class="container-lg">
       <a href="/">Home</a>
+      <div>Tags: </div>
     </div>
     <div class="content">
       <div class="container-lg">
@@ -41,16 +42,29 @@
             </ul>
             <h3 id="clean-code-coding-principles-conventions">Clean
             Code. Coding Principles. Conventions</h3>
+            <ol type="1">
+            <li>Intro</li>
+            <li><a href="./cc_naming.html">Meaningful Names</a></li>
+            <li><a href="./cc_functions.html">Functions</a></li>
+            <li>Comments</li>
+            <li><a href="./cc_formating.html">Formatting</a></li>
+            <li>Objects and Data structures</li>
+            <li>Error Handling. <a
+            href="./cc_exceptions.html">Exceptions</a></li>
+            <li>Boundaries</li>
+            <li><a href="./cc_unit_tests.html">Unit tests</a></li>
+            <li><a href="./cc_classes.html">Classes</a></li>
+            <li>Systems</li>
+            <li>Emergence</li>
+            <li>Concurrency</li>
+            <li>Successive Refinement</li>
+            <li><ul>
+            <li></li>
+            </ul></li>
+            <li>Refactoring SerialDate</li>
+            <li>Smells and Heuristics
             <ul>
-            <li><p><a href="./cc_naming.html">Naming</a></p></li>
-            <li><p><a href="./cc_functions.html">Functions</a></p></li>
-            <li><p>ch 6. Objects and Data structures</p></li>
-            <li><p><a href="./cc_exceptions.html">ch 7.
-            Exceptions</a></p></li>
-            <li><p>ch 9. <a href="./cc_unit_tests.html">Unit
-            tests</a></p></li>
-            <li><p><a href="./cc_classes.html">ch 10. Classes</a></p></li>
-            <li><p>General</p>
+            <li>General
             <ul>
             <li>broken windows: They used the metaphor of broken
             windows.3 A building with broken windows looks like nobody
@@ -75,10 +89,13 @@
             example.)</li>
             <li>G25: Replace magic numbers with named constants</li>
             </ul></li>
-            <li><p><a
-            href="https://gist.github.com/cedrickchee/55ecfbaac643bf0c24da6874bf4feb08">https://gist.github.com/cedrickchee/55ecfbaac643bf0c24da6874bf4feb08</a></p></li>
-            <li><p><a
-            href="https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29">https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29</a></p></li>
+            </ul></li>
+            </ol>
+            <ul>
+            <li><a
+            href="https://gist.github.com/cedrickchee/55ecfbaac643bf0c24da6874bf4feb08">https://gist.github.com/cedrickchee/55ecfbaac643bf0c24da6874bf4feb08</a></li>
+            <li><a
+            href="https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29">https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29</a></li>
             </ul>
             <p>Coding Principles:</p>
             <ul>
@@ -195,6 +212,8 @@
             <li>Queue</li>
             <li>Stack</li>
             </ul></li>
+            <li><a href="./cs_anonymous_types.html">Anonymous Objects.
+            Anonymous Types</a></li>
             </ul></li>
             <li>Dates and time: <a
             href="./cs_dates_and_time.html">Datetime</a></li>
@@ -213,17 +232,38 @@
             conventions</a></li>
             <li><a href="./cs_tests_fluent_assertions.html">Fluent
             Assertions</a></li>
-            <li><a href="./cs_tests_autofixture.html">AutoFixture</a></li>
-            <li><a href="./cs_mocking.html">Mocking</a></li>
+            <li><a href="./cs_tests_autofixture.html">AutoFixture</a>
+            <ul>
+            <li><a
+            href="./cs_testing_idioms.html">AutoFixture.Idioms</a></li>
+            </ul></li>
+            <li><a href="./cs_mocking.html">Mocking moq</a></li>
             <li><a href="./cs_testing_automoq.html">Automoq</a></li>
+            </ul>
+            <p>Unit testing concrete items:</p>
+            <ul>
+            <li><a
+            href="./cs_tests_fluent_assertions.html##Exception-Assertions">Testing
+            Exceptions</a></li>
+            <li><a href="./cs_tesing_httpclient.html">Testing the
+            HttpClient</a></li>
             </ul>
             <p>Networking:</p>
             <ul>
             <li><a href="./cs_uris.html">URIs, URLs...</a></li>
-            <li>HttpClient
+            <li><a href="./cs_httpclient.html">HttpClient</a> *
+            <ul>
+            <li><a href="./cs_httpclient_di.html">HttpClient and
+            Dependency Injection (DI)</a></li>
+            <li><a
+            href="./cs_httpclienthandler.html">HttpClientHandler</a></li>
+            <li>Requests
             <ul>
             <li><a href="./cs_httpclient_http_message.html">HTTP request
             message</a></li>
+            </ul></li>
+            <li><a href="./cs_httpclient_response.html">Responses</a>.
+            JSON Deserialization</li>
             </ul></li>
             </ul>
             <p>Security: <a
@@ -233,99 +273,16 @@
             href="https://learn.microsoft.com/en-us/dotnet/standard/security/cryptography-model">https://learn.microsoft.com/en-us/dotnet/standard/security/cryptography-model</a></li>
             </ul>
             <h3 id="web-apps-and-aspnet">Web Apps and ASP.NET</h3>
-            <p><strong>WebApplicationBuilder - minimal hosting model
-            introduced with .NET 6</strong> The
-            <code>WebApplicationBuilder</code> class provides a
-            streamlined way to configure and build a web application. It
-            combines the functionality of the traditional
-            <code>Startup</code> class and <code>Program</code> class
-            into a single, cohesive setup.</p>
-            <div class="sourceCode" id="cb1"><pre
-            class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> builder <span class="op">=</span> WebApplication<span class="op">.</span><span class="fu">CreateBuilder</span><span class="op">(</span>args<span class="op">);</span> <span class="co">// This line initializes a new `WebApplicationBuilder` instance, which sets up the application&#39;s configuration, logging, and services.</span></span></code></pre></div>
-            <p>Key Responsibilities / Step-by-Step Explanation:</p>
-            <ol type="1">
-            <li><strong>Configuration</strong>: Sets up configuration
-            sources (e.g., appsettings.json, environment variables)</li>
-            <li><strong>Logging</strong>: Configures logging providers
-            and settings</li>
-            <li><strong>Dependency Injection (DI)</strong>: Registers
-            services with the DI container
             <ul>
-            <li>Register Services
-            <ul>
-            <li>Services are registered with the DI container using
-            <code>builder.Services.AddScoped</code>,
-            <code>builder.Services.AddTransient</code> and
-            <code>builder.Services.AddSingleton</code></li>
-            </ul></li>
-            <li>Add HTTP Clients
-            <ul>
-            <li>HTTP clients are registered using
-            <code>builder.Services.AddHttpClient</code></li>
-            </ul></li>
-            <li>Add Controllers and Swagger
-            <ul>
-            <li>Controllers and Swagger/OpenAPI are configured using
-            <code>builder.Services.AddControllers</code> and
-            <code>builder.Services.AddSwaggerGen</code></li>
-            </ul></li>
-            <li>Configure Authentication and Authorization
-            <ul>
-            <li>JWT authentication and authorization policies are
-            configured using the
-            <code>builder.Services.AddAuthentication</code> and
-            <code>builder.Services.AddAuthorization</code></li>
-            </ul></li>
-            </ul></li>
-            <li><strong>Builds the Application</strong>:
-            <ul>
-            <li><code>var app = builder.Build();</code>: This line
-            builds the <code>WebApplication</code> instance, which is
-            used to configure the middleware pipeline and run the
-            application</li>
-            </ul></li>
-            <li><strong><a
-            href="./aspdotnet_middleware_pipeline.html">Middleware
-            Pipeline</a></strong>: Configures the middleware pipeline
-            for handling HTTP requests
-            <ul>
-            <li>Middleware components such as Serilog request logging,
-            <code>CORS</code>, authentication, and authorization are
-            added to the pipeline.</li>
-            <li><strong>Authentication, and Authorization</strong>: <a
-            href="./aspdotnet_appuseauthentication.html">app.UseAuthentication()</a>
-            and <a
-            href="./aspdotnet_appuseauthorization.html">app.UseAuthorization()</a>
-            are middleware components that are used to handle
-            authentication and authorization in the request processing
-            pipeline. These middleware components are essential for
-            securing your application by ensuring that only
-            authenticated and authorized users can access certain
-            resources.</li>
-            <li><strong>Routing</strong>: Routing middleware is
-            responsible for mapping incoming HTTP requests to the
-            appropriate endpoint (controller action, etc) based on teh
-            URL and HTTP method.
-            <ul>
-            <li><code>app.MapControllers()</code>: Maps attribute-routed
-            controllers. This method is used to map controller actions
-            that have route attributes defined on them.</li>
-            </ul></li>
-            </ul></li>
-            <li><strong>Runs the Application</strong>:
-            <ul>
-            <li><code>app.Run()</code>: This line starts the web
-            application and begins listening for incoming HTTP
-            requests.</li>
-            </ul></li>
-            </ol>
-            <ul>
-            <li>Dependency Injection</li>
+            <li><a
+            href="./cs_webapplicationbuilder.html">WebApplicationBuilder</a></li>
+            <li>Dependency Injection (design pattern, programming
+            technique)</li>
             <li>Logging &amp; Audit</li>
             <li>(Security) Authentication, authorization, claims</li>
             <li><a
             href="./cs_web_configuration.html">Configuration</a></li>
-            <li>routing</li>
+            <li>Routing</li>
             </ul>
             <h2 id="javascript">JavaScript</h2>
             <ul>
@@ -348,10 +305,17 @@
             <h2 id="web-html-css">Web: HTML, CSS</h2>
             <ul>
             <li><a href="./html.html">HTML</a></li>
-            <li><a href="./css.html">CSS</a></li>
+            <li><a href="./css.html">CSS</a>
+            <ul>
+            <li>class and ID naming conventions</li>
+            </ul></li>
             </ul>
             <h2 id="other-programming-languages">Other programming
             languages</h2>
+            <h3 id="python">Python</h3>
+            <p>To do: ...</p>
+            <h3 id="c">C</h3>
+            <p>To do: ...</p>
             <h3 id="java">Java</h3>
             <p><a href="./linux_arch_java.html">Environment and set up on
             arch linux</a></p>
@@ -570,7 +534,9 @@
             <li><p>git</p>
             <ul>
             <li>basics</li>
-            <li><a href="./git_next.html">next steps</a></li>
+            <li><a href="./git_next.html">log, cherry-pick, reset,
+            rebase</a></li>
+            <li>branching strategies</li>
             </ul></li>
             <li><p><a href="./command_pass.html">Password manager:
             pass</a></p></li>
@@ -607,7 +573,12 @@
             <li><code>:db</code>, <code>:db1</code>: close buffer</li>
             </ul></li>
             <li><a href="./vim_splitting_viewport.html">Splitting
-            viewport</a></li>
+            viewport</a>
+            <ul>
+            <li>reposition the edit window while keeping the cursor on
+            the same line (make current line be in the middle of the
+            screen): <code>zz</code></li>
+            </ul></li>
             <li><a href="./vim_plugins.html">Plugins</a></li>
             <li><a href="./vim_tutorial.html">tutorial, lessons,
             etc</a></li>
@@ -727,7 +698,9 @@
             <li><a href="./cryptography_mac.html">Message authentication
             codes (MACs)</a></li>
             </ul></li>
-            <li>Asymmetric Cryptography (public-key cryptography)
+            <li><a
+            href="./encryption_asymmetric_cryptography.html">Asymmetric
+            Cryptography (public-key cryptography)</a>
             <ul>
             <li><a href="./encryption_public_key.html">Public Key</a></li>
             <li><a href="./encryption_private_key.html">Private
@@ -753,6 +726,8 @@
             <li>Filename extensions: <code>.pem</code>,
             <code>.cer</code></li>
             </ul></li>
+            <li><a href="./cryptography_jwt.html">Asymmetric Cryptography
+            in JWT</a></li>
             </ul></li>
             </ul>
             <p>Protocols:</p>
@@ -881,13 +856,19 @@
             href="https://en.wikipedia.org/wiki/Unix_philosophy">https://en.wikipedia.org/wiki/Unix_philosophy</a></li>
             </ul>
             <h2 id="glossary">Glossary</h2>
+            <p>General:</p>
             <ul>
-            <li><a href="./stub.html">stub</a></li>
             <li><a href="./metadata.html">metadata</a></li>
             <li>command line options or flags</li>
             <li><a
             href="./glossary_shell_command_line_scripting.html">Shell,
             Command Line Tools and Scripting</a></li>
+            </ul>
+            <p>Unit testing:</p>
+            <ul>
+            <li><a href="./glossary_fake.html">Fake</a></li>
+            <li><a href="./glossary_mock.html">Mock</a></li>
+            <li><a href="./glossary_stub.html">Stub</a></li>
             </ul>
           </div>
         </article>

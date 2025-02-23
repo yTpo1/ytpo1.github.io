@@ -9,6 +9,7 @@
   <body>
     <div class="container-lg">
       <a href="/">Home</a>
+      <div>Tags: </div>
     </div>
     <div class="content">
       <div class="container-lg">
@@ -18,12 +19,28 @@
             <p>Other names: keyboard shortcuts, key bindings</p>
             <h2 id="editor">Editor</h2>
             <ul>
-            <li><code>shift + enter</code>: New line</li>
+            <li><code>shift + enter</code>: New line underneath</li>
             <li><code>ctrl + d</code>: Duplicate line</li>
             <li><code>ctrl + shift + up/down</code>: edit multiple lines
             at once</li>
             <li><code>ctrl + l</code>: delete line (cut)</li>
             <li><code>ctrl + k, ctrl + c</code>: comment selection</li>
+            </ul>
+            <h3
+            id="go-to-definition-implementation-declaration-references">Go
+            to Definition, Implementation, Declaration, References</h3>
+            <ul>
+            <li><code>F12</code>: Go to definition</li>
+            <li><code>Ctrl+F12</code>: Go to implementation</li>
+            </ul>
+            <h3 id="collapse-all-definitionsmethods">Collapse all
+            definitions/methods</h3>
+            <ul>
+            <li><code>ctrl+m ctrl+o</code>: Collapse all
+            definitions/methods</li>
+            <li><code>ctrl+m ctrl+p</code>: Expand all</li>
+            <li><code>ctrl+m ctrl+m</code>: Toggle collapse and expand
+            current section</li>
             </ul>
             <h3 id="intellisense">Intellisense</h3>
             <ul>
@@ -34,20 +51,58 @@
             suggestions</li>
             <li><code>alt + /</code>: Copilot</li>
             </ul>
+            <h3 id="refactoring">Refactoring</h3>
+            <ul>
+            <li><code>Ctrl+Shift+R</code>: Refactor this (Displays a
+            list of refactoring options)</li>
+            <li><code>Ctrl+.</code>: Quick actions and refactorings</li>
+            <li><code>Ctrl+K+E</code>: Sort usings and remove "unused
+            usings" in the file</li>
+            <li><code>Ctr+R Ctrl+G</code>: Sort usings and remove
+            "unused usings" in the file</li>
+            </ul>
+            <h3 id="formatting">Formatting</h3>
+            <ul>
+            <li><code>ctrl+k+d</code>: Format code (entire
+            document)</li>
+            <li><code>ctrl+k+f</code>: Format Code (selection only)</li>
+            </ul>
+            <h3 id="navigation-in-the-current-file">Navigation in the
+            current file</h3>
+            <ul>
+            <li><code>ctrl+left/right</code>: Skip a word
+            left/right</li>
+            <li><code>Home</code>: Go to start of the line</li>
+            <li><code>End</code>: Go to the end of the line</li>
+            <li><code>PgUp</code>/<code>PgDown</code>:</li>
+            <li><code>shift+PgUp/PgDown</code>: move to the top/bottom
+            of the screen</li>
+            <li><code>ctrl+Home</code>: Go to the first line of the
+            document</li>
+            <li><code>ctrl+End</code>: Go to the last line of the
+            document</li>
+            <li><code>alt+up/down</code>: Go to the next method
+            up/down</li>
+            </ul>
+            <h3 id="window-management">Window Management</h3>
+            <ul>
+            <li><code>shift+alt+enter</code>: enter full screen</li>
+            </ul>
+            <h2 id="bookmarks">Bookmarks</h2>
+            <ul>
+            <li><code>ctrl+k ctrl+k</code>: Set bookmark</li>
+            <li><code>ctrl+k ctrl+p</code>: Go to previous bookmark</li>
+            <li><code>ctrl+k ctrl+n</code>: Go to next bookmark</li>
+            </ul>
+            <h2 id="navigation-between-files">Navigation between
+            files</h2>
+            <ul>
+            <li><code>ctrl+,</code>: go to file</li>
+            <li><code>ctrl+t</code>: go to type</li>
+            </ul>
           </div>
         </article>
-        <p>Date: </p>
       </div>
     </div>
-    <h1>Screen Dimensions</h1>
-    <button id="showDimensions">Show Dimensions</button>
-    <div class="dimensions" id="dimensionsDisplay"></div>
-    <script>
-      document.getElementById('showDimensions').addEventListener('click', function() {
-          const width = window.innerWidth;
-          const height = window.innerHeight;
-          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
-      });
-  </script>
   </body>
 </html>

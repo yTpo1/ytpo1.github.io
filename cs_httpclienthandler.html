@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title>HttpClientHandler</title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+      <div>Tags: C# | HttpClient | Networking</div>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="httpclienthandler">HttpClientHandler</h1>
+            <p>An HttpClientHandler in .NET is a class that is
+            responsible for processing HTTP requests and responses when
+            using the HttpClient class. It acts as a bridge between your
+            application and the underlying HTTP protocol, allowing you
+            to configure various settings related to HTTP
+            communication.</p>
+            <p>Key Features of HttpClientHandler</p>
+            <ol type="1">
+            <li><strong>Message Processing:</strong> It handles the
+            sending of HTTP requests and the receiving of HTTP
+            responses. You can customize how requests are sent and
+            responses are processed.</li>
+            <li><strong>Configuration Options:</strong>
+            HttpClientHandler provides various properties to configure
+            the behaviour of HTTP requests, including:
+            <ul>
+            <li><strong>Proxy Settings:</strong> Specify whether to use
+            a proxy server and configure proxy settings.</li>
+            <li><strong>SSL/TLS Settings:</strong> Control SSL
+            certificate validation, including options to bypass
+            certificate errors.</li>
+            <li><strong>Cookies:</strong> Automatically manage cookies
+            for requests and responses.</li>
+            <li><strong>Automatic Decompression:</strong> Enable
+            automatic decompression of response content (e.g., gzip,
+            deflate).</li>
+            </ul></li>
+            <li><strong>Custom Handling:</strong> You can derive from
+            HttpClientHandler to create your own custom handlers that
+            can intercept and modify requests or responses. This is
+            useful for scenarios like logging, modifying headers, or
+            adding authentication tokens.</li>
+            </ol>
+            <h3 id="common-properties">Common Properties</h3>
+            <p>Some commonly used properties of HttpClientHandler
+            include:</p>
+            <ul>
+            <li><strong>AllowAutoRedirect:</strong> Indicates whether
+            the handler should follow redirects.</li>
+            <li><strong>UseCookies:</strong> Specifies whether to use
+            cookies in requests.</li>
+            <li><strong>CookieContainer:</strong> A container for
+            managing cookies.</li>
+            <li><strong>ServerCertificateCustomValidationCallback:</strong>
+            A callback that allows you to customize the validation of
+            server certificates.</li>
+            <li><strong>UseProxy:</strong> Indicates whether to use a
+            proxy for requests.</li>
+            <li><strong>Proxy:</strong> Specifies the proxy settings for
+            the handler.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

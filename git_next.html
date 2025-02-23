@@ -3,56 +3,69 @@
   <head>
     <meta charset="utf-8">
     <meta name="date" content=''>
-    <title>git - next steps</title>
+    <title>git - continued</title>
     <link rel="stylesheet" href="0_style.css">
   </head>
   <body>
     <div class="container-lg">
       <a href="/">Home</a>
+      <div>Tags: </div>
     </div>
     <div class="content">
       <div class="container-lg">
         <article class="article markdown-body">
           <div class="article-inner">
             <h1 id="git---continued">git - continued</h1>
+            <h2 id="log">log</h2>
+            <p>To view the logs for a different branch (to the one you
+            are already on) in Git, you can use the git log command
+            followed by the branch name.</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log branch-name</span></code></pre></div>
+            <p>See commit differences between branches. Display commits
+            that Branch-A has but Branch-B doesn't</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> lost Branch-A..Branch-B</span></code></pre></div>
             <h2 id="cherry-pick">cherry-pick</h2>
             <p>Will apply selected commit to current branch</p>
-            <div class="sourceCode" id="cb1"><pre
-            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick commit-hash</span></code></pre></div>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick commit-hash</span></code></pre></div>
             <p>Multiple commits:</p>
-            <div class="sourceCode" id="cb2"><pre
-            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick commit-hash1 commit-hash2 commit-hash3</span></code></pre></div>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick commit-hash1 commit-hash2 commit-hash3</span></code></pre></div>
             <p>Using the --no-commit option with git cherry-pick allows
             you to apply changes from a specific commit to your working
             directory and staging area without creating a new commit.
             This gives you the flexibility ot review and modify the
             changes before committing them.</p>
-            <div class="sourceCode" id="cb3"><pre
-            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick <span class="at">--no-commit</span> commit-hash</span></code></pre></div>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick <span class="at">--no-commit</span> commit-hash</span></code></pre></div>
             <h2 id="reset">reset</h2>
             <p>Will remove the lastest commit. The changes are kept in
             the working directory and staging area, so that they are
             ready to be committed again if needed.</p>
-            <div class="sourceCode" id="cb4"><pre
-            class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--soft</span> HEAD~1</span></code></pre></div>
+            <div class="sourceCode" id="cb6"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--soft</span> HEAD~1</span></code></pre></div>
             <p>Will remove both the lastest commit and the changes in
             it.</p>
-            <div class="sourceCode" id="cb5"><pre
-            class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> HEAD~1</span></code></pre></div>
+            <div class="sourceCode" id="cb7"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> HEAD~1</span></code></pre></div>
+            <h2 id="rebase">rebase</h2>
+            <div class="sourceCode" id="cb8"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase branch-name</span></code></pre></div>
+            <p>If you want to abort the rebase at any point:</p>
+            <div class="sourceCode" id="cb9"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase <span class="at">--abort</span></span></code></pre></div>
+            <h3 id="rebase-interactive">rebase interactive</h3>
+            <p>Start an interactive rebase for the last 4 commits:</p>
+            <div class="sourceCode" id="cb10"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout branch-name</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebased <span class="at">-i</span> HEAD~4</span></code></pre></div>
+            <p>Can be used to squash commits (squashing multiple commits
+            into one).</p>
           </div>
         </article>
-        <p>Date: </p>
       </div>
     </div>
-    <h1>Screen Dimensions</h1>
-    <button id="showDimensions">Show Dimensions</button>
-    <div class="dimensions" id="dimensionsDisplay"></div>
-    <script>
-      document.getElementById('showDimensions').addEventListener('click', function() {
-          const width = window.innerWidth;
-          const height = window.innerHeight;
-          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
-      });
-  </script>
   </body>
 </html>

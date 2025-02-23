@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title></title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+      <div>Tags: </div>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="webapplicationbuilder">WebApplicationBuilder</h1>
+            <p><strong>WebApplicationBuilder - minimal hosting model
+            introduced with .NET 6</strong> The
+            <code>WebApplicationBuilder</code> class provides a
+            streamlined way to configure and build a web application. It
+            combines the functionality of the traditional
+            <code>Startup</code> class and <code>Program</code> class
+            into a single, cohesive setup.</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> builder <span class="op">=</span> WebApplication<span class="op">.</span><span class="fu">CreateBuilder</span><span class="op">(</span>args<span class="op">);</span> <span class="co">// This line initializes a new `WebApplicationBuilder` instance, which sets up the application&#39;s configuration, logging, and services.</span></span></code></pre></div>
+            <p>Key Responsibilities / Step-by-Step Explanation:</p>
+            <ol type="1">
+            <li><strong>Configuration</strong>: Sets up configuration
+            sources (e.g., appsettings.json, environment variables)</li>
+            <li><strong>Logging</strong>: Configures logging providers
+            and settings</li>
+            <li><strong>Dependency Injection (DI)</strong>: Registers
+            services with the DI container
+            <ul>
+            <li>Register Services
+            <ul>
+            <li>Services are registered with the DI container using
+            <code>builder.Services.AddScoped</code>,
+            <code>builder.Services.AddTransient</code> and
+            <code>builder.Services.AddSingleton</code></li>
+            </ul></li>
+            <li>Add HTTP Clients
+            <ul>
+            <li>HTTP clients are registered using
+            <code>builder.Services.AddHttpClient</code></li>
+            </ul></li>
+            <li>Add Controllers and Swagger
+            <ul>
+            <li>Controllers and Swagger/OpenAPI are configured using
+            <code>builder.Services.AddControllers</code> and
+            <code>builder.Services.AddSwaggerGen</code></li>
+            </ul></li>
+            <li>Configure Authentication and Authorization
+            <ul>
+            <li>JWT authentication and authorization policies are
+            configured using the
+            <code>builder.Services.AddAuthentication</code> and
+            <code>builder.Services.AddAuthorization</code></li>
+            </ul></li>
+            </ul></li>
+            <li><strong>Builds the Application</strong>:
+            <ul>
+            <li><code>var app = builder.Build();</code>: This line
+            builds the <code>WebApplication</code> instance, which is
+            used to configure the middleware pipeline and run the
+            application</li>
+            </ul></li>
+            <li><strong><a
+            href="./aspdotnet_middleware_pipeline.html">Middleware
+            Pipeline</a></strong>: Configures the middleware pipeline
+            for handling HTTP requests
+            <ul>
+            <li>Middleware components such as Serilog request logging,
+            <code>CORS</code>, authentication, and authorization are
+            added to the pipeline.</li>
+            <li><strong>Authentication, and Authorization</strong>: <a
+            href="./aspdotnet_appuseauthentication.html">app.UseAuthentication()</a>
+            and <a
+            href="./aspdotnet_appuseauthorization.html">app.UseAuthorization()</a>
+            are middleware components that are used to handle
+            authentication and authorization in the request processing
+            pipeline. These middleware components are essential for
+            securing your application by ensuring that only
+            authenticated and authorized users can access certain
+            resources.</li>
+            <li><strong>Routing</strong>: Routing middleware is
+            responsible for mapping incoming HTTP requests to the
+            appropriate endpoint (controller action, etc) based on the
+            URL and HTTP method.
+            <ul>
+            <li><code>app.MapControllers()</code>: Maps attribute-routed
+            controllers. This method is used to map controller actions
+            that have route attributes defined on them.</li>
+            </ul></li>
+            </ul></li>
+            <li><strong>Runs the Application</strong>:
+            <ul>
+            <li><code>app.Run()</code>: This line starts the web
+            application and begins listening for incoming HTTP
+            requests.</li>
+            </ul></li>
+            </ol>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

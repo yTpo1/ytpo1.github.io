@@ -53,6 +53,7 @@ h1 {
   font-size: 2em;
   border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));
   margin-bottom: var(--base-size-16);
+  margin-top: 0px;
   font-weight: var(--base-text-weight-semibold, 600);
   line-height: 1.25;
 }

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="date" content=''>
+    <title>HttpClientHandler</title>
+    <link rel="stylesheet" href="0_style.css">
+  </head>
+  <body>
+    <div class="container-lg">
+      <a href="/">Home</a>
+      <div>Tags: C# | HttpClient | JSON Deserialization | Networking |
+HTTP | HTTP Response | HTTP POST Response</div>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <article class="article markdown-body">
+          <div class="article-inner">
+            <h1 id="responses-json-deserialization">Responses. JSON
+            Deserialization</h1>
+            <p>Option 1</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> async Task<span class="op">&lt;</span>Product<span class="op">&gt;</span> <span class="fu">GetProductAsync</span><span class="op">(</span><span class="dt">int</span> id<span class="op">)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> response <span class="op">=</span> await HttpClientSingleton<span class="op">.</span><span class="fu">Instance</span><span class="op">.</span><span class="fu">GetAsync</span><span class="op">(</span>$<span class="st">&quot;products/{id}&quot;</span><span class="op">);</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    response<span class="op">.</span><span class="fu">EnsureSuccessStatusCode</span><span class="op">();</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> product <span class="op">=</span> await response<span class="op">.</span><span class="fu">Content</span><span class="op">.</span><span class="fu">ReadFromJsonAsync</span><span class="op">&lt;</span>Product<span class="op">&gt;();</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> product <span class="op">??</span> <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">Exception</span><span class="op">(</span><span class="st">&quot;Product not found&quot;</span><span class="op">);</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+            <p>Option 1</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> async Task<span class="op">&lt;</span>List<span class="op">&lt;</span>Fruit<span class="op">&gt;&gt;</span> <span class="fu">GetFruits</span><span class="op">()</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> response <span class="op">=</span> await HttpClientSingleton<span class="op">.</span><span class="fu">Instance</span><span class="op">.</span><span class="fu">GetAsync</span><span class="op">(</span>$<span class="st">&quot;http://localhost:5147/fruits&quot;</span><span class="op">);</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    response<span class="op">.</span><span class="fu">EnsureSuccessStatusCode</span><span class="op">();</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> content <span class="op">=</span> await response<span class="op">.</span><span class="fu">Content</span><span class="op">.</span><span class="fu">ReadAsStringAsync</span><span class="op">();</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> fruits <span class="op">=</span> JsonSerializer<span class="op">.</span><span class="fu">Deserialize</span><span class="op">&lt;</span>List<span class="op">&lt;</span>Fruit<span class="op">&gt;&gt;(</span>content<span class="op">);</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> fruits<span class="op">;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

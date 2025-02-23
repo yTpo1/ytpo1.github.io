@@ -9,26 +9,69 @@
   <body>
     <div class="container-lg">
       <a href="/">Home</a>
+      <div>Tags: </div>
     </div>
     <div class="content">
       <div class="container-lg">
         <article class="article markdown-body">
           <div class="article-inner">
-            <h1 id="mocking">Mocking</h1>
+            <h1 id="mocking-with-moq">Mocking with Moq</h1>
+            <p>It enables you to isolate the code being tested by
+            simulating the behaviour of dependencies, such as services
+            or repositories, without requiring their actual
+            implementations.</p>
+            <p>Naming conventions:</p>
+            <ul>
+            <li>Either with a prefix:
+            <code>var mockService = ...</code></li>
+            <li>Or suffix: <code>var serviceMock = ...</code></li>
+            </ul>
+            <p>Links:</p>
+            <ul>
+            <li><a
+            href="https://github.com/devlooped/moq/wiki/Quickstart">https://github.com/devlooped/moq/wiki/Quickstart</a></li>
+            <li><a
+            href="https://documentation.help/Moq/">https://documentation.help/Moq/</a></li>
+            </ul>
+            <h2 id="mock-out-a-dependency---setup">Mock out a dependency
+            - Setup</h2>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Moq<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">interface</span> ICalculator</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> <span class="fu">Add</span><span class="op">(</span><span class="dt">int</span> a<span class="op">,</span> <span class="dt">int</span> b<span class="op">);</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> <span class="fu">Subtract</span><span class="op">(</span><span class="dt">int</span> a<span class="op">,</span> <span class="dt">int</span> b<span class="op">);</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> mockCalculator <span class="op">=</span> <span class="kw">new</span> Mock<span class="op">&lt;</span>ICalculator<span class="op">&gt;();</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mockCalculator<span class="op">.</span><span class="fu">Setup</span><span class="op">(</span>m <span class="op">=&gt;</span> m<span class="op">.</span><span class="fu">Add</span><span class="op">(</span>It<span class="op">.</span><span class="fu">IsAny</span><span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;(),</span> It<span class="op">.</span><span class="fu">IsAny</span><span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;())).</span><span class="fu">Returns</span><span class="op">(</span><span class="dv">5</span><span class="op">);</span></span></code></pre></div>
+            <h2
+            id="check-the-mock-was-executed-as-part-of-the-test-verify">Check
+            the mock was executed as part of the test. Verify</h2>
+            <p>Moq <code>Verify</code>: Used to check that a method on a
+            mock object was called as expected.</p>
+            <p>Verification: Moq allows you to verify that certain
+            methods were called on the mock objects during the test.</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>TestMethod<span class="op">]</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">Reverse_ShouldInvokeOnce_IsLogEnabled</span><span class="op">()</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    _wordUtils<span class="op">.</span><span class="fu">Reverse</span><span class="op">(</span><span class="st">&quot;mountain&quot;</span><span class="op">);</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    Mock<span class="op">.</span><span class="fu">Get</span><span class="op">(</span>_log<span class="op">).</span><span class="fu">Verify</span><span class="op">(</span>x <span class="op">=&gt;</span> x<span class="op">.</span><span class="fu">IsLogEnabled</span><span class="op">(),</span> Times<span class="op">.</span><span class="fu">Once</span><span class="op">);</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+            <h2 id="throw-an-exception">Throw an exception</h2>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode cs"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">//Throw an exception</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>mockAddressBuilder<span class="op">.</span><span class="fu">Setup</span><span class="op">(</span>m <span class="op">=&gt;</span> m<span class="op">.</span><span class="fu">From</span><span class="op">(</span>It<span class="op">.</span><span class="fu">IsAny</span><span class="op">&lt;</span>CustomerDto<span class="op">&gt;())).</span><span class="fu">Throws</span><span class="op">&lt;</span>InvalidAddressException<span class="op">&gt;();</span></span></code></pre></div>
+            <h2 id="installation">Installation</h2>
+            <p>Powershell</p>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Install-Package</span> Moq</span></code></pre></div>
           </div>
         </article>
-        <p>Date: </p>
       </div>
     </div>
-    <h1>Screen Dimensions</h1>
-    <button id="showDimensions">Show Dimensions</button>
-    <div class="dimensions" id="dimensionsDisplay"></div>
-    <script>
-      document.getElementById('showDimensions').addEventListener('click', function() {
-          const width = window.innerWidth;
-          const height = window.innerHeight;
-          document.getElementById('dimensionsDisplay').innerText = `Width: px, Height: px`;
-      });
-  </script>
   </body>
 </html>
